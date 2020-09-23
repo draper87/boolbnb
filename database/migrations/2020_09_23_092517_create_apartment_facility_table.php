@@ -14,12 +14,12 @@ class CreateApartmentFacilityTable extends Migration
     public function up()
     {
         Schema::create('apartment_facility', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
             $table->unsignedBigInteger('facility_id');
             $table->foreign('facility_id')->references('id')->on('facilities');
             $table->unsignedBigInteger('apartment_id');
             $table->foreign('apartment_id')->references('id')->on('apartments');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
