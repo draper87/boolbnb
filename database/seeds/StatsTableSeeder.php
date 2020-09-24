@@ -14,8 +14,8 @@ class StatsTableSeeder extends Seeder
     {
         for ($i=0; $i < 100; $i++) {
             $new_stat = new Stat();
-            $new_stat->apartment_id = rand(22, 31);
-            
+            $new_stat->apartment_id = rand(2, 11);
+
             $new_stat->save();
         }
     }
