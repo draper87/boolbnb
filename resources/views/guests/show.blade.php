@@ -9,7 +9,11 @@
     <li>{{$apartment->id}}</li>
 </ul>
 
+<<<<<<< HEAD
 <form action="{{ route('send', $apartment) }}" method="post">
+=======
+<form action="{{ route('send') }}" method="post">
+>>>>>>> master
     @csrf
     @method('POST')
     <label for="email">Email</label>
