@@ -32,5 +32,18 @@
 <label for="address">address</label>
 <input type="text" name="address" placeholder="address" value="{{ isset($apartment->address)? $apartment->address : old('address')}}" required>
 
+<label for="longitude">Longitude</label>
+<input type="text" name="longitude" placeholder="longitude" value="{{ isset($apartment->longitude)? $apartment->longitude :old('longitude')}}" required>
+
+<label for="latitude">Latitude</label>
+<input type="text" name="latitude" placeholder="latitude" value="{{ isset($apartment->latitude)? $apartment->latitude :old('latitude')}}" required>
+
+    @foreach ($facilities as $facility)
+        <div>
+            <input type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
+            <span>{{ $facility->facility }}</span>
+        </div>
+    @endforeach
+
 <input type="submit" value="Invia">
 </form>
