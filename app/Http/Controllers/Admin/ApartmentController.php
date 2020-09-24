@@ -18,7 +18,7 @@ class ApartmentController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $apartments = Apartment::all();
+        $apartments = Apartment::where('user_id', $user->id)->get();;
 
         return view('admin.index', compact('apartments','user' ));
     }
@@ -50,9 +50,9 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Apartment $apartment)
     {
-        //
+        return view('admin.show', compact('apartment'));
     }
 
     /**
@@ -61,9 +61,9 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment $apartment)
     {
-        //
+        return view('admin.edit' , compact('apartment'));
     }
 
     /**
@@ -73,9 +73,16 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+        $request->validate($this->validationData());
+
+        $requested_data = $request->all();
+        $apartment->update($requested_data);
+
+        if ($apartment) {
+          return view('admin.show' , compact('apartment'));
+        }
     }
 
     /**
@@ -88,4 +95,15 @@ class ApartmentController extends Controller
     {
         //
     }
+    public function validationData(){
+      return [
+        'title' => 'required|max:100',
+        'rooms' => 'required|integer|min:1|max:9',
+        'beds' => 'required|integer|min:1|max:9',
+        'bathrooms' => 'required|integer|min:1|max:9',
+        'square' => 'required|integer|min:50|max:300',
+        'address' => 'required|max:255',
+      ];
+    }
+
 }
