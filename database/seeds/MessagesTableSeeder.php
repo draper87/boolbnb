@@ -15,7 +15,9 @@ class MessagesTableSeeder extends Seeder
     {
         for ($i=0; $i < 15; $i++) {
             $new_message = new Message();
-            $new_message->apartment_id = rand(2, 11);
+
+            $new_message->apartment_id = rand(9, 13);
+
             $new_message->message = $faker->paragraph();
             $new_message->email = $faker->email;
 

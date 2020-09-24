@@ -54,7 +54,11 @@ class ApartmentsTableSeeder extends Seeder
             $new_apartment->visible = true;
 
             $new_apartment->save();
+<<<<<<< Updated upstream
             // $new_apartment->facilities()->attach(rand(1, 6));
+=======
+//            $new_apartment->facilities()->attach(rand(1, 6));
+>>>>>>> Stashed changes
         }
     }
 }

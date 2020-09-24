@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Facility;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Apartment;
 use App\User;
+use App\Message;
 use Illuminate\Support\Facades\Auth;
 
 class ApartmentController extends Controller
@@ -18,9 +20,9 @@ class ApartmentController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $apartments = Apartment::where('user_id', $user->id)->get();;
+        $apartments = Apartment::where('user_id', $user->id)->get();
 
-        return view('admin.index', compact('apartments','user' ));
+        return view('admin.index', compact('apartments','user'));
     }
 
     /**
@@ -30,7 +32,8 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        $facilities = Facility::all();
+        return view('admin.create', compact('facilities'));
     }
 
     /**
@@ -41,7 +44,29 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate($this->validationData());
+
+        $requested_data = $request->all();
+
+
+        $new_apartment = new Apartment();
+        $new_apartment->user_id = Auth::id();
+        $new_apartment->title = $requested_data['title'];
+        $new_apartment->rooms = $requested_data['rooms'];
+        $new_apartment->beds = $requested_data['beds'];
+        $new_apartment->bathrooms = $requested_data['bathrooms'];
+        $new_apartment->square = $requested_data['square'];
+        $new_apartment->address = $requested_data['address'];
+        $new_apartment->longitude = $requested_data['longitude'];
+        $new_apartment->latitude = $requested_data['latitude'];
+        $new_apartment->visible = true;
+        $new_apartment->save();
+
+        if (isset($requested_data['facilities'])) {
+            $new_apartment->facilities()->sync($requested_data['facilities']);
+        }
+
+        return redirect()->route('admin.apartments.show', $new_apartment);
     }
 
     /**
@@ -63,7 +88,8 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        return view('admin.edit' , compact('apartment'));
+        $facilities = Facility::all();
+        return view('admin.edit' , compact('apartment','facilities'));
     }
 
     /**
@@ -80,6 +106,12 @@ class ApartmentController extends Controller
         $requested_data = $request->all();
         $apartment->update($requested_data);
 
+        if (isset($requested_data['facilities'])) {
+            $apartment->facilities()->sync($requested_data['facilities']);
+        } else {
+            $apartment->facilities()->detach();
+        }
+
         if ($apartment) {
           return view('admin.show' , compact('apartment'));
         }
@@ -91,10 +123,18 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Apartment $apartment)
     {
-        //
+        $apartment->messages()->delete();
+        $apartment->stats()->delete();
+        $apartment->facilities()->detach();
+        $apartment->promos()->detach();
+        $apartment->delete();
+
+        return redirect()->route('admin.apartments.index');
+
     }
+
     public function validationData(){
       return [
         'title' => 'required|max:100',
@@ -103,6 +143,8 @@ class ApartmentController extends Controller
         'bathrooms' => 'required|integer|min:1|max:9',
         'square' => 'required|integer|min:50|max:300',
         'address' => 'required|max:255',
+        'longitude' => 'required|numeric|min:-180|max:180',
+        'latitude' => 'required|numeric|min:-90|max:90',
       ];
     }
 
