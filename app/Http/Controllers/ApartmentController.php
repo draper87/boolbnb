@@ -33,6 +33,10 @@ class ApartmentController extends Controller
 
         $new_message->save();
 
+<<<<<<< HEAD
 
+=======
+        return redirect()->route('show', $new_message->apartment);
+>>>>>>> master
     }
 }
