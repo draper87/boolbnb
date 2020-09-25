@@ -15,3 +15,8 @@
     @endforeach
   </li>
 </ul>
+
+<a href="{{ route('admin.stat_show', $apartment) }}">Visualizza statistiche</a>
+
+
+

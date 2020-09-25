@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use Illuminate\Support\Facades\Auth;
 use App\Message;
+use App\Facility;
 
 class ApartmentController extends Controller
 {
@@ -17,7 +18,8 @@ class ApartmentController extends Controller
 
     public function show(Apartment $apartment) {
 
-        return view('guests.show', compact('apartment'));
+        $facilities = Facility::all();
+        return view('guests.show', compact('apartment','facilities'));
     }
 
     public function sendMessage(Request $request) {
@@ -33,14 +35,7 @@ class ApartmentController extends Controller
 
         $new_message->save();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+        return redirect()->route('show', $new_message->apartment);
 
-=======
-        return redirect()->route('show', $new_message->apartment);
->>>>>>> master
-=======
-        return redirect()->route('show', $new_message->apartment);
->>>>>>> master
     }
 }

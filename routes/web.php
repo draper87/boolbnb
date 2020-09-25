@@ -29,6 +29,7 @@ Route::prefix('admin')
         Route::resource('apartments', 'ApartmentController');
         Route::get('/message', 'MessageController@index')->name('message');
         Route::get('/message/{message}', 'MessageController@show')->name('message_show');
+        Route::get('/stat/{apartment}', 'StatController@show')->name('stat_show');
 });
 
 Route::get('/', 'ApartmentController@index')->name('index');

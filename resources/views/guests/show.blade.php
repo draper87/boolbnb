@@ -6,18 +6,19 @@
     <li>Bagni: {{$apartment->bathrooms}}</li>
     <li>Metri quadri: {{$apartment->square}}</li>
     <li>Indirizzo: {{$apartment->address}}</li>
-    <li>{{$apartment->id}}</li>
+    <li>servizi:
+        @foreach ($facilities as $facility)
+            <div>
+                <input onclick="return false;" type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
+                <span>{{ $facility->facility }}</span>
+            </div>
+        @endforeach
+    </li>
 </ul>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<form action="{{ route('send', $apartment) }}" method="post">
-=======
+
 <form action="{{ route('send') }}" method="post">
->>>>>>> master
-=======
-<form action="{{ route('send') }}" method="post">
->>>>>>> master
+
     @csrf
     @method('POST')
     <label for="email">Email</label>
