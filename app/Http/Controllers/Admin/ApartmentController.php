@@ -77,7 +77,8 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('admin.show', compact('apartment'));
+        $facilities = Facility::all();
+        return view('admin.show', compact('apartment','facilities'));
     }
 
     /**
@@ -113,7 +114,7 @@ class ApartmentController extends Controller
         }
 
         if ($apartment) {
-          return view('admin.show' , compact('apartment'));
+          return redirect()->route('admin.apartments.show' , $apartment);
         }
     }
 
