@@ -10,7 +10,11 @@
 </ul>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <form action="{{ route('send', $apartment) }}" method="post">
+=======
+<form action="{{ route('send') }}" method="post">
+>>>>>>> master
 =======
 <form action="{{ route('send') }}" method="post">
 >>>>>>> master

@@ -27,6 +27,8 @@ Route::prefix('admin')
       ->name('admin.')
       ->group(function () {
         Route::resource('apartments', 'ApartmentController');
+        Route::get('/message', 'MessageController@index')->name('message');
+        Route::get('/message/{message}', 'MessageController@show')->name('message_show');
 });
 
 Route::get('/', 'ApartmentController@index')->name('index');
