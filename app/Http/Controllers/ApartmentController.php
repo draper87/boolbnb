@@ -31,18 +31,8 @@ class ApartmentController extends Controller
         $new_message->message = $requested_data['messagge'];
         $new_message->email = $requested_data['email'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        $new_message->save();
-
-
-=======
-        // dd($new_message->apartment);
-=======
->>>>>>> master
         $new_message->save();
 
         return redirect()->route('show', $new_message->apartment);
->>>>>>> master
     }
 }
