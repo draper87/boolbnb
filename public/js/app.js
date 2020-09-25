@@ -37266,45 +37266,7 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-$.ajax({
-  url: 'http://127.0.0.1:8000/api/stats',
-  data: {
-    apartment: $('#appartamento').text()
-  },
-  method: 'GET',
-  success: function success(dataResponse) {
-    var numero = dataResponse.statistiche.length;
-  },
-  error: function error() {
-    alert('error');
-  }
-});
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-  // The type of chart we want to create
-  type: 'line',
-  // The data for our dataset
-  data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45]
-    }]
-  },
-  // Configuration options go here
-  options: {
-    layout: {
-      padding: {
-        left: 50,
-        right: 50,
-        top: 50,
-        bottom: 50
-      }
-    }
-  }
-});
+__webpack_require__(/*! ./stats */ "./resources/js/stats.js");
 
 /***/ }),
 
@@ -37350,6 +37312,68 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/stats.js":
+/*!*******************************!*\
+  !*** ./resources/js/stats.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+$.ajax({
+  url: 'http://127.0.0.1:8000/api/stats',
+  data: {
+    apartment: $('#appartamento').text()
+  },
+  method: 'GET',
+  success: function success(dataResponse) {
+    var gennaio = dataResponse.gennaio.length;
+    var febbraio = dataResponse.febbraio.length;
+    var marzo = dataResponse.marzo.length;
+    var aprile = dataResponse.aprile.length;
+    var maggio = dataResponse.maggio.length;
+    var giugno = dataResponse.giugno.length;
+    var luglio = dataResponse.luglio.length;
+    var agosto = dataResponse.agosto.length;
+    var settembre = dataResponse.settembre.length;
+    var ottobre = dataResponse.ottobre.length;
+    var novembre = dataResponse.novembre.length;
+    var dicembre = dataResponse.dicembre.length;
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'line',
+      // The data for our dataset
+      data: {
+        labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+        datasets: [{
+          label: 'My First dataset',
+          // backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre]
+        }]
+      },
+      // Configuration options go here
+      options: {
+        layout: {
+          padding: {
+            left: 50,
+            right: 50,
+            top: 50,
+            bottom: 50
+          }
+        }
+      }
+    });
+  },
+  error: function error() {
+    alert('error');
+  }
+});
 
 /***/ }),
 
