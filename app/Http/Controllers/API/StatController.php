@@ -12,6 +12,7 @@ class StatController extends Controller
     public function index(Request $request) {
 
         $data = $request->all();
+<<<<<<< Updated upstream
 
 
         $stats_gennaio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-01-01' ,'2020-02-01'])->get();
@@ -28,6 +29,11 @@ class StatController extends Controller
         $stats_novembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-11-01 00:00:00' ,'2020-12-01 00:00:00'])->get();
         $stats_dicembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-12-01 00:00:00' ,'2021-01-01 00:00:00'])->get();
 
+=======
+        $data_attuale = date();
+        dd($data_attuale);
+        $stats = Stat::where('apartment_id', $data['apartment'])->get();
+>>>>>>> Stashed changes
 
 
 
