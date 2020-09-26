@@ -12,30 +12,64 @@ class StatController extends Controller
     public function index(Request $request) {
 
         $data = $request->all();
-<<<<<<< Updated upstream
 
+        $anno_corrente = now()->year;
+        $mese_corrente = now()->month;
 
-        $stats_gennaio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-01-01' ,'2020-02-01'])->get();
-//        dd($stats_gennaio);
-        $stats_febbraio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at',['2020-02-01' ,'2020-03-01'])->get();
-        $stats_marzo = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-03-01 00:00:00' ,'2020-04-01 00:00:00'])->get();
-        $stats_aprile = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-04-01 00:00:00' ,'2020-05-01 00:00:00'])->get();
-        $stats_maggio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-05-01 00:00:00' ,'2020-06-01 00:00:00'])->get();
-        $stats_giugno = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-06-01 00:00:00' ,'2020-07-01 00:00:00'])->get();
-        $stats_luglio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-07-01 00:00:00' ,'2020-08-01 00:00:00'])->get();
-        $stats_agosto = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-08-01 00:00:00' ,'2020-09-01 00:00:00'])->get();
-        $stats_settembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-09-01' ,'2020-10-01'])->get();
-        $stats_ottobre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-10-01 00:00:00' ,'2020-11-01 00:00:00'])->get();
-        $stats_novembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-11-01 00:00:00' ,'2020-12-01 00:00:00'])->get();
-        $stats_dicembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', ['2020-12-01 00:00:00' ,'2021-01-01 00:00:00'])->get();
+        $stats_gennaio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-01-01' ,$anno_corrente . '-02-01'])->get();
+        $stats_febbraio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at',[$anno_corrente . '-02-01' ,$anno_corrente . '-03-01'])->get();
+        $stats_marzo = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-03-01 ' ,$anno_corrente . '-04-01'])->get();
+        $stats_aprile = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-04-01 ' ,$anno_corrente . '-05-01'])->get();
+        $stats_maggio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-05-01 ' ,$anno_corrente . '-06-01'])->get();
+        $stats_giugno = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-06-01 ' ,$anno_corrente . '-07-01'])->get();
 
-=======
-        $data_attuale = date();
-        dd($data_attuale);
-        $stats = Stat::where('apartment_id', $data['apartment'])->get();
->>>>>>> Stashed changes
+        if ($mese_corrente == 1) {
+          $anno_corrente = $anno_corrente - 1;
 
+          $stats_luglio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-07-01 ' ,$anno_corrente . '-08-01'])->get();
+          $stats_agosto = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-08-01 ' ,$anno_corrente . '-09-01'])->get();
+          $stats_settembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-09-01' ,$anno_corrente . '-10-01'])->get();
+          $stats_ottobre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-10-01 ' ,$anno_corrente . '-11-01'])->get();
+          $stats_novembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-11-01 ' ,$anno_corrente . '-12-01'])->get();
+          $stats_dicembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-12-01 ' ,$anno_corrente . '-01-01'])->get();
+        }elseif ($mese_corrente == 2){
+          $anno_corrente = $anno_corrente - 1;
 
+          $stats_agosto = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-08-01 ' ,$anno_corrente . '-09-01'])->get();
+          $stats_settembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-09-01' ,$anno_corrente . '-10-01'])->get();
+          $stats_ottobre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-10-01 ' ,$anno_corrente . '-11-01'])->get();
+          $stats_novembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-11-01 ' ,$anno_corrente . '-12-01'])->get();
+          $stats_dicembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-12-01 ' ,$anno_corrente . '-01-01'])->get();
+        }elseif ($mese_corrente == 3){
+          $anno_corrente = $anno_corrente - 1;
+
+          $stats_settembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-09-01' ,$anno_corrente . '-10-01'])->get();
+          $stats_ottobre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-10-01 ' ,$anno_corrente . '-11-01'])->get();
+          $stats_novembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-11-01 ' ,$anno_corrente . '-12-01'])->get();
+          $stats_dicembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-12-01 ' ,$anno_corrente . '-01-01'])->get();
+        }elseif ($mese_corrente == 4) {
+          $anno_corrente = $anno_corrente - 1;
+
+          $stats_ottobre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-10-01 ' ,$anno_corrente . '-11-01'])->get();
+          $stats_novembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-11-01 ' ,$anno_corrente . '-12-01'])->get();
+          $stats_dicembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-12-01 ' ,$anno_corrente . '-01-01'])->get();
+        }elseif ($mese_corrente == 5) {
+          $anno_corrente = $anno_corrente - 1;
+
+          $stats_novembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-11-01 ' ,$anno_corrente . '-12-01'])->get();
+          $stats_dicembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-12-01 ' ,$anno_corrente . '-01-01'])->get();
+        }elseif ($mese_corrente == 6) {
+          $anno_corrente = $anno_corrente - 1;
+
+          $stats_dicembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-12-01 ' ,$anno_corrente . '-01-01'])->get();
+        }else {
+          $stats_luglio = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-07-01 ' ,$anno_corrente . '-08-01'])->get();
+          $stats_agosto = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-08-01 ' ,$anno_corrente . '-09-01'])->get();
+          $stats_settembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-09-01' ,$anno_corrente . '-10-01'])->get();
+          $stats_ottobre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-10-01 ' ,$anno_corrente . '-11-01'])->get();
+          $stats_novembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-11-01 ' ,$anno_corrente . '-12-01'])->get();
+          $stats_dicembre = Stat::where('apartment_id', $data['apartment'])->whereBetween('created_at', [$anno_corrente . '-12-01 ' ,$anno_corrente . '-01-01'])->get();
+        }
 
         return response()->json([
             'gennaio' => $stats_gennaio,
