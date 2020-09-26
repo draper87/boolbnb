@@ -9,7 +9,7 @@ $.ajax({
     method: 'GET',
     success: function(dataResponse) {
         // NOTE: per la label
-        var currentMonth = new Date().getMonth();
+        var currentMonth = new Date().getMonth() + 1;
         var months = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
 
 

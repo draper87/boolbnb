@@ -13,6 +13,8 @@ class StatController extends Controller
 
         $data = $request->all();
 
+        // commento da eliminare , test gitkraken
+
         $anno_corrente = now()->year;
         $mese_corrente = now()->month;
 
