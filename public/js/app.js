@@ -37266,7 +37266,7 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./stats */ "./resources/js/stats.js");
+__webpack_require__(/*! ./stats.js */ "./resources/js/stats.js");
 
 /***/ }),
 
@@ -37331,6 +37331,10 @@ $.ajax({
   },
   method: 'GET',
   success: function success(dataResponse) {
+    // NOTE: per la label
+    var currentMonth = new Date().getMonth();
+    var months = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre']; // NOTE: per il data
+
     var gennaio = dataResponse.gennaio.length;
     var febbraio = dataResponse.febbraio.length;
     var marzo = dataResponse.marzo.length;
@@ -37343,18 +37347,20 @@ $.ajax({
     var ottobre = dataResponse.ottobre.length;
     var novembre = dataResponse.novembre.length;
     var dicembre = dataResponse.dicembre.length;
+    var monthsStats = [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre]; // console.log(months.slice(currentMonth - 6, currentMonth));
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
       // The type of chart we want to create
       type: 'line',
       // The data for our dataset
       data: {
-        labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+        labels: months.slice(currentMonth - 6, currentMonth),
         datasets: [{
-          label: 'My First dataset',
+          label: 'dati degli ultimi 6 mesi',
           // backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
-          data: [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre]
+          data: monthsStats.slice(currentMonth - 6, currentMonth)
         }]
       },
       // Configuration options go here
@@ -37395,8 +37401,8 @@ $.ajax({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\drape\Desktop\Repo\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\drape\Desktop\Repo\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/alessandro/Documents/boolean/mamp-htdocs/boolbnb/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/alessandro/Documents/boolean/mamp-htdocs/boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

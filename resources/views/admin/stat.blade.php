@@ -7,7 +7,7 @@
 
 <h2>Statistiche relative all appartamento {{ $apartment->title }}</h2>
 
-<div><canvas id="myChart" width="400" height="400"></canvas></div>
+<div><canvas id="myChart" width="300" height="100"></canvas></div>
 
 <div id="appartamento" hidden>{{ $apartment->id }}</div>
 

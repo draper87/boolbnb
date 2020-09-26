@@ -1,10 +1,2 @@
 require('./bootstrap');
-require('./stats')
-
-
-
-
-
-
-
-
+require('./stats.js');

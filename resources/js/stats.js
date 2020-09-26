@@ -8,6 +8,12 @@ $.ajax({
     },
     method: 'GET',
     success: function(dataResponse) {
+        // NOTE: per la label
+        var currentMonth = new Date().getMonth();
+        var months = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+
+
+        // NOTE: per il data
         var gennaio = dataResponse.gennaio.length;
         var febbraio = dataResponse.febbraio.length;
         var marzo = dataResponse.marzo.length;
@@ -21,6 +27,9 @@ $.ajax({
         var novembre = dataResponse.novembre.length;
         var dicembre = dataResponse.dicembre.length;
 
+        var monthsStats = [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre];
+
+        // console.log(months.slice(currentMonth - 6, currentMonth));
         var ctx = document.getElementById('myChart').getContext('2d');
         var chart = new Chart(ctx, {
             // The type of chart we want to create
@@ -28,12 +37,12 @@ $.ajax({
 
             // The data for our dataset
             data: {
-                labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+                labels: months.slice(currentMonth - 6, currentMonth),
                 datasets: [{
-                    label: 'My First dataset',
+                    label: 'dati degli ultimi 6 mesi',
                     // backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
-                    data: [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre],
+                    data: monthsStats.slice(currentMonth - 6, currentMonth),
                 }]
             },
 
