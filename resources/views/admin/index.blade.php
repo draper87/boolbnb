@@ -11,6 +11,10 @@
             <a class="btn btn-primary mb-2" href="{{ route('admin.apartments.create') }}">Crea nuovo appartamento</a>
         </div>
 
+        <div>
+            <a class="btn btn-primary mb-2" href="{{ route('admin.message') }}">Visualizza messaggi</a>
+        </div>
+
 
 
         @foreach ($apartments as $apartment)
