@@ -112,10 +112,18 @@ class ApartmentController extends Controller
         $request->validate($this->validationData());
 
         $requested_data = $request->all();
+        // dd($requested_data);
 
         if (isset($requested_data['image_path'])) {
             $path = $request->file('image_path')->store('images', 'public');
             $requested_data['image_path'] = $path;
+        }
+
+        if (isset($requested_data['visible'])) {
+
+            $requested_data['visible'] = false;
+        } else {
+            $requested_data['visible'] = true;
         }
 
         $apartment->update($requested_data);
