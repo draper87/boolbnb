@@ -9,31 +9,6 @@ $( "#stat_start" ).click(function() {
   printStats(numeroMesi);
 });
 
-// // NOTE: debugg
-// var currentMonth = new Date().getMonth() + 1;
-// var months = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-// function getMonth(arrayMesi, numeroMesiDaVisualizzare) {
-//
-//   return arrayMesi.slice(currentMonth - numeroMesiDaVisualizzare).concat(arrayMesi.slice(0,currentMonth))
-//   // console.log(arrayMesi.slice(currentMonth - numeroMesiDaVisualizzare, currentMonth));
-//   // return arrayMesi.slice(currentMonth - numeroMesiDaVisualizzare, currentMonth);
-// }
-// console.log(getMonth(months, 6));
-
-
-// var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-//
-// var today = new Date() + 1;
-// var d;
-// var month= [];
-//
-// for(var i = 6; i > 0; i -= 1) {
-//   d = new Date(today.getMonth() - i, 1);
-//   month.push(monthNames[d.getMonth()]);
-// }
-// console.log(month);
-// // NOTE: finedebuggg
-
 function printStats(numeroMesiDaVisualizzare){
   $.ajax({
       url: 'http://127.0.0.1:8000/api/stats',
@@ -43,11 +18,6 @@ function printStats(numeroMesiDaVisualizzare){
       },
       method: 'GET',
       success: function(dataResponse) {
-          // NOTE: per la label
-          var currentMonth = new Date().getMonth() + 1;
-          var months = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-          // console.log(months.slice(currentMonth - numeroMesiDaVisualizzare).concat(months.slice(0,currentMonth)));
-
           // NOTE: per il data
           var gennaio = dataResponse.gennaio.length;
           var febbraio = dataResponse.febbraio.length;
@@ -63,7 +33,22 @@ function printStats(numeroMesiDaVisualizzare){
           var dicembre = dataResponse.dicembre.length;
 
           var monthsStats = [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre];
+          var months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
 
+          var today = new Date();
+          var aMonth = today.getMonth();
+          var arrayMesiDaPassare =[];
+          var arrayValoriDaPassare =[];
+
+
+          for (var i = 0; i < numeroMesiDaVisualizzare; i++) {
+            arrayMesiDaPassare.push(months[aMonth]);
+            arrayValoriDaPassare.push(monthsStats[aMonth]);
+            aMonth = aMonth - 1;
+            if (aMonth == -1) {
+              aMonth = 11;
+            }
+          }
 
           var ctx = document.getElementById('myChart').getContext('2d');
           var chart = new Chart(ctx, {
@@ -72,12 +57,12 @@ function printStats(numeroMesiDaVisualizzare){
 
               // The data for our dataset
               data: {
-                  labels: getMonthToPass(months, numeroMesiDaVisualizzare),
+                  labels: arrayMesiDaPassare,
                   datasets: [{
                       label: 'dati degli ultimi 6 mesi',
                       // backgroundColor: 'rgb(255, 99, 132)',
                       borderColor: 'rgb(255, 99, 132)',
-                      data: getMonthToPass(monthsStats, numeroMesiDaVisualizzare),
+                      data: arrayValoriDaPassare,
                   }]
               },
 
@@ -93,12 +78,7 @@ function printStats(numeroMesiDaVisualizzare){
                   }
               }
           });
-          // getMonth(months, 6);
-          function getMonthToPass(arrayMesi, numeroMesiDaVisualizzare) {
-            // arrayMesi.slice(currentMonth - numeroMesiDaVisualizzare).concat(arrayMesi.slice(0,currentMonth))
-            // console.log(arrayMesi.slice(currentMonth - numeroMesiDaVisualizzare, currentMonth));
-            return arrayMesi.slice(currentMonth - numeroMesiDaVisualizzare, currentMonth);
-          }
+
       },
       error: function error() {
           alert('error');
