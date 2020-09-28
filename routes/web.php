@@ -35,3 +35,6 @@ Route::prefix('admin')
 Route::get('/', 'ApartmentController@index')->name('index');
 Route::get('/apartments/{apartment}', 'ApartmentController@show')->name('show');
 Route::post('/','ApartmentController@sendMessage')->name('send');
+Route::get('/search', function () {
+    return view('search.index');
+});
