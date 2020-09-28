@@ -34,7 +34,7 @@
     <input type="number" name="square" placeholder="square" value="{{ old('square')}}" required>
 
     <label for="image_path">image_path</label>
-    <input type="file" name="image_path" placeholder="image_path" accept="image/*">
+    <input type="file" name="image_path" placeholder="image_path" accept="image/*" required>
 
     <label for="address">address</label>
     <input id="address" type="text" name="address" placeholder="address" value="{{ old('address')}}" required>

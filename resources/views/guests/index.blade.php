@@ -9,13 +9,10 @@
 
         @foreach ($apartments as $apartment)
             <ul>
-                <li><img src="{{$apartment->image_path}}" alt="appartamento"></li>
+                <li><img src="{{asset('storage') . '/' . $apartment->image_path}}" alt="appartamento"></li>
                 <li>Titolo: {{$apartment->title}}</li>
                 <li><a href="{{ route('show' , $apartment->id)}}">Visualizza</a></li>
             </ul>
         @endforeach
     </div>
 @endsection
-
-
-
