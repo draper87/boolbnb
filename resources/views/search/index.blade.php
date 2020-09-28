@@ -31,12 +31,13 @@
 {{--          Sezione relativa ad Handlebars             --}}
 <script id="entry-template" type="text/x-handlebars-template">
     <h2>@{{ title }}</h2>
+    <p>@{{ id }}</p>
     <p>Stanze @{{ rooms }}</p>
     <p>Letti @{{ beds }}</p>
     <p>Bagni @{{ bathrooms }}</p>
     <p>Metri quadri @{{ square }}</p>
     <p>Indirizzo @{{ address }}</p>
-    <img src="@{{image_path}}" alt="appartamento">
+    <img src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
 </script>
 
 
