@@ -37323,10 +37323,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports, __webpack_require__) {
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"); //select per la gestione del tempo
+// var numeroMesiDefault = $('#time_stat').val();
+// printStats(numeroMesiDefault);
 
 
-var numeroMesiDefault = $('#time_stat').val();
-printStats(numeroMesiDefault);
 $("#stat_start").click(function () {
   var numeroMesi = $('#time_stat').val();
   printStats(numeroMesi);
@@ -37377,12 +37377,12 @@ function printStats(numeroMesiDaVisualizzare) {
         type: 'line',
         // The data for our dataset
         data: {
-          labels: arrayMesiDaPassare,
+          labels: arrayMesiDaPassare.reverse(),
           datasets: [{
             label: 'dati degli ultimi 6 mesi',
             // backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: arrayValoriDaPassare
+            data: arrayValoriDaPassare.reverse()
           }]
         },
         // Configuration options go here

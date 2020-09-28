@@ -1,8 +1,8 @@
 var $ = require( "jquery" );
 
 //select per la gestione del tempo
-var numeroMesiDefault = $('#time_stat').val();
-printStats(numeroMesiDefault);
+// var numeroMesiDefault = $('#time_stat').val();
+// printStats(numeroMesiDefault);
 
 $( "#stat_start" ).click(function() {
   var numeroMesi = $('#time_stat').val();
@@ -57,12 +57,12 @@ function printStats(numeroMesiDaVisualizzare){
 
               // The data for our dataset
               data: {
-                  labels: arrayMesiDaPassare,
+                  labels: arrayMesiDaPassare.reverse(),
                   datasets: [{
                       label: 'dati degli ultimi 6 mesi',
                       // backgroundColor: 'rgb(255, 99, 132)',
                       borderColor: 'rgb(255, 99, 132)',
-                      data: arrayValoriDaPassare,
+                      data: arrayValoriDaPassare.reverse(),
                   }]
               },
 
