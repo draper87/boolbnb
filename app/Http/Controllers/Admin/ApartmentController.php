@@ -47,6 +47,7 @@ class ApartmentController extends Controller
         $request->validate($this->validationData());
 
         $requested_data = $request->all();
+        // dd($requested_data);
 
 
         $new_apartment = new Apartment();
@@ -60,6 +61,12 @@ class ApartmentController extends Controller
         $new_apartment->longitude = $requested_data['longitude'];
         $new_apartment->latitude = $requested_data['latitude'];
         $new_apartment->visible = true;
+
+        if (isset($requested_data['image_path'])) {
+            $path = $request->file('image_path')->store('images', 'public');
+            $new_apartment->image_path = $path;
+        }
+
         $new_apartment->save();
 
         if (isset($requested_data['facilities'])) {
@@ -105,6 +112,12 @@ class ApartmentController extends Controller
         $request->validate($this->validationData());
 
         $requested_data = $request->all();
+
+        if (isset($requested_data['image_path'])) {
+            $path = $request->file('image_path')->store('images', 'public');
+            $requested_data['image_path'] = $path;
+        }
+
         $apartment->update($requested_data);
 
         if (isset($requested_data['facilities'])) {
@@ -146,6 +159,7 @@ class ApartmentController extends Controller
         'address' => 'required|max:255',
         'longitude' => 'required|numeric|min:-180|max:180',
         'latitude' => 'required|numeric|min:-90|max:90',
+        'image_path' => 'image',
       ];
     }
 
