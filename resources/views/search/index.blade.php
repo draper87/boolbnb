@@ -10,16 +10,67 @@
 
 <form autocomplete="off">
 
-<label for="address">Dove vuoi andare?</label>
-<input id="address" type="text" name="address" placeholder="address" value="{{ old('address')}}" required>
+    <label for="address">Dove vuoi andare?</label>
+    <input id="address" type="text" name="address" placeholder="address" value="{{ old('address')}}" required>
 
-<label for="latitude" hidden>Latitude</label>
-<input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" >
+    <label for="latitude" hidden>Latitude</label>
+    <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" hidden>
 
-<label for="longitude" hidden>Longitude</label>
-<input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" >
+    <label for="longitude" hidden>Longitude</label>
+    <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" hidden>
 
-<input id="bottone" type="submit" value="Invia">
+    <div>
+        <label for="rooms">Numero stanze:</label>
+        <input type="range" id="rooms" min="1" max="9" step="1" value="3">
+        <a id="roomsvalue"></a>
+    </div>
+
+    <div>
+        <label for="beds">Numero letti:</label>
+        <input type="range" id="beds" min="1" max="9" step="1" value="2">
+        <a id="bedsvalue"></a>
+    </div>
+
+    <div>
+        <label for="kmradius">Raggio di ricerca (km):</label>
+        <input type="range" id="kmradius" min="2" max="200" step="2" value="20">
+        <a id="kmradiusvalue"></a>
+    </div>
+
+    <div>
+        <label for="wifi">Wifi: </label>
+        <input type="checkbox" id="wifi" value="">
+    </div>
+
+    <div>
+        <label for="car">Posto macchina: </label>
+        <input type="checkbox" id="car" value="">
+    </div>
+
+    <div>
+        <label for="piscina">Piscina </label>
+        <input type="checkbox" id="piscina" value="">
+    </div>
+
+    <div>
+        <label for="portineria">Portineria </label>
+        <input type="checkbox" id="portineria" value="">
+    </div>
+
+    <div>
+        <label for="sauna">Sauna </label>
+        <input type="checkbox" id="sauna" value="">
+    </div>
+
+    <div>
+        <label for="vistamare">Vista mare </label>
+        <input type="checkbox" id="vistamare" value="">
+    </div>
+
+
+
+    <div><input id="bottone" type="submit" value="Invia"></div>
+
 
 </form>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Apartment;
 
@@ -10,10 +11,18 @@ class SearchController extends Controller
 {
     public function index(Request $request) {
 
+        $rooms = $request->get('rooms');
+        $beds = $request->get('beds');
+        $wifi = $request->get('wifi');
+        $car = $request->get('car');
+        $piscina = $request->get('piscina');
+        $portineria = $request->get('portineria');
+        $sauna = $request->get('sauna');
+        $vistamare = $request->get('vistamare');
 
         // dichiaro le mie costanti per trasformare un raggio espresso in Km in gradi longitudinali e latitudinali
-        $R = 6371; // raggio terrestre in km
-        $rad = 100; // di quanti km vogliamo sia il nostro raggio di ricerca
+        $R = 6371; // raggio della Terra in km
+        $rad = intval($request->get('kmradius')); // di quanti km vogliamo sia il nostro raggio di ricerca
         $lat = floatval($request->get('latitude')); // valore latitudinale ricercato
         $lon = floatval($request->get('longitude')); // valore longitudinale ricercato
 
@@ -26,12 +35,51 @@ class SearchController extends Controller
         ];
 
         // inizializzo la mia query
-        $query = Apartment::query();
+        $queryApartment = Apartment::query();
 
-        $query->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
-        $query->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);
+        if ($wifi == 'yes') {
+            $queryApartment->whereHas('facilities', function (Builder $query) {
+                $query->where('facility_id', '=', '1');
+            });
+        }
 
-        return $query->get();
+        if ($car == 'yes') {
+            $queryApartment->whereHas('facilities', function (Builder $query) {
+                $query->where('facility_id', '=', '2');
+            });
+        }
+
+        if ($piscina == 'yes') {
+            $queryApartment->whereHas('facilities', function (Builder $query) {
+                $query->where('facility_id', '=', '3');
+            });
+        }
+
+        if ($portineria == 'yes') {
+            $queryApartment->whereHas('facilities', function (Builder $query) {
+                $query->where('facility_id', '=', '4');
+            });
+        }
+
+        if ($sauna == 'yes') {
+            $queryApartment->whereHas('facilities', function (Builder $query) {
+                $query->where('facility_id', '=', '5');
+            });
+        }
+
+        if ($vistamare == 'yes') {
+            $queryApartment->whereHas('facilities', function (Builder $query) {
+                $query->where('facility_id', '=', '6');
+            });
+        }
+
+        $queryApartment->where('rooms', '>=' ,$rooms);
+        $queryApartment->where('beds', '>=' ,$beds);
+
+        $queryApartment->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
+        $queryApartment->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);
+
+        return $queryApartment->get();
 
     }
 }
