@@ -37326,8 +37326,9 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 
 $(document).ready(function () {
   // select per la gestione del tempo
-  printStats(6);
-  $("#stat_start").click(function () {
+  printStats(6); //al change della select mostro le relative stats
+
+  $("#time_stat").on('change', function () {
     var numeroMesi = $('#time_stat').val();
     printStats(numeroMesi);
   });
@@ -37371,8 +37372,6 @@ $(document).ready(function () {
           }
         }
 
-        console.log(arrayMesiDaPassare);
-        console.log(arrayValoriDaPassare);
         var ctx = document.getElementById('myChart').getContext('2d');
         var chart = new Chart(ctx, {
           // The type of chart we want to create

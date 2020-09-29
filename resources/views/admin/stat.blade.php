@@ -13,9 +13,9 @@
   <option value="12">1 anno</option>
 </select>
 
-<button id="stat_start" type="button" name="button">Vedi relativo grafico</button>
 
-<div><canvas id="myChart" width="300" height="100"></canvas></div>
+
+<div><canvas id="myChart" width="300" height="200"></canvas></div>
 
 <div id="appartamento" hidden>{{ $apartment->id }}</div>
 

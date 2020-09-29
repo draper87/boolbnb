@@ -3,10 +3,12 @@ $( document ).ready(function() {
   // select per la gestione del tempo
   printStats(6);
 
-  $( "#stat_start" ).click(function() {
+  //al change della select mostro le relative stats
+  $( "#time_stat" ).on('change', function() {
     var numeroMesi = $('#time_stat').val();
     printStats(numeroMesi);
   });
+
 
   function printStats(numeroMesiDaVisualizzare){
     $.ajax({
@@ -49,9 +51,6 @@ $( document ).ready(function() {
                 aMonth = 11;
               }
             }
-
-            console.log(arrayMesiDaPassare);
-            console.log(arrayValoriDaPassare);
 
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
