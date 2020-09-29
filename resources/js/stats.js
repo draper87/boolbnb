@@ -1,65 +1,91 @@
 var $ = require( "jquery" );
+$( document ).ready(function() {
+  // select per la gestione del tempo
+  printStats(6);
+
+  //al change della select mostro le relative stats
+  $( "#time_stat" ).on('change', function() {
+    var numeroMesi = $('#time_stat').val();
+    printStats(numeroMesi);
+  });
 
 
-$.ajax({
-    url: 'http://127.0.0.1:8000/api/stats',
-    data: {
-        apartment: $('#appartamento').text(),
-    },
-    method: 'GET',
-    success: function(dataResponse) {
-        // NOTE: per la label
-        var currentMonth = new Date().getMonth() + 1;
-        var months = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+  function printStats(numeroMesiDaVisualizzare){
+    $.ajax({
+        url: 'http://127.0.0.1:8000/api/stats',
+        data: {
+            apartment: $('#appartamento').text(),
+            mesi: numeroMesiDaVisualizzare,
+        },
+        method: 'GET',
+        success: function(dataResponse) {
+            // NOTE: per il data
+            var gennaio = dataResponse.gennaio.length;
+            var febbraio = dataResponse.febbraio.length;
+            var marzo = dataResponse.marzo.length;
+            var aprile = dataResponse.aprile.length;
+            var maggio = dataResponse.maggio.length;
+            var giugno = dataResponse.giugno.length;
+            var luglio = dataResponse.luglio.length;
+            var agosto = dataResponse.agosto.length;
+            var settembre = dataResponse.settembre.length;
+            var ottobre = dataResponse.ottobre.length;
+            var novembre = dataResponse.novembre.length;
+            var dicembre = dataResponse.dicembre.length;
 
 
-        // NOTE: per il data
-        var gennaio = dataResponse.gennaio.length;
-        var febbraio = dataResponse.febbraio.length;
-        var marzo = dataResponse.marzo.length;
-        var aprile = dataResponse.aprile.length;
-        var maggio = dataResponse.maggio.length;
-        var giugno = dataResponse.giugno.length;
-        var luglio = dataResponse.luglio.length;
-        var agosto = dataResponse.agosto.length;
-        var settembre = dataResponse.settembre.length;
-        var ottobre = dataResponse.ottobre.length;
-        var novembre = dataResponse.novembre.length;
-        var dicembre = dataResponse.dicembre.length;
+            var monthsStats = [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre];
+            var months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
 
-        var monthsStats = [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre];
+            var today = new Date();
+            var aMonth = today.getMonth();
+            var arrayMesiDaPassare =[];
+            var arrayValoriDaPassare =[];
 
-        // console.log(months.slice(currentMonth - 6, currentMonth));
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'line',
 
-            // The data for our dataset
-            data: {
-                labels: months.slice(currentMonth - 6, currentMonth),
-                datasets: [{
-                    label: 'dati degli ultimi 6 mesi',
-                    // backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: monthsStats.slice(currentMonth - 6, currentMonth),
-                }]
-            },
+            for (var i = 0; i < numeroMesiDaVisualizzare; i++) {
+              arrayMesiDaPassare.push(months[aMonth]);
+              arrayValoriDaPassare.push(monthsStats[aMonth]);
+              aMonth = aMonth - 1;
+              if (aMonth == -1) {
+                aMonth = 11;
+              }
+            }
 
-            // Configuration options go here
-            options: {
-                layout: {
-                    padding: {
-                        left: 50,
-                        right: 50,
-                        top: 50,
-                        bottom: 50
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: arrayMesiDaPassare.reverse(),
+                    datasets: [{
+                        label: 'dati degli ultimi 6 mesi',
+                        // backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: arrayValoriDaPassare.reverse(),
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    layout: {
+                        padding: {
+                            left: 50,
+                            right: 50,
+                            top: 50,
+                            bottom: 50
+                        }
                     }
                 }
-            }
-        });
-    },
-    error: function error() {
-        alert('error');
-    }
+            });
+
+        },
+        error: function error() {
+            alert('error');
+        }
+    });
+  }
+
 });
