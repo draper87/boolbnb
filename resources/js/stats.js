@@ -1,8 +1,7 @@
 var $ = require( "jquery" );
 $( document ).ready(function() {
-  // // select per la gestione del tempo
-  // var numeroMesiDefault = $('#time_stat').val();
-  // printStats(numeroMesiDefault);
+  // select per la gestione del tempo
+  printStats(6);
 
   $( "#stat_start" ).click(function() {
     var numeroMesi = $('#time_stat').val();
@@ -32,6 +31,7 @@ $( document ).ready(function() {
             var novembre = dataResponse.novembre.length;
             var dicembre = dataResponse.dicembre.length;
 
+
             var monthsStats = [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre];
             var months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
 
@@ -49,6 +49,9 @@ $( document ).ready(function() {
                 aMonth = 11;
               }
             }
+
+            console.log(arrayMesiDaPassare);
+            console.log(arrayValoriDaPassare);
 
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {

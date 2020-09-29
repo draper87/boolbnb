@@ -37325,9 +37325,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $(document).ready(function () {
-  // // select per la gestione del tempo
-  // var numeroMesiDefault = $('#time_stat').val();
-  // printStats(numeroMesiDefault);
+  // select per la gestione del tempo
+  printStats(6);
   $("#stat_start").click(function () {
     var numeroMesi = $('#time_stat').val();
     printStats(numeroMesi);
@@ -37372,6 +37371,8 @@ $(document).ready(function () {
           }
         }
 
+        console.log(arrayMesiDaPassare);
+        console.log(arrayValoriDaPassare);
         var ctx = document.getElementById('myChart').getContext('2d');
         var chart = new Chart(ctx, {
           // The type of chart we want to create
