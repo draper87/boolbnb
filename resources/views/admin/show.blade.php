@@ -30,6 +30,7 @@
 </ul>
 
 <a href="{{ route('admin.stat_show', $apartment) }}">Visualizza statistiche</a>
+<a href="{{ route('admin.promo', $apartment) }}">Sponsorizza</a>
 
 <div id="mapid" style="height: 300px; width: 500px"></div>
 

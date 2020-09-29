@@ -37268,6 +37268,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./stats.js */ "./resources/js/stats.js");
 
+__webpack_require__(/*! ./promo.js */ "./resources/js/promo.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37312,6 +37314,22 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/promo.js":
+/*!*******************************!*\
+  !*** ./resources/js/promo.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $("#promo_selected").change(function () {
+    var price = $(this).find(':selected').data("price");
+    $('#amount').val(price);
+  });
+});
 
 /***/ }),
 
