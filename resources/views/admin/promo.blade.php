@@ -66,7 +66,6 @@
 <script src="{{ asset('js/app.js') }}"></script>
 @else
     @foreach ($apartment->promos as $promo)
-        @dd(now() - $promo->timing)
-        <p>hai già la {{ $promo->name }} attiva. Mancano {{ $promo->timing }}</p>
+        <p>hai già la {{ $promo->name }} attiva. Scade il {{ $data_scadenza }}</p>
     @endforeach
 @endif

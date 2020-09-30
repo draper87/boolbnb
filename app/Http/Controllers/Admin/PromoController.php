@@ -13,13 +13,13 @@ class PromoController extends Controller
 {
     public function index(Apartment $apartment)
     {
-        // dd($apartment);
         $promos = Promo::all();
 
-        // foreach ($apartment->promos as $promo) {
-        //     $this_promo = Promo::where('id', $promo->id)->first();
-        //     dd($promo->pivot->time_ending);
-        // }
+        foreach ($apartment->promos as $promo) {
+            $time_ending = $promo->pivot->time_ending;
+        }
+        $carbon_time_ending = new Carbon($time_ending);
+        $data_scadenza = $carbon_time_ending->format('d-m-y');
 
         $gateway = new Gateway([
             'environment' => config('services.braintree.environment'),
@@ -28,9 +28,8 @@ class PromoController extends Controller
             'privateKey' => config('services.braintree.privateKey')
         ]);
         $token = $gateway->ClientToken()->generate();
-        
-        //passare time_ending e ora attuale
-        return view('admin.promo', compact('token', 'apartment', 'promos'));
+
+        return view('admin.promo', compact('token', 'apartment', 'promos', 'data_scadenza'));
     }
 
     public function checkout(Request $request, Apartment $apartment)
@@ -64,13 +63,11 @@ class PromoController extends Controller
             $transaction = $result->transaction;
 
             if (isset($promo)) {
-                // fuso orario italiano da mettere
-                $scadenza_promo = Carbon::now()->addHours(24);
-                // dd($scadenza_promo->addHours('24:00:00'));
+                $scadenza_promo = Carbon::now('Europe/Rome')->addHours($this_promo->timing);
 
                 $apartment->promos()->attach($promo, [
                     'time_ending' => $scadenza_promo,
-                    'created_at' => Carbon::now(),
+                    'created_at' => Carbon::now('Europe/Rome'),
                 ]);
             }
 
