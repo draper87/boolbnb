@@ -1,64 +1,72 @@
-<form method="post" id="payment-form" action="{{ route('admin.checkout', $apartment) }}">
-    @csrf
-    @method('POST')
-    <section>
+@if (count($apartment->promos) == 0)
 
-        <!-- select promo -->
-        <label>seleziona promo</label>
-        <select id="promo_selected" name="promo_selected">
-            <option default="">Seleziona promo</option>
-            @foreach ($promos as $promo)
-                <option data-price="{{ $promo->price }}" value="{{ $promo->id }}">{{ $promo->name }}</option>
-            @endforeach
-        </select>
-        <!-- select promo -->
+    <form method="post" id="payment-form" action="{{ route('admin.checkout', $apartment) }}">
+        @csrf
+        @method('POST')
+        <section>
 
-        <label for="amount">
-            <span class="input-label">Amount</span>
-            <div class="input-wrapper amount-wrapper">
-                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="">
+            <!-- select promo -->
+            <label>seleziona promo</label>
+            <select id="promo_selected" name="promo_selected">
+                <option default="">Seleziona promo</option>
+                @foreach ($promos as $promo)
+                    <option data-price="{{ $promo->price }}" value="{{ $promo->id }}">{{ $promo->name }}</option>
+                @endforeach
+            </select>
+            <!-- select promo -->
+
+            <label for="amount">
+                <span class="input-label">Amount</span>
+                <div class="input-wrapper amount-wrapper">
+                    <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="">
+                </div>
+            </label>
+
+            <div class="bt-drop-in-wrapper">
+                <div id="bt-dropin"></div>
             </div>
-        </label>
+        </section>
 
-        <div class="bt-drop-in-wrapper">
-            <div id="bt-dropin"></div>
-        </div>
-    </section>
+        <input id="nonce" name="payment_method_nonce" type="hidden" />
+        <button class="button" type="submit"><span>Test Transaction</span></button>
+    </form>
 
-    <input id="nonce" name="payment_method_nonce" type="hidden" />
-    <button class="button" type="submit"><span>Test Transaction</span></button>
-</form>
-
-<script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
-<script>
+    <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
+    <script>
     var form = document.querySelector('#payment-form');
     var client_token = "{{ $token }}";
 
     braintree.dropin.create({
-      authorization: client_token,
-      selector: '#bt-dropin',
-      paypal: {
-        flow: 'vault'
-      }
+        authorization: client_token,
+        selector: '#bt-dropin',
+        paypal: {
+            flow: 'vault'
+        }
     }, function (createErr, instance) {
-      if (createErr) {
-        console.log('Create Error', createErr);
-        return;
-      }
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        instance.requestPaymentMethod(function (err, payload) {
-          if (err) {
-            console.log('Request Payment Method Error', err);
+        if (createErr) {
+            console.log('Create Error', createErr);
             return;
-          }
+        }
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
 
-          // Add the nonce to the form and submit
-          document.querySelector('#nonce').value = payload.nonce;
-          form.submit();
+            instance.requestPaymentMethod(function (err, payload) {
+                if (err) {
+                    console.log('Request Payment Method Error', err);
+                    return;
+                }
+
+                // Add the nonce to the form and submit
+                document.querySelector('#nonce').value = payload.nonce;
+                form.submit();
+            });
         });
-      });
     });
 </script>
 <script src="{{ asset('js/app.js') }}"></script>
+@else
+    @foreach ($apartment->promos as $promo)
+        @dd(now() - $promo->timing)
+        <p>hai già la {{ $promo->name }} attiva. Mancano {{ $promo->timing }}</p>
+    @endforeach
+@endif
