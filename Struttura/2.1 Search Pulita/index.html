@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HomePage 7BnB</title>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Jquery 3.4.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!-- Header Start  -->
+    <header>
+      <nav id="navigator_my" class="navbar navbar-expand-md navbar-dark  my_nav_color">
+        <!-- Navbar left-side -->
+        <div class="container-fluid">
+          <a href="#" class="navbar-brand mr-3">7BnB</a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar right-side -->
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+              <a href="#" class="nav-item nav-link">Register</a>
+              <a href="#" class="nav-item nav-link">Login</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- STICKY Return button -->
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    </header>
+    <!-- Header End -->
+    <!-- Main Start -->
+    <main>
+      <!-- SEARCH BAR -->
+      <section>
+      <div class="container-fluid my_section_padding">
+        <div class="container main-search background_my text-white">
+          <div class="search_box more_space_my">
+          <input id="address" type="text" class="address-input w-50" name="" placeholder="Cerca Indirizzo">
+          <input min="20" max="999" type="number" name="distance" id="distance">
+          <label for="distance"><i class="fas fa-map-marker-alt option_icon add_red_my"></i> <span class="radius-text">Raggio di ricerca (KM)</span></label>
+          <button class="btn_search btn-warning" id='search'>Search</button>
+          </div>
+          <div class=" more_space_me">
+            <i class="fas fa-bed option_icon"></i><label for="beds">Letti</label>
+              <input min="1" max="10" type="number" name="beds" id="beds" placeholder="1-10">
+            <i class="fas fa-toilet option_icon"></i><label for="bathroom">Bagni</label>
+              <input min="1" max="5" type="number" name="bathroom" id="bathrooms" placeholder="1-5">
+            <i class="fas fa-door-open option_icon"></i><label for="room_number">Stanze</label>
+              <input  min="1" max="5"type="number" name="room_number" id="room_number" placeholder="1-5">
+            <i class="fas fa-wifi extra_icon"></i> <label for="checkbox">WiFi</label>
+              <input type="checkbox"  class="checkbox-filter" name="extra" value="WiFi" id="">
+            <i class="fas fa-parking extra_icon"></i> <label for="checkbox">Parcheggio</label>
+              <input type="checkbox" class="checkbox-filter" name="extra" value="Parcheggio" id="">
+            <i class="fas fa-swimmer extra_icon"></i> <label for="checkbox">Piscina</label>
+              <input type="checkbox" class="checkbox-filter" name="extra" value="Piscina" id="">
+            <i class="fas fa-concierge-bell extra_icon"></i> <label for="checkbox">Portineria</label>
+              <input type="checkbox" class="checkbox-filter" name="extra" value="Portineria" id="">
+            <i class="fas fa-hot-tub extra_icon"></i> <label for="checkbox">Sauna</label>
+              <input type="checkbox" class="checkbox-filter" name="extra" value="Sauna" id="">
+            <button type="submit" class="btn_filters btn-warning" id="filter-button">Filtra</button>
+            <button type="submit" class="btn_filters btn-warning" id="remove-filters">Rimuovi Filtri</button>
+          </div>
+        </div>
+      </div>
+      </section>
+      <!-- RESULT -->
+      <section>
+        <div class="container extra_padding">
+          <div class="row my_padding">
+            <div class="col-sm-3">
+              <img class="circle" src="img/casa.jpg">
+            </div>
+            <div class="col-sm-9">
+              <p><b>Lodi</b></p>
+              <p>Questo è del semplice testo tanto per far volume, non perder tempo a leggermi per favore, sono inutile!</p>
+            </div>
+          </div><br>
+          <div class="row my_padding">
+            <div class="col-sm-3">
+              <img class="circle" src="img/casa.jpg">
+            </div>
+            <div class="col-sm-9">
+              <p><b>Lodi</b></p>
+              <p>Questo è del semplice testo tanto per far volume, non perder tempo a leggermi per favore, sono inutile!</p>
+            </div>
+          </div><br>
+          <div class="row my_padding">
+            <div class="col-sm-3">
+              <img class="circle" src="img/casa.jpg">
+            </div>
+            <div class="col-sm-9">
+              <p><b>Lodi</b></p>
+              <p>Questo è del semplice testo tanto per far volume, non perder tempo a leggermi per favore, sono inutile!</p>
+            </div>
+          </div><br>
+          <div class="row my_padding">
+            <div class="col-sm-3">
+              <img class="circle" src="img/casa.jpg">
+            </div>
+            <div class="col-sm-9">
+              <p><b>Lodi</b></p>
+              <p>Questo è del semplice testo tanto per far volume, non perder tempo a leggermi per favore, sono inutile!</p>
+            </div>
+          </div><br>
+          <div class="row my_padding">
+            <div class="col-sm-3">
+              <img class="circle" src="img/casa.jpg">
+            </div>
+            <div class="col-sm-9">
+              <p><b>Lodi</b></p>
+              <p>Questo è del semplice testo tanto per far volume, non perder tempo a leggermi per favore, sono inutile!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Main End -->
+    <!-- Footer Start -->
+    <footer class=" pt-4 my_footer_color edit_footer">
+      <div class="container">
+        <!-- SOCIAL NETWORK -->
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1">
+              <i class="fab fa-facebook-f"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1">
+              <i class="fab fa-twitter"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+              <i class="fab fa-google-plus-g"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1">
+              <i class="fab fa-linkedin-in"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-dribbble mx-1">
+              <i class="fab fa-dribbble"> </i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href=""> Team S3v3n</a>
+      </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- SCRIPT -->
+    <script type="text/javascript" src="script.js"></script>
+    <!-- Bootstrap JQuery Plugin -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
