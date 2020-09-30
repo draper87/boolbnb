@@ -37270,6 +37270,8 @@ __webpack_require__(/*! ./stats.js */ "./resources/js/stats.js");
 
 __webpack_require__(/*! ./promo.js */ "./resources/js/promo.js");
 
+__webpack_require__(/*! ./navbar.js */ "./resources/js/navbar.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37314,6 +37316,50 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/navbar.js":
+/*!********************************!*\
+  !*** ./resources/js/navbar.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Change style navbar on scroll
+$(document).ready(function () {
+  var scrollTop = 0;
+  $(window).scroll(function () {
+    scrollTop = $(window).scrollTop();
+    $('.counter').html(scrollTop);
+
+    if (scrollTop >= 80) {
+      $('#navigator_my').addClass('scrolled-nav');
+    } else if (scrollTop < 80) {
+      $('#navigator_my').removeClass('scrolled-nav');
+    }
+  });
+}); // Scroll back to the top function
+
+mybutton = document.getElementById("myBtn");
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0; // Safari
+
+  document.documentElement.scrollTop = 0; //Chrome Firefox
+}
 
 /***/ }),
 
@@ -37444,10 +37490,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\nicop\Documents\BOOLEAN\laravel\team\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\nicop\Documents\BOOLEAN\laravel\team\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");     
-__webpack_require__(/*! C:\Users\drape\Desktop\Repo\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\drape\Desktop\Repo\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gianpiero\desktop\mamp\mamp-php\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianpiero\desktop\mamp\mamp-php\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
