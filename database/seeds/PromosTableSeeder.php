@@ -25,9 +25,9 @@ class PromosTableSeeder extends Seeder
         ];
 
         $array_timing = [
-            '24:00:00',
-            '72:00:00',
-            '144:00:00',
+            24,
+            72,
+            144,
         ];
 
         for ($i=0; $i < 3; $i++) {

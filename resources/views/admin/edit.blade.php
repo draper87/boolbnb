@@ -38,12 +38,19 @@
 <label for="latitude">Latitude</label>
 <input type="text" name="latitude" placeholder="latitude" value="{{ isset($apartment->latitude)? $apartment->latitude :old('latitude')}}" required>
 
-    @foreach ($facilities as $facility)
-        <div>
-            <input type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
-            <span>{{ $facility->facility }}</span>
-        </div>
-    @endforeach
+@foreach ($facilities as $facility)
+    <div>
+        <input type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
+        <span>{{ $facility->facility }}</span>
+    </div>
+@endforeach
+
+<hr>
+
+<div>
+    <input type="checkbox" name="visible" {{ ($apartment->visible) ? '' : 'checked' }} value="check">
+    <span>Nascondi</span>
+</div>
 
 <input type="submit" value="Invia">
 </form>

@@ -12,7 +12,7 @@
 
 
 <ul>
-  <li><img src="{{$apartment->image_path}}" alt="appartamento"></li>
+  <li><img src="{{asset('storage') . '/' . $apartment->image_path}}" alt="appartamento"></li>
   <li>{{$apartment->title}}</li>
   <li>Camere: {{$apartment->rooms}}</li>
   <li>Letti: {{$apartment->beds}}</li>
@@ -30,6 +30,7 @@
 </ul>
 
 <a href="{{ route('admin.stat_show', $apartment) }}">Visualizza statistiche</a>
+<a href="{{ route('admin.promo', $apartment) }}">Sponsorizza</a>
 
 <div id="mapid" style="height: 300px; width: 500px"></div>
 
@@ -46,6 +47,3 @@
         .bindPopup('{{$apartment->title}}')
         .openPopup();
 </script>
-
-
-
