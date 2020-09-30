@@ -30,6 +30,11 @@ Route::prefix('admin')
         Route::get('/message', 'MessageController@index')->name('message');
         Route::get('/message/{message}', 'MessageController@show')->name('message_show');
         Route::get('/stat/{apartment}', 'StatController@show')->name('stat_show');
+
+        // PROMO
+        Route::get('/promo/{apartment}', 'PromoController@index')->name('promo');
+        Route::post('/promo/{apartment}/checkout', 'PromoController@checkout')->name('checkout');
+        Route::get('/promo/{apartment}/transaction', 'PromoController@transaction')->name('transaction');
 });
 
 Route::get('/', 'ApartmentController@index')->name('index');

@@ -37,7 +37,9 @@ class Apartment extends Model
     }
 
     public function promos() {
-        return $this->belongsToMany('App\Promo');
+        return $this->belongsToMany('App\Promo')
+                    ->withPivot('time_ending')
+                    ->withTimestamps();
     }
 
 }
