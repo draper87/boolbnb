@@ -43,3 +43,6 @@ Route::post('/','ApartmentController@sendMessage')->name('send');
 Route::get('/search', function () {
     return view('search.index');
 });
+Route::get('/prova', function () {
+    return view('homepage');
+});
