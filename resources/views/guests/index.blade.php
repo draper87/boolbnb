@@ -70,18 +70,22 @@
               <!--FIRST PAGE-->
               <div class="carousel-item active">
                 @foreach ($apartments as $apartment)
-                <div class="col-md-3 my_shadow " style="float:left">
-                  <div class="my_fix my_strong"> IN EVIDENZA <i class="fas fa-medal"></i></div>
-                    <div class="card mb-2">
-                      <img class="card-img-top relative"
-                      src="{{asset('storage') . '/' . $apartment->image_path}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">{{$apartment->title}}</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                </div>
+                    @foreach($apartment->promos as $promo)
+                          @if($promo->pivot->time_ending > \Carbon\Carbon::now())
+                          <div class="col-md-3 my_shadow " style="float:left">
+                              <div class="my_fix my_strong"> IN EVIDENZA <i class="fas fa-medal"></i></div>
+                              <div class="card mb-2">
+                                  <img class="card-img-top relative my_img_max"
+                                       src="{{asset('storage') . '/' . $apartment->image_path}}" alt="Card image cap">
+                                  <div class="card-body">
+                                      <h4 class="card-title text-center">{{$apartment->title}}</h4>
+                                      <p class="card-text">{{$promo->pivot->time_ending}}</p>
+                                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                                  </div>
+                              </div>
+                          </div>
+                          @endif
+                    @endforeach
                 @endforeach
               </div>
               </div>

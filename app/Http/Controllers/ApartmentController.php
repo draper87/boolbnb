@@ -10,11 +10,21 @@ use App\Facility;
 
 class ApartmentController extends Controller
 {
-    public function index() {
-        $apartments = Apartment::all();
+  public function index() {
+  $apartments = Apartment::all();
 
-        return view('guests.index', compact('apartments'));
-    }
+  $evidence_apartments = [];
+
+  foreach ($apartments as $apartment) {
+      foreach ($apartment->promos as $promo) {
+          $time_ending = $promo->pivot->time_ending;
+          if ($time_ending > Carbon::now()) {
+              $evidence_apartments[] = $apartment;
+          }
+      }
+  }
+  return view('guests.index', compact('apartments', 'evidence_apartments'));
+}
 
     public function show(Apartment $apartment) {
 
