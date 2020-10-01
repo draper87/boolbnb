@@ -1,111 +1,116 @@
-<head>
+@extends('layouts.app')
+
+@section('head')
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
     <script src="https://cdn.jsdelivr.net/algoliasearch/3.31/algoliasearchLite.min.js"></script>
-    <title></title>
-</head>
+@endsection
 
-
-<h1>Crea nuovo appartamento</h1>
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-<form action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
-    @csrf
-    @method('POST')
-    <label for="title">Titolo</label>
-    <input type="text" name="title" placeholder="title" value="{{ old('title')}}" required>
-
-    <label for="rooms">Rooms</label>
-    <input type="number" name="rooms" placeholder="rooms" value="{{ old('rooms')}}" required>
-
-    <label for="beds">Beds</label>
-    <input type="number" name="beds" placeholder="beds" value="{{ old('beds')}}" required>
-
-    <label for="bathrooms">bathrooms</label>
-    <input type="number" name="bathrooms" placeholder="bathrooms" value="{{ old('bathrooms')}}" required>
-
-    <label for="square">square</label>
-    <input type="number" name="square" placeholder="square" value="{{ old('square')}}" required>
-
-    <label for="image_path">image_path</label>
-    <input type="file" name="image_path" placeholder="image_path" accept="image/*" required>
-
-    <label for="address">address</label>
-    <input id="address" type="text" name="address" placeholder="address" value="{{ old('address')}}" required>
-
-    <label for="longitude">Longitude</label>
-    <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" required>
-
-    <label for="latitude">Latitude</label>
-    <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" required>
-
-    @foreach ($facilities as $facility)
-        <div>
-            <input type="checkbox" name="facilities[]" value="{{ $facility->id }}">
-            <span>{{ $facility->facility }}</span>
+@section('content')
+    <h1>Crea nuovo appartamento</h1>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
-    @endforeach
+    @endif
+    <form action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        @method('POST')
+        <label for="title">Titolo</label>
+        <input type="text" name="title" placeholder="title" value="{{ old('title')}}" required>
 
-    <input type="submit" value="Invia">
-</form>
+        <label for="rooms">Rooms</label>
+        <input type="number" name="rooms" placeholder="rooms" value="{{ old('rooms')}}" required>
 
-<script>
-    (function() {
-        var placesAutocomplete = places({
-            appId: 'plNO17G18F5R',
-            apiKey: '9bc42c41773997040e2daf6810f20401',
-            container: document.querySelector('#address')
-        });
+        <label for="beds">Beds</label>
+        <input type="number" name="beds" placeholder="beds" value="{{ old('beds')}}" required>
 
-        placesAutocomplete.on('change', function(e) {
-            document.querySelector('#lat-value').value = e.suggestion.latlng.lat
-        });
+        <label for="bathrooms">bathrooms</label>
+        <input type="number" name="bathrooms" placeholder="bathrooms" value="{{ old('bathrooms')}}" required>
 
-        placesAutocomplete.on('change', function(e) {
-            document.querySelector('#lng-value').value = e.suggestion.latlng.lng
-        });
+        <label for="square">square</label>
+        <input type="number" name="square" placeholder="square" value="{{ old('square')}}" required>
 
-        placesAutocomplete.on('clear', function() {
-            document.querySelector('#lat-value').value = '';
-            document.querySelector('#lng-value').value = '';
-            document.querySelector('#address').value = '';
-        });
+        <label for="image_path">image_path</label>
+        <input type="file" name="image_path" placeholder="image_path" accept="image/*" required>
 
-        // parte relativa alla funzione locate me
-        placesAutocomplete.on('locate', function() {
+        <label for="address">address</label>
+        <input id="address" type="text" name="address" placeholder="address" value="{{ old('address')}}" required>
 
-            var places = algoliasearch.initPlaces('plNO17G18F5R', '9bc42c41773997040e2daf6810f20401');
+        <label for="longitude">Longitude</label>
+        <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" required>
 
-            function updateForm(response) {
-                var hits = response.hits;
-                var suggestion = hits[0];
+        <label for="latitude">Latitude</label>
+        <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" required>
 
-                console.log(suggestion);
+        @foreach ($facilities as $facility)
+            <div>
+                <input type="checkbox" name="facilities[]" value="{{ $facility->id }}">
+                <span>{{ $facility->facility }}</span>
+            </div>
+        @endforeach
 
-                if (suggestion && suggestion.locale_names && suggestion.city) {
-                    placesAutocomplete.setVal(suggestion.locale_names.default[0] + ' ' + suggestion.city.default[0]);
-                }
-            }
+        <input type="submit" value="Invia">
+    </form>
 
-            navigator.geolocation.getCurrentPosition(function (response) {
-                var coords = response.coords;
-                lat = coords.latitude.toFixed(6);
-                lng = coords.longitude.toFixed(6);
-
-                places.reverse({
-                    aroundLatLng: lat + ',' + lng,
-                    hitsPerPage: 1
-                }).then(updateForm);
+    <script>
+        (function() {
+            var placesAutocomplete = places({
+                appId: 'plNO17G18F5R',
+                apiKey: '9bc42c41773997040e2daf6810f20401',
+                container: document.querySelector('#address')
             });
 
+            placesAutocomplete.on('change', function(e) {
+                document.querySelector('#lat-value').value = e.suggestion.latlng.lat
+            });
 
-        });
+            placesAutocomplete.on('change', function(e) {
+                document.querySelector('#lng-value').value = e.suggestion.latlng.lng
+            });
 
-    })();
-</script>
+            placesAutocomplete.on('clear', function() {
+                document.querySelector('#lat-value').value = '';
+                document.querySelector('#lng-value').value = '';
+                document.querySelector('#address').value = '';
+            });
+
+            // parte relativa alla funzione locate me
+            placesAutocomplete.on('locate', function() {
+
+                var places = algoliasearch.initPlaces('plNO17G18F5R', '9bc42c41773997040e2daf6810f20401');
+
+                function updateForm(response) {
+                    var hits = response.hits;
+                    var suggestion = hits[0];
+
+                    console.log(suggestion);
+
+                    if (suggestion && suggestion.locale_names && suggestion.city) {
+                        placesAutocomplete.setVal(suggestion.locale_names.default[0] + ' ' + suggestion.city.default[0]);
+                    }
+                }
+
+                navigator.geolocation.getCurrentPosition(function (response) {
+                    var coords = response.coords;
+                    lat = coords.latitude.toFixed(6);
+                    lng = coords.longitude.toFixed(6);
+
+                    places.reverse({
+                        aroundLatLng: lat + ',' + lng,
+                        hitsPerPage: 1
+                    }).then(updateForm);
+                });
+
+
+            });
+
+        })();
+    </script>
+
+@endsection
+
+
