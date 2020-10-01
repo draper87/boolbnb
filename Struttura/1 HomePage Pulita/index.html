@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HomePage 7BnB</title>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Jquery 3.4.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!-- Header Start  -->
+    <header>
+      <nav id="navigator_my" class="navbar navbar-expand-md navbar-dark my_nav_color">
+        <!-- Navbar left-side -->
+        <div class="container-fluid">
+          <a href="#" class="navbar-brand mr-3">7BnB</a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar right-side -->
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+              <a href="#" class="nav-item nav-link">Register</a>
+              <a href="#" class="nav-item nav-link">Login</a>
+              <a href="#" class="nav-item nav-link d-none d-block d-sm-block d-md-none">
+                <input class="form-control mr-sm-2" type="text" placeholder="Dove andiamo?" aria-label="Dove andiamo?">
+                <button class="btn btn-warning" type="submit">Go!</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- STICKY Return button -->
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    </header>
+    <!-- Header End -->
+    <!-- Main Start -->
+    <main>
+      <!-- JUMBO W SEARCHBAR -->
+      <div class="container-fluid my_remove ">
+        <div class="row">
+          <!-- searcbar position aboslute to carousel-jumbo -->
+          <div class="absolute d-none d-lg-block">
+            <form class="form-inline mr-auto">
+              <input class="form-control mr-sm-2" type="text" placeholder="Dove andiamo?" aria-label="Dove andiamo?">
+              <button class="btn btn-warning" type="submit">Go!</button>
+            </form>
+          </div>
+          <div class="col-md-12 ">
+            <div class="carousel slide relative " data-ride="carousel">
+              <div class="carousel-inner">
+                <!-- IMG 1 -->
+                <div class="carousel-item active" data-interval="10000">
+                  <img class="img-fluid" src="mare.png" alt="">
+                </div>
+                <!-- IMG 2 -->
+                <div class="carousel-item" data-interval="2000">
+                  <img class="img-fluid" src="montagna.png" alt="">
+                </div>
+                <!-- IMG 3 -->
+                <div class="carousel-item">
+                  <img class="img-fluid" src="spazio.jpg" alt="">
+                </div>
+              </div>
+                <!-- Carousel control hidden -->
+                <a class="carousel-control-prev" role="button" data-slide="prev">
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" role="button" data-slide="next">
+                <span class="sr-only">Next</span>
+                </a>
+                <!-- End Carousel control hidden -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SPONSOR HOUSE -->
+      <section>
+        <div class="container-fluid relat">
+          <h2 class="text-center my_strong title_space_around">IN EVIDENZA</h2>
+          <!-- IMAGE CAROUSEL BASE -->
+          <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel">
+            <!--CONTROL LEFT-->
+            <div class="controls-top move_me_my left-butt">
+              <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+            </div>
+            <div class="carousel-inner" role="listbox">
+            <!--FIRST PAGE-->
+            <div class="carousel-item active">
+              <div class="col-md-3 my_shadow " style="float:left">
+                <div class="my_fix my_strong"> IN EVIDENZA <i class="fas fa-medal"></i></div>
+                  <div class="card mb-2">
+                    <img class="card-img-top relative"
+                    src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Milano</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-md-3 my_shadow" style="float:left">
+                <div class="my_fix my_strong">IN EVIDENZA <i class="fas fa-medal"></i></div>
+                <div class="card mb-2">
+                  <img class="card-img-top relative"
+                  src="casa.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">Torino</h4>
+                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 my_shadow" style="float:left">
+                <div class="my_fix my_strong">IN EVIDENZA <i class="fas fa-medal"></i></div>
+                <div class="card mb-2">
+                  <img class="card-img-top relative"
+                  src="casa.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">Bergamo</h4>
+                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 my_shadow" style="float:left">
+                <div class="my_fix my_strong">IN EVIDENZA <i class="fas fa-medal"></i></div>
+                <div class="card mb-2">
+                  <img class="card-img-top relative"
+                  src="casa.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">Genova</h4>
+                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END FIRST PAGE-->
+
+            <!--SECOND PAGE-->
+            <div class="carousel-item">
+              <div class="col-md-3 my_shadow" style="float:left">
+                <div class="my_fix my_strong">IN EVIDENZA <i class="fas fa-medal"></i></div>
+                <div class="card mb-2">
+                  <img class="card-img-top relative"
+                  src="casa.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">Lodi</h4>
+                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 my_shadow" style="float:left">
+                <div class="my_fix my_strong">IN EVIDENZA <i class="fas fa-medal"></i></div>
+                <div class="card mb-2">
+                  <img class="card-img-top relative"
+                  src="casa.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">Napoli</h4>
+                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 my_shadow" style="float:left">
+                <div class="my_fix my_strong">IN EVIDENZA <i class="fas fa-medal"></i></div>
+                <div class="card mb-2">
+                  <img class="card-img-top relative"
+                  src="casa.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">Roma</h4>
+                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                  </div>
+              </div>
+              </div>
+
+              <div class="col-md-3 my_shadow" style="float:left">
+                <div class="my_fix my_strong">IN EVIDENZA <i class="fas fa-medal"></i></div>
+                <div class="card mb-2">
+                  <img class="card-img-top relative"
+                  src="casa.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">Cantù</h4>
+                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!--END SECOND PAGE-->
+            </div>
+            <!--CONTROL RIGHT-->
+            <div class="controls-top move_me_my right_butt">
+            <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <!--END CAROUSEL BASE-->
+        </div>
+      </section>
+      <!-- END SPONSOR HOUSE -->
+      <!-- OTHER HOUSE SECTION -->
+      <section>
+        <div class="container get_away_from_me">
+          <hr>
+          <h3 class=" text-center my_strong">ALTRE CASE DAI NOSTRI UTENTI</h3>
+          <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+              <!--FIRST PAGE-->
+              <div class="carousel-item active">
+                <div class="col-md-3" style="float:left">
+                 <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Recco</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Rapallo</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Portofino</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="col-md-3" style="float:left">
+                 <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Livorno</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--END FIRST PAGE-->
+
+              <!--SECOND PAGE-->
+              <div class="carousel-item">
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Alghero</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Sassari</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Verona</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Paullo</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--END SECOND PAGE-->
+            </div>
+          </div>
+          <div id="multi-item-example" class="carousel slide carousel-multi-item get_away_from_me" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+              <!--FIRST PAGE-->
+              <div class="carousel-item active">
+                <div class="col-md-3" style="float:left">
+                 <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Recco</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Rapallo</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Portofino</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="col-md-3" style="float:left">
+                 <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Livorno</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--END FIRST PAGE-->
+
+              <!--SECOND PAGE-->
+              <div class="carousel-item">
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Alghero</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Sassari</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Verona</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="float:left">
+                  <div class="card mb-2">
+                    <img class="card-img-top"
+                      src="casa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">Paullo</h4>
+                      <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--END SECOND PAGE-->
+            </div>
+          </div>
+          <hr>
+        </div>
+      </section>
+      <!-- END OTHER HOUSE SECTION -->
+      <!-- ABOUT US -->
+      <section class="my_spacing">
+        <div class="col-md-12">
+          <h2 class="text-center my_strong">CHI SIAMO</h2>
+          <div id="carouselExample" class="carousel slide " data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExample" data-slide-to="0" class="active d-none d-md-block">
+                <img class="rounded-circle" src="oliver.jpg" alt="First slide">
+              </li>
+              <li data-target="#carouselExample" data-slide-to="1"class=" d-none d-md-block">
+                <img class="rounded-circle" src="Ale2.jpg" alt="Second slide">
+              </li>
+              <li data-target="#carouselExample" data-slide-to="2" class=" d-none d-md-block">
+                <img class="rounded-circle" src="io.jpg" alt="Third slide">
+              </li>
+              <li data-target="#carouselExample" data-slide-to="3" class=" d-none d-md-block">
+                <img class="rounded-circle" src="Nico.jpg" alt="Third slide">
+              </li>
+              <li data-target="#carouselExample" data-slide-to="4"class=" d-none d-md-block">
+                <img class="rounded-circle" src="andy2.jpg" alt="Third slide">
+              </li>
+            </ol>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <blockquote class="blockquote">
+              OLIVER BENOIT
+              </blockquote>
+              <small>
+              Back-end developer
+              </small>
+            </div>
+
+            <div class="carousel-item">
+              <blockquote class="blockquote">
+              ALESSANDRO CAPANNA
+              </blockquote>
+              <small>
+              Back-end developer
+              </small>
+            </div>
+
+            <div class="carousel-item">
+              <blockquote class="blockquote">
+              GIANPIERO INVERNIZZI
+              </blockquote>
+              <small>
+              Front-end developer
+              </small>
+            </div>
+
+            <div class="carousel-item">
+              <blockquote class="blockquote">
+              NICOLO' PAGANELLI
+              </blockquote>
+              <small>
+              Back-end developer
+              </small>
+            </div>
+
+            <div class="carousel-item">
+              <blockquote class="blockquote">
+              ANDY UKPE
+              </blockquote>
+              <small>
+              Front-end developer
+              </small>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Main End -->
+    <!-- Footer Start -->
+    <footer class=" pt-4 my_footer_color edit_footer">
+      <div class="container">
+        <!-- SOCIAL NETWORK -->
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1">
+              <i class="fab fa-facebook-f"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1">
+              <i class="fab fa-twitter"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+              <i class="fab fa-google-plus-g"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1">
+              <i class="fab fa-linkedin-in"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-dribbble mx-1">
+              <i class="fab fa-dribbble"> </i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href=""> Team S3v3n</a>
+      </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- SCRIPT -->
+    <script type="text/javascript" src="script.js"></script>
+    <!-- Bootstrap JQuery Plugin -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

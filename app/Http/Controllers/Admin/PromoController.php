@@ -14,12 +14,16 @@ class PromoController extends Controller
     public function index(Apartment $apartment)
     {
         $promos = Promo::all();
-
-        foreach ($apartment->promos as $promo) {
-            $time_ending = $promo->pivot->time_ending;
+        // dd($apartment->promos);
+        $data_scadenza = false;
+        if (count($apartment->promos) != 0) {
+            foreach ($apartment->promos as $promo) {
+                $time_ending = $promo->pivot->time_ending;
+            }
+            $carbon_time_ending = new Carbon($time_ending);
+            $data_scadenza = $carbon_time_ending->format('d-m-y');
         }
-        $carbon_time_ending = new Carbon($time_ending);
-        $data_scadenza = $carbon_time_ending->format('d-m-y');
+
 
         $gateway = new Gateway([
             'environment' => config('services.braintree.environment'),
@@ -84,8 +88,6 @@ class PromoController extends Controller
 
     public function transaction(Apartment $apartment)
     {
-        // dd($transaction);
-        dd($apartment->promos);
-        return view('admin.transaction', compact('transaction'));
+        return view('admin.transaction', compact('apartment'));
     }
 }
