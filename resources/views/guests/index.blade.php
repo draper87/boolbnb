@@ -103,18 +103,24 @@
                 <div class="carousel-item active">
 
                     @for ($i=0; $i < 4; $i++)
-                        <div class="col-md-3" style="float:left">
-                            <div class="card mb-2">
-                                <img class="card-img-top"
-                                     src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">{{$no_promo_apartments[$i]->title}}</h4>
-                                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                        @if (empty($no_promo_apartments[$i]))
+                            <div class="col-md-3" style="float:left">
+                            </div>
+                        @else
+                            <div class="col-md-3" style="float:left">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                         src="{{asset('images/casa.jpg')}}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-center">{{$no_promo_apartments[$i]->title}}</h4>
+                                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                                        <a class="btn btn-success spacing_my">Guarda ora</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     @endfor
+
 
 
                 </div>
@@ -124,17 +130,22 @@
                 <div class="carousel-item">
 
                     @for ($j=4; $j < 8; $j++)
-                        <div class="col-md-3" style="float:left">
-                            <div class="card mb-2">
-                                <img class="card-img-top"
-                                     src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">{{$no_promo_apartments[$j]->title}}</h4>
-                                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                        @if (empty($no_promo_apartments[$j]))
+                            <div class="col-md-3" style="float:left">
+                            </div>
+                        @else
+                            <div class="col-md-3" style="float:left">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                         src="{{asset('images/casa.jpg')}}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-center">{{$no_promo_apartments[$j]->title}}</h4>
+                                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                                        <a class="btn btn-success spacing_my">Guarda ora</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     @endfor
 
 
