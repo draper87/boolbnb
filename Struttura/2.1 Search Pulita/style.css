@@ -59,7 +59,7 @@ main {
 /* SECTION SEARCH */
 .my_section_padding {
   padding-bottom: 30px;
-  background-image: url(img/city.jpg);
+  background-image: url(../../public/images/city.jpg);
   background-repeat: no-repeat;
   margin-bottom: 40px;
   height: 400px;

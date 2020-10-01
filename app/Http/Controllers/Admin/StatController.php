@@ -13,7 +13,6 @@ class StatController extends Controller
 //    }
 
     public function show(Apartment $apartment) {
-        dd($apartment);
         return view('admin.stat', compact('apartment'));
     }
 }

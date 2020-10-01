@@ -23,7 +23,7 @@
           <div class="row">
             <!-- searcbar position aboslute to carousel-jumbo -->
             <div class="absolute d-none d-lg-block">
-              <form class="form-inline mr-auto">
+              <form action="" class="form-inline mr-auto">
                 <input class="form-control mr-sm-2" type="text" placeholder="Dove andiamo?" aria-label="Dove andiamo?">
                 <button class="btn btn-warning" type="submit">Go!</button>
               </form>
@@ -69,9 +69,8 @@
               <div class="carousel-inner" role="listbox">
               <!--FIRST PAGE-->
               <div class="carousel-item active">
-                @foreach ($apartments as $apartment)
-                    @foreach($apartment->promos as $promo)
-                          @if($promo->pivot->time_ending > \Carbon\Carbon::now())
+                @foreach ($evidence_apartments as $apartment)
+
                           <div class="col-md-3 my_shadow " style="float:left">
                               <div class="my_fix my_strong"> IN EVIDENZA <i class="fas fa-medal"></i></div>
                               <div class="card mb-2">
@@ -79,13 +78,12 @@
                                        src="{{asset('storage') . '/' . $apartment->image_path}}" alt="Card image cap">
                                   <div class="card-body">
                                       <h4 class="card-title text-center">{{$apartment->title}}</h4>
-                                      <p class="card-text">{{$promo->pivot->time_ending}}</p>
+                                      <p class="card-text"></p>
                                       <a class="btn btn-success spacing_my">Guarda ora</a>
                                   </div>
                               </div>
                           </div>
-                          @endif
-                    @endforeach
+
                 @endforeach
               </div>
               </div>
@@ -103,218 +101,48 @@
               <div class="carousel-inner" role="listbox">
                 <!--FIRST PAGE-->
                 <div class="carousel-item active">
-                  <div class="col-md-3" style="float:left">
-                   <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Recco</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Rapallo</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
+                    @for ($i=0; $i < 4; $i++)
+                        <div class="col-md-3" style="float:left">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="{{asset('images/casa.jpg')}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center">{{$no_promo_apartments[$i]->title}}</h4>
+                                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
 
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Portofino</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
 
-                   <div class="col-md-3" style="float:left">
-                   <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Livorno</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <!--END FIRST PAGE-->
 
                 <!--SECOND PAGE-->
                 <div class="carousel-item">
 
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Alghero</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
+                    @for ($j=4; $j < 8; $j++)
+                        <div class="col-md-3" style="float:left">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="{{asset('images/casa.jpg')}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center">{{$no_promo_apartments[$j]->title}}</h4>
+                                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                                    <a class="btn btn-success spacing_my">Guarda ora</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
 
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Sassari</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Verona</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Paullo</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <!--END SECOND PAGE-->
               </div>
             </div>
-            <div id="multi-item-example" class="carousel slide carousel-multi-item get_away_from_me" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <!--FIRST PAGE-->
-                <div class="carousel-item active">
-                  <div class="col-md-3" style="float:left">
-                   <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Recco</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Rapallo</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Portofino</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
-
-                   <div class="col-md-3" style="float:left">
-                   <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Livorno</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--END FIRST PAGE-->
-
-                <!--SECOND PAGE-->
-                <div class="carousel-item">
-
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Alghero</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Sassari</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Verona</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                      <img class="card-img-top"
-                        src="{{asset('images/casa.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h4 class="card-title text-center">Paullo</h4>
-                        <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                        <a class="btn btn-success spacing_my">Guarda ora</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--END SECOND PAGE-->
-              </div>
-            </div>
             <hr>
           </div>
         </section>

@@ -7,6 +7,7 @@ use App\Apartment;
 use Illuminate\Support\Facades\Auth;
 use App\Message;
 use App\Facility;
+use Carbon\Carbon;
 
 class ApartmentController extends Controller
 {
@@ -15,15 +16,25 @@ class ApartmentController extends Controller
 
   $evidence_apartments = [];
 
+  $no_promo_apartments = [];
+
   foreach ($apartments as $apartment) {
-      foreach ($apartment->promos as $promo) {
-          $time_ending = $promo->pivot->time_ending;
-          if ($time_ending > Carbon::now()) {
-              $evidence_apartments[] = $apartment;
+      if (count($apartment->promos) != 0) {
+          foreach ($apartment->promos as $promo) {
+              $time_ending = $promo->pivot->time_ending;
+              if ($time_ending > Carbon::now()) {
+                  $evidence_apartments[] = $apartment;
+              }
           }
+      } else {
+          $no_promo_apartments[] = $apartment;
       }
   }
-  return view('guests.index', compact('apartments', 'evidence_apartments'));
+
+  shuffle($no_promo_apartments);
+
+
+  return view('guests.index', compact('no_promo_apartments', 'evidence_apartments', 'apartments'));
 }
 
     public function show(Apartment $apartment) {

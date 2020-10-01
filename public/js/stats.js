@@ -1,4 +1,5 @@
-var $ = require( "jquery" );
+// var $ = require( "jquery" );
+
 $( document ).ready(function() {
   // select per la gestione del tempo
   printStats(6);
