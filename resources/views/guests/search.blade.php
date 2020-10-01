@@ -94,9 +94,9 @@
                 </div></a><br>
     </script>
 
-
     <script src="{{asset('js/search.js')}}" ></script>
     <script>
+
         (function() {
             var placesAutocomplete = places({
                 appId: 'plNO17G18F5R',
