@@ -1,0 +1,171 @@
+/* NAVBAR + JUMBO STYLE AND POSITION */
+.relative {
+  position: relative;
+}
+.absolute {
+  position:absolute;
+  z-index:2;
+  left:44%;
+  top:25%;
+}
+.my_remove {
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow:hidden;
+}
+
+.btn.btn-warning {
+  background-color: #FFC107;
+}
+
+/* MAIN SECTION SPONSOR */
+.my_img_max {
+  max-width: 436.25px;
+  max-height: 330px;
+  min-width: 420px;
+  min-height: 330px;
+}
+.my_fix {
+  position:fixed;
+  z-index:2;
+  color:white;
+  opacity: 0.9;
+  top:0%;
+  left:70%;
+  background-color: #FFC107;
+  padding: 0px 10px 0px;
+}
+.title_space_around {
+  margin-top : 25px;
+  margin-bottom: 25px;
+}
+.my_custom_title {
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 25px;
+  background-color: #FFC107;
+  border: 1px solid black;
+}
+.right_butt {
+ bottom: 50%;
+ left: 100%;
+ position: absolute;
+}
+
+.relat {
+  position:relative;
+}
+.left-butt {
+  position: absolute;
+  bottom: 50%;
+  left: -10px;
+}
+.my_shadow{
+  display: inline-block;
+  transform: translate(0);
+  box-shadow: 1 1 1px black;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.my_shadow:hover,
+.my_shadow:active {
+    transform: scale(1.04);
+}
+
+/* MAIN SECTION OTHER HOUSE */
+.get_away_from_me {
+  margin-top: 65px;
+}
+
+/* MAIN SECTION ABOUT US */
+#carouselExample{text-align:center;margin-top:50px}#carouselExample .carousel-indicators{position:relative;bottom:0;height:150px}#carouselExample .carousel-indicators li{width:auto;height:auto;text-indent:0%;background-color:transparent;margin-left:20px;margin-right:20px;flex-direction:column}#carouselExample .carousel-indicators li img{transition:0.5s}#carouselExample .carousel-indicators li.active{transition:0.5s}#carouselExample .carousel-indicators li.active img{transform:scale(1.5);transition:transform 1s ease-in-out}#carouselExample .carousel-item{transition:1s linear}#carouselExample .blockquote{font-style:italic;font-weight:bold}#carouselExample small{text-align:right}#carouselExample i{color:#222}@media screen and (min-width: 320px) and (max-width: 767px){.carousel-title{font-size:18px;margin-top:20px}#carouselExample .blockquote{font-size:15px;text-align:center;margin:20px 0}#carouselExample small{text-align:center;display:block}#carouselExample .carousel-indicators li{margin-left:8px;margin-right:8px}#carouselExample .carousel-indicators li.active img{transform:scale(1.2)}}
+
+.my_spacing {
+  margin-top: 60px;
+  padding-bottom: 50px;
+}
+
+/* FOOTER */
+.edit_footer {
+  color:white;
+}
+.edit_footer a{
+  color:white;
+}
+.my_footer_color {
+  background: linear-gradient(to bottom, rgba(64,159,247,1) 10%, rgba(54,151,247,1) 27%, rgba(35,136,246,1) 58%, rgba(20,125,245,1) 82%);
+}
+
+/* SECTION SEARCH */
+.my_section_padding {
+    padding-bottom: 30px;
+    background-image: url(/images/city.jpg);
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+    height: 400px;
+}
+.background_my {
+    padding-top: 25px;
+    border-radius:10px;
+}
+.add_red_my {
+    color:red;
+}
+/* SECTION MAIN ROW */
+
+.card {
+    display:block;
+    width:100%;
+    max-width:800px;
+    margin-bottom: 25px;
+}
+img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #FFC107;
+}
+.innerLeft {
+    display:inline-block;
+    margin-right:-4px;
+    vertical-align:top;
+    width:30%;
+    text-align:center;
+    padding:5px;
+}
+.innerRight {
+    display:inline-block;
+    vertical-align:top;
+    width:70%;
+    text-align:left;
+    padding:5px;
+}
+.card-text {
+    display:inline-block;
+}
+
+.my_padding {
+    padding-bottom:25px;
+    border-bottom: 1px solid #FFC107;
+    border-right: 1px solid #FFC107;
+
+}
+.extra_padding {
+    padding-bottom: 50px;
+}
+
+.row.my_padding:hover{
+    -webkit-box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65);
+    -moz-box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65);
+    box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65)
+
+}
+
+.more_space_my {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left:15%;
+}
+.more_space_me {
+    margin-bottom: 40px;
+    margin-left: 6%;
+}

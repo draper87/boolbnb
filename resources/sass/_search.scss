@@ -1,0 +1,74 @@
+/* SECTION SEARCH */
+.my_section_padding {
+  padding-bottom: 30px;
+  // background-image: url(img/city.png);
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+}
+.background_my {
+  padding-top: 25px;
+  border-radius:10px;
+}
+.add_red_my {
+  color:red;
+}
+/* SECTION MAIN ROW */
+
+.my_section_edit {
+  padding-bottom: 50px;
+}
+
+.card {
+ display:block;
+ width:100%;
+ max-width:800px;
+ margin-bottom: 25px;
+}
+ .circle {
+ max-width: 250px;
+ max-height: 160px;
+ height: auto;
+ border-bottom: 2px solid #FFC107;
+}
+.innerLeft {
+ display:inline-block;
+ margin-right:-4px;
+ vertical-align:top;
+ width:30%;
+ text-align:center;
+ padding:5px;
+}
+.innerRight {
+ display:inline-block;
+ vertical-align:top;
+ width:70%;
+ text-align:left;
+ padding:5px;
+}
+.card-text {
+ display:inline-block;
+}
+
+.extra_padding {
+  width:85%;
+}
+
+.btn_search.btn-warning {
+  background-color: #FFC107;
+}
+
+#entry-template span,span,p {
+  color: black;
+}
+a:hover {
+  text-decoration:none;
+}
+.more_space_my {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left:15%;
+}
+.more_space_me {
+  margin-bottom: 40px;
+  margin-left: 6%;
+}

@@ -1,0 +1,22 @@
+ul.list_box {
+  list-style-type: none;
+  margin-left:110px;
+}
+
+.my_custom_title {
+  border-radius: 25px;
+  background-color: #FFC107;
+  border: 1px solid black;
+}
+
+/* MAIN RULES */
+.bottom-img_my {
+  margin-bottom: 20px;
+}
+.bottom-img_my .img-fluid {
+  max-height: 650px;
+  min-height: 300px;
+}
+.my_strong {
+  font-weight: bold;
+}
