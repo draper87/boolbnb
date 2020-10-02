@@ -80,7 +80,7 @@
     <!-- Main End -->
 
     {{--          Sezione relativa ad Handlebars             --}}
-    <script id="entry-template" type="text/x-handlebars-template">
+    <script id="entry-templatenopromo" type="text/x-handlebars-template">
     <a href="/apartments/@{{ id }}">
                 <div class="row my_padding">
                     <div class="col-sm-3">
@@ -90,6 +90,25 @@
                         <p><b>@{{ title }}</b></p>
                         <span>Stanze @{{ rooms }} </span>
                         <span>Letti @{{ beds }} </span>
+                        <span>Bagni @{{ bathrooms }} </span>
+                        <span>Metri quadri @{{ square }} </span>
+                        <span>Stanze @{{ address }} </span>
+                        <span>Stanze @{{ id }} </span>
+                    </div>
+                </div></a><br>
+    </script>
+
+    <script id="entry-templatepromo" type="text/x-handlebars-template">
+    <a href="/apartments/@{{ id }}">
+                <div class="row my_padding">
+                    <div class="col-sm-3">
+                        <img class="circle" src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
+                    </div>
+                    <div class="col-sm-9">
+                        <p><b>@{{ title }}</b></p>
+                        <span>Stanze @{{ rooms }} </span>
+                        <span>Letti @{{ beds }} </span>
+                        <span>IN EVIDENZA</span>
                         <span>Bagni @{{ bathrooms }} </span>
                         <span>Metri quadri @{{ square }} </span>
                         <span>Stanze @{{ address }} </span>
