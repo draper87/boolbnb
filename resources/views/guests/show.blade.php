@@ -74,25 +74,23 @@
                     </div>
                     <div class="col-md-12 col-lg-6 container">
                         <div id="mapid" style="height: 300px; width: 500px"></div>
-                        <a class="btn btn-danger d-flex justify-content-center bottom-img_my" href="...">Contatta l'Host!</a>
+{{--                        <a class="btn btn-danger d-flex justify-content-center bottom-img_my" href="...">Contatta l'Host!</a>--}}
                     </div>
 
-                    <div>
+                    <div class="text-center">
                         <form action="{{ route('send') }}" method="post">
 
                             @csrf
                             @method('POST')
-                            <label for="email">Email</label>
-                            <input type="email" name="email" placeholder="email" value="{{old('email')}}" required>
+                            <label for="email" hidden>Email</label>
+                            <input class="form-control" type="email" name="email" placeholder="Email" value="{{old('email')}}" required>
 
-                            <label for="messagge">Messaggio</label>
-                            <input type="text" name="messagge" placeholder="messagge" value="{{ old('messagge')}}" required>
+                            <label for="messagge" hidden>Messaggio</label>
+                            <textarea class="form-control" name="messagge" placeholder="Inserisci messaggio" value="{{ old('messagge')}}" required rows="4" cols="50"></textarea>
 
-                            <input type="text" name="apartment_id" placeholder="apartment_id" value="{{ $apartment->id }}" hidden>
+                            <input class="form-control" type="text" name="apartment_id" placeholder="apartment_id" value="{{ $apartment->id }}" hidden>
 
-
-
-                            <input type="submit" value="Invia">
+                            <input class="btn btn-primary mt-1" type="submit" value="Invia">
                         </form>
                     </div>
 
@@ -128,6 +126,8 @@
 
     @if(!empty($messaggio))
         <head>
+
+            <!-- Parte relativa all avviso di messaggio inviato -->
             <script src="{{asset('js/avviso.js')}}"></script>
             <style>
                 body {
@@ -210,12 +210,8 @@
                 }
             </style>
         </head>
-
-
             <!-- Button HTML (to Trigger Modal) -->
             <a id='avviso' href="#myModal" class="trigger-btn" data-toggle="modal" hidden>Click to Open Confirm Modal</a>
-
-
         <!-- Modal HTML -->
         <div id="myModal" class="modal fade">
             <div class="modal-dialog modal-confirm">
@@ -235,7 +231,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Fine Parte relativa all avviso di messaggio inviato -->
 
     @endif
 
