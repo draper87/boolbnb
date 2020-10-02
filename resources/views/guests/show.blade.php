@@ -12,7 +12,6 @@
         <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
     </head>
@@ -129,6 +128,7 @@
 
     @if(!empty($messaggio))
         <head>
+            <script src="{{asset('js/avviso.js')}}"></script>
             <style>
                 body {
                     font-family: 'Varela Round', sans-serif;
@@ -212,10 +212,9 @@
         </head>
 
 
-        <div class="text-center">
             <!-- Button HTML (to Trigger Modal) -->
-            <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Confirm Modal</a>
-        </div>
+            <a id='avviso' href="#myModal" class="trigger-btn" data-toggle="modal" hidden>Click to Open Confirm Modal</a>
+
 
         <!-- Modal HTML -->
         <div id="myModal" class="modal fade">
@@ -225,10 +224,10 @@
                         <div class="icon-box">
                             <i class="material-icons">&#xE876;</i>
                         </div>
-                        <h4 class="modal-title w-100">Awesome!</h4>
+                        <h4 class="modal-title w-100">Inviato!</h4>
                     </div>
                     <div class="modal-body">
-                        <p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+                        <p class="text-center">Il messaggio è stato inviato correttamente.</p>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
