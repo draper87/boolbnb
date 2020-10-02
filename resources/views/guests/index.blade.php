@@ -63,35 +63,79 @@
             <!-- IMAGE CAROUSEL BASE -->
             <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel">
               <!--CONTROL LEFT-->
+              @if(count($evidence_apartments) > 4)
               <div class="controls-top move_me_my left-butt">
                 <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
               </div>
+              @endif
+
               <div class="carousel-inner" role="listbox">
+
               <!--FIRST PAGE-->
               <div class="carousel-item active">
-                {{-- @dd($evidence_apartments) --}}
-                @foreach ($evidence_apartments as $apartment)
 
+                @for ($i=0; $i < 4; $i++)
+
+                      @if (empty($evidence_apartments[$i]))
+                          <div class="col-md-3" style="float:left">
+                          </div>
+                      @else
                           <div class="col-md-3 my_shadow " style="float:left">
                               <div class="my_fix my_strong my_blue_text"> IN EVIDENZA <i class="fas fa-medal"></i></div>
                               <div class="card mb-2 my_mb-2 my_mb-2">
                                   <img class="card-img-top relative my_img_max"
-                                       src="{{asset('storage') . '/' . $apartment->image_path}}" alt="Card image cap">
+                                       src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="Card image cap">
                                   <div class="card-body">
-                                      <h4 class="card-title text-center my_blue_text text-uppercase">{{$apartment->title}}</h4>
+                                      <h4 class="card-title text-center my_blue_text text-uppercase">{{$evidence_apartments[$i]->title}}</h4>
                                       <p class="card-text"></p>
                                       <a class="btn btn-success spacing_my">Guarda ora</a>
                                   </div>
                               </div>
                           </div>
 
-                @endforeach
+
+                      @endif
+                @endfor
+
+
               </div>
+
+              @if(count($evidence_apartments) > 4)
+              <div class="carousel-item">
+
+                  @for ($i=4; $i < 8; $i++)
+
+                      @if (empty($evidence_apartments[$i]))
+                          <div class="col-md-3" style="float:left">
+                          </div>
+                      @else
+                          <div class="col-md-3 my_shadow " style="float:left">
+                              <div class="my_fix my_strong my_blue_text"> IN EVIDENZA <i class="fas fa-medal"></i></div>
+                              <div class="card mb-2 my_mb-2 my_mb-2">
+                                  <img class="card-img-top relative my_img_max"
+                                       src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="Card image cap">
+                                  <div class="card-body">
+                                      <h4 class="card-title text-center my_blue_text text-uppercase">{{$evidence_apartments[$i]->title}}</h4>
+                                      <p class="card-text"></p>
+                                      <a class="btn btn-success spacing_my">Guarda ora</a>
+                                  </div>
+                              </div>
+                          </div>
+
+
+                      @endif
+                  @endfor
+              </div>
+              @endif
+
+
               </div>
               <!--CONTROL RIGHT-->
-              <div class="controls-top move_me_my right_butt">
-              <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
-              </div>
+              @if(count($evidence_apartments) > 4)
+                  <div class="controls-top move_me_my right_butt">
+                  <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+                  </div>
+              @endif
             </div>
             <!--END CAROUSEL BASE-->
           </div>
@@ -115,7 +159,7 @@
                         <div class="col-md-3" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
-                                     src="{{asset('images/casa.jpg')}}" alt="Card image cap">
+                                     src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                 <div class="card-body">
                                     <h4 class="card-title text-center my_blue_text text-capitalize">{{$no_promo_apartments[$i]->title}}</h4>
                                     <p class="card-text my_blue_text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
@@ -135,16 +179,16 @@
                 <div class="carousel-item">
 
                     @for ($j=4; $j < 8; $j++)
-                      @if (empty($no_promo_apartments[$i]))
+                      @if (empty($no_promo_apartments[$j]))
                           <div class="col-md-3" style="float:left">
                           </div>
                       @else
                         <div class="col-md-3" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
-                                     src="{{asset('images/casa.jpg')}}" alt="Card image cap">
+                                     src="{{asset('storage') . '/' . $no_promo_apartments[$j]->image_path}}" alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title text-center my_blue_text text-capitalize">{{$no_promo_apartments[$i]->title}}</h4>
+                                    <h4 class="card-title text-center my_blue_text text-capitalize">{{$no_promo_apartments[$j]->title}}</h4>
                                     <p class="card-text my_blue_text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
                                     <a class="btn btn-success spacing_my">Guarda ora</a>
                                 </div>

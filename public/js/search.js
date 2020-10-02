@@ -94,7 +94,6 @@ $(document).ready(function () {
 
     // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
     function stampaAppartamentiNoPromo(dataResponse) {
-        // $('.lista').html('');
         const source = $('#entry-templatenopromo').html(); // questo e il path al nostro template html
         const template = Handlebars.compile(source); // passiamo a Handlebars il percorso del template html
 
@@ -105,8 +104,8 @@ $(document).ready(function () {
         }
     }
 
+
     function stampaAppartamentiPromo(dataResponse) {
-        // $('.lista').html('');
         const source = $('#entry-templatepromo').html(); // questo e il path al nostro template html
         const template = Handlebars.compile(source); // passiamo a Handlebars il percorso del template html
 
