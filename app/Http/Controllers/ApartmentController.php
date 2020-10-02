@@ -55,14 +55,21 @@ class ApartmentController extends Controller
 
         $requested_data = $request->all();
 
+        $facilities = Facility::all();
+
         $new_message = new Message();
         $new_message->apartment_id = $requested_data['apartment_id'];
         $new_message->message = $requested_data['messagge'];
         $new_message->email = $requested_data['email'];
 
+        $apartment = $new_message->apartment;
+
         $new_message->save();
 
-        return redirect()->route('show', $new_message->apartment);
+        $messaggio = '<script language="javascript">alert("message successfully sent")</script>';
+
+        return view('guests.show', compact('apartment','messaggio', 'facilities'));
+
 
     }
 }
