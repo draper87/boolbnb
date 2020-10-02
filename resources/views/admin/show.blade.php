@@ -14,28 +14,37 @@
 
 
     <main>
-        <div class="container">
+      <div class="container-fluid ">
+        <img class="img-fluid" src="{{asset('storage') . '/' . $apartment->image_path}}" alt="appartamento">
+      </div>
+        <div class="container text-center">
+            <div class="d-inline">
+              <ul class="d-inline">
 
-            <ul>
-              <li><img src="{{asset('storage') . '/' . $apartment->image_path}}" alt="appartamento"></li>
-              <li>{{$apartment->title}}</li>
-              <li>Camere: {{$apartment->rooms}}</li>
-              <li>Letti: {{$apartment->beds}}</li>
-              <li>Bagni: {{$apartment->bathrooms}}</li>
-              <li>Metri quadri: {{$apartment->square}}</li>
-              <li>Indirizzo: {{$apartment->address}}</li>
+                <li>{{$apartment->title}}</li>
+                <li>Camere: {{$apartment->rooms}}</li>
+                <li>Letti: {{$apartment->beds}}</li>
+                <li>Bagni: {{$apartment->bathrooms}}</li>
+                <li>Metri quadri: {{$apartment->square}}</li>
+                <li>Indirizzo: {{$apartment->address}}</li>
+              </ul>
+            </div>
+
+            <div class="d-inline">
+              <ul>
               <li>servizi:
                 @foreach ($facilities as $facility)
-                    <div>
+                    <div class="d-inline">
                         <input onclick="return false;" type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
                         <span>{{ $facility->facility }}</span>
                     </div>
                 @endforeach
               </li>
             </ul>
+            </div>
 
-            <a href="{{ route('admin.stat_show', $apartment) }}">Visualizza statistiche</a>
-            <a href="{{ route('admin.promo', $apartment) }}">Sponsorizza</a>
+            <a href="{{ route('admin.stat_show', $apartment) }}"><button type="button" class="btn btn-success">Visualizza Statistiche</button></a>
+            <a href="{{ route('admin.promo', $apartment) }}"><button type="button" class="btn btn-info">Sponsorizza</button></a>
 
             <div id="mapid" style="height: 300px; width: 500px"></div>
 
