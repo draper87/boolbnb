@@ -10,61 +10,85 @@
         <!-- Payment simulation -->
         <section>
             <div class="container">
-                <h1 class="space_my_payment font-weight-bold">SPONSORIZZA ORA</h1>
+              <div class="row">
+                <!-- inizio headline -->
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <h1 class="space_my_payment font-weight-bold text-gray ms_title_margin">Scopri i vantaggi della Sponsorizzazione. Tre pacchetti per mettere subito inevidenza i tuoi risultati di ricerca.</h1>
+                </div>
+                <!-- fine headline -->
 
-                {{--       Inizio form         --}}
-                <form method="post" id="payment-form" action="{{ route('admin.checkout', $apartment) }}">
-                    @csrf
-                    @method('POST')
-                    <section>
 
-                        <!-- select promo -->
-                        <label>seleziona promo</label>
-                        <select id="promo_selected" name="promo_selected">
-                            <option default="">Seleziona promo</option>
-                            @foreach ($promos as $promo)
-                                <option data-price="{{ $promo->price }}" value="{{ $promo->id }}">{{ $promo->name }}</option>
-                            @endforeach
-                        </select>
-                        <!-- select promo -->
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
-                        <label for="amount">
-                            <span class="input-label">Amount</span>
-                            <div class="input-wrapper amount-wrapper">
-                                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="" readonly>
+                      {{--       Inizio form         --}}
+                      <form class="ms_cards" method="post" id="payment-form" action="{{ route('admin.checkout', $apartment) }}">
+                          @csrf
+                          @method('POST')
+                          <section>
+                            <div class="form-row">
+                              <div class="col-sm-12 col-md-12 col-lg-4 offset-lg-2 offset-xl-2">
+                                <!-- select promo -->
+                                <label>Seleziona promo</label><br>
+                                <select id="promo_selected" name="promo_selected" class="form-control">
+                                    <option default="">Seleziona promo</option>
+                                    @foreach ($promos as $promo)
+                                        <option data-price="{{ $promo->price }}" value="{{ $promo->id }}">{{ $promo->name }}</option>
+                                    @endforeach
+                                </select>
+                                <!-- select promo -->
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-4">
+                                <!-- select promo -->
+                                <label for="amount">
+                                    <span class="input-label">Amount</span>
+                                    <div class="input-wrapper amount-wrapper">
+                                        <input class="form-control" id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="" readonly>
+                                    </div>
+                                </label>
+                                <!-- select promo -->
+
+                              </div>
                             </div>
-                        </label>
 
-                        <div class="bt-drop-in-wrapper container">
-                            <div id="bt-dropin"></div>
-                        </div>
-                    </section>
+                            <div class="bt-drop-in-wrapper container">
+                                <div id="bt-dropin"></div>
+                            </div>
+                          </section>
+                          <div class="row">
+                            <div class="offset-sm-10 col-sm-2 offset-md-10 col-md-2 offset-lg-10 col-lg-2 offset-xl-10 col-xl-2">
+                              <input id="nonce" name="payment_method_nonce" type="hidden" />
+                              <button class="btn-save btn btn-warning btn-sm down_my_btn text-gray " type="submit"><span>Paga ora</span></button>
+                            </div>
+                          </div>
 
-                    <input id="nonce" name="payment_method_nonce" type="hidden" />
-                    <button class="btn-save btn btn-warning btn-sm down_my_btn text-white" type="submit"><span>Paga ora</span></button>
-                </form>
-                {{--       Fine form         --}}
-
+                      </form>
+                      {{--       Fine form         --}}
+                    </div>
 
                 <hr>
+              </div>
+
             </div>
         </section>
         <!-- Plane description -->
         <section>
-            @foreach($promos as $promo)
-                <div class="container">
-                    <h2 class="font-weight-bold">{{$promo->name}}</h2>
-                    <p>Metti in evidenza il tuo appartamento per {{$promo->timing}} ore</p>
-                    <hr>
-                </div>
-            @endforeach
+          <div class="container">
+            <div class="ms_container_flex">
+                @foreach($promos as $promo)
+                  <div class="ms_flex_item ms_cards">
+                    <h2 class=" font-weight-bold ms_promo_decor text-center ms_position_relative"> <span class="ms_position_centered">{{$promo->name}}h</span></h2>
+                    <p class="text-center">Metti in evidenza il <br> tuo appartamento per<br> {{$promo->timing}} ore</p>
+                  </div>
+                @endforeach
+            </div>
+          </div>
         </section>
         <!-- CUSTOMER REVIEVV -->
-        <section>
-            <div class="container my_padding">
+        <section class="ms_section">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="text-center carousel-title space_my_h1 font-weight-bold">COSA DICONO DI NOI</h1>
+                        <h1 class="text-center carousel-title space_my_h1 font-weight-bold text-gray ms_title_margin">Ecco cosa dicono i nostri clienti:</h1>
                     </div>
                     <div class="col-md-12">
                         <div id="carouselExample" class="carousel slide" data-ride="carousel">
