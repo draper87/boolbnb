@@ -69,6 +69,7 @@
               <div class="carousel-inner" role="listbox">
               <!--FIRST PAGE-->
               <div class="carousel-item active">
+                {{-- @dd($evidence_apartments) --}}
                 @foreach ($evidence_apartments as $apartment)
 
                           <div class="col-md-3 my_shadow " style="float:left">

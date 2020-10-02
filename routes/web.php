@@ -42,7 +42,7 @@ Route::get('/apartments/{apartment}', 'ApartmentController@show')->name('show');
 Route::post('/','ApartmentController@sendMessage')->name('send');
 Route::get('/search', function () {
     return view('guests.search');
-});
+})->name('search');
 Route::get('/prova', function () {
     return view('homepage');
 });
