@@ -16,51 +16,55 @@
         <!-- SEARCH BAR -->
         <section>
             <div class="container-fluid my_section_padding">
-                <div class="container main-search background_my text-white">
+                <div class="container main-search background_my text-white my_container_spacing_right">
                     <div class="search_box more_space_my">
                         <input id="address" type="text" name="address" placeholder="Dove vuoi andare?" value="{{ old('address')}}" required>
                         <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" hidden>
                         <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" hidden>
-                        <div>
-                            <label for="rooms">Numero stanze:</label>
-                            <input type="range" id="rooms" min="1" max="9" step="1" value="3">
-                            <a id="roomsvalue"></a>
-                        </div>
-                        <div>
-                            <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti:</label>
-                            <input type="range" id="beds" min="1" max="9" step="1" value="2">
-                            <a id="bedsvalue"></a>
-                        </div>
-                        <div>
-                            <label for="kmradius"><i class="fas fa-map-marker-alt option_icon add_red_my"></i> Raggio di ricerca (km):</label>
-                            <input type="range" id="kmradius" min="2" max="200" step="2" value="20">
-                            <a id="kmradiusvalue"></a>
-                        </div>
-                        <div>
-                            <label for="wifi"><i class="fas fa-wifi extra_icon"></i> Wifi: </label>
-                            <input type="checkbox" id="wifi" value="">
-                        </div>
-                        <div>
-                            <label for="car"><i class="fas fa-parking extra_icon"></i> Posto macchina: </label>
-                            <input type="checkbox" id="car" value="">
-                        </div>
-                        <div>
-                            <label for="piscina"><i class="fas fa-swimmer extra_icon"></i> Piscina </label>
-                            <input type="checkbox" id="piscina" value="">
-                        </div>
-                        <div>
-                            <label for="portineria"><i class="fas fa-concierge-bell extra_icon"></i> Portineria </label>
-                            <input type="checkbox" id="portineria" value="">
-                        </div>
-                        <div>
-                            <label for="sauna"><i class="fas fa-hot-tub extra_icon"></i> Sauna </label>
-                            <input type="checkbox" id="sauna" value="">
-                        </div>
-                        <div>
-                            <label for="vistamare"><i class="fas fa-water"></i> Vista mare </label>
-                            <input type="checkbox" id="vistamare" value="">
-                        </div>
-                        <button class="btn_search btn-warning" id='bottone'>Search</button>
+                        <button class="btn_search btn btn-warning super_yellow_button" id='bottone'>Search</button>
+                        <ul class="gauge_spacing_search">
+                          <div class="d-inline">
+                              <label for="rooms">Numero stanze:</label>
+                              <input type="range" id="rooms" min="1" max="9" step="1" value="3">
+                              <a id="roomsvalue"></a>
+                          </div>
+                          <div class="d-inline">
+                              <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti:</label>
+                              <input type="range" id="beds" min="1" max="9" step="1" value="2">
+                              <a id="bedsvalue"></a>
+                          </div>
+                          <div class="d-inline">
+                              <label for="kmradius"><i class="fas fa-map-marker-alt option_icon add_red_my"></i> Raggio di ricerca (km):</label>
+                              <input type="range" id="kmradius" min="2" max="200" step="2" value="20">
+                              <a id="kmradiusvalue"></a>
+                          </div>
+                        </ul>
+                        <ul class="my_selection_button_spacing">
+                          <div class="d-inline">
+                              <label for="wifi"><i class="fas fa-wifi extra_icon"></i> Wifi: </label>
+                              <input type="checkbox" id="wifi" value="">
+                          </div>
+                          <div class="d-inline">
+                              <label for="car"><i class="fas fa-parking extra_icon"></i> Posto macchina: </label>
+                              <input type="checkbox" id="car" value="">
+                          </div>
+                          <div class="d-inline">
+                              <label for="piscina"><i class="fas fa-swimmer extra_icon"></i> Piscina </label>
+                              <input type="checkbox" id="piscina" value="">
+                          </div>
+                          <div class="d-inline">
+                              <label for="portineria"><i class="fas fa-concierge-bell extra_icon"></i> Portineria </label>
+                              <input type="checkbox" id="portineria" value="">
+                          </div>
+                          <div class="d-inline">
+                              <label for="sauna"><i class="fas fa-hot-tub extra_icon"></i> Sauna </label>
+                              <input type="checkbox" id="sauna" value="">
+                          </div>
+                          <div class="d-inline">
+                              <label for="vistamare"><i class="fas fa-water"></i> Vista mare </label>
+                              <input type="checkbox" id="vistamare" value="">
+                          </div>
+                        </ul>
                     </div>
 
                 </div>
