@@ -14,12 +14,19 @@ class PromoController extends Controller
     public function index(Apartment $apartment)
     {
         $promos = Promo::all();
-        // dd($apartment->promos);
+
+        $now = Carbon::now();
         $data_scadenza = false;
+        $time_ending = false;
         if (count($apartment->promos) != 0) {
+
             foreach ($apartment->promos as $promo) {
-                $time_ending = $promo->pivot->time_ending;
+              $time_ending = $promo->pivot->time_ending;
+              if ($time_ending < $now) {
+                $apartment->promos()->detach($promo);
+              }
             }
+
             $carbon_time_ending = new Carbon($time_ending);
             $data_scadenza = $carbon_time_ending->format('d-m-y');
         }
@@ -33,7 +40,7 @@ class PromoController extends Controller
         ]);
         $token = $gateway->ClientToken()->generate();
 
-        return view('admin.promo', compact('token', 'apartment', 'promos', 'data_scadenza'));
+        return view('admin.promo', compact('token', 'apartment', 'promos', 'data_scadenza' , 'now' ,'time_ending'));
     }
 
     public function checkout(Request $request, Apartment $apartment)

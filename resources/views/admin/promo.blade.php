@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
-    @if (count($apartment->promos) == 0)
+    {{-- !isset($time_ending) ||  --}}
+    @if ($time_ending < $now || $time_ending == false)
 
     <!-- Main Start -->
 
@@ -172,6 +172,3 @@
     @endif
 
 @endsection
-
-
-
