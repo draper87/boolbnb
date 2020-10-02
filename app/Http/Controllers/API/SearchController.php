@@ -6,10 +6,32 @@ use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Apartment;
+use Carbon\Carbon;
+
 
 class SearchController extends Controller
 {
     public function index(Request $request) {
+
+        $apartments = Apartment::all();
+        $now = Carbon::now('Europe/Rome');
+        $evidence_apartments = [];
+        $no_promo_apartments = [];
+
+        foreach ($apartments as $apartment) {
+            if (count($apartment->promos) != 0) {
+                foreach ($apartment->promos as $promo) {
+                    $time_ending = $promo->pivot->time_ending;
+                    if ($time_ending > $now) {
+                        $evidence_apartments[] = $apartment;
+                    } elseif ($time_ending < $now) {
+                        $apartment->promos()->detach($promo);
+                    }
+                }
+            } else {
+                $no_promo_apartments[] = $apartment;
+            }
+        }
 
         $rooms = $request->get('rooms');
         $beds = $request->get('beds');
@@ -35,51 +57,63 @@ class SearchController extends Controller
         ];
 
         // inizializzo la mia query
-        $queryApartment = Apartment::query();
+        $queryApartmentNoPromo = Apartment::query();
+        $queryApartmentPromo = Apartment::query();
 
         if ($wifi == 'yes') {
-            $queryApartment->whereHas('facilities', function (Builder $query) {
+            $queryApartmentNoPromo->whereHas('facilities', function (Builder $query) {
                 $query->where('facility_id', '=', '1');
             });
         }
 
         if ($car == 'yes') {
-            $queryApartment->whereHas('facilities', function (Builder $query) {
+            $queryApartmentNoPromo->whereHas('facilities', function (Builder $query) {
                 $query->where('facility_id', '=', '2');
             });
         }
 
         if ($piscina == 'yes') {
-            $queryApartment->whereHas('facilities', function (Builder $query) {
+            $queryApartmentNoPromo->whereHas('facilities', function (Builder $query) {
                 $query->where('facility_id', '=', '3');
             });
         }
 
         if ($portineria == 'yes') {
-            $queryApartment->whereHas('facilities', function (Builder $query) {
+            $queryApartmentNoPromo->whereHas('facilities', function (Builder $query) {
                 $query->where('facility_id', '=', '4');
             });
         }
 
         if ($sauna == 'yes') {
-            $queryApartment->whereHas('facilities', function (Builder $query) {
+            $queryApartmentNoPromo->whereHas('facilities', function (Builder $query) {
                 $query->where('facility_id', '=', '5');
             });
         }
 
         if ($vistamare == 'yes') {
-            $queryApartment->whereHas('facilities', function (Builder $query) {
+            $queryApartmentNoPromo->whereHas('facilities', function (Builder $query) {
                 $query->where('facility_id', '=', '6');
             });
         }
 
-        $queryApartment->where('rooms', '>=' ,$rooms);
-        $queryApartment->where('beds', '>=' ,$beds);
+        $queryApartmentNoPromo->where('rooms', '>=' ,$rooms);
+        $queryApartmentNoPromo->where('beds', '>=' ,$beds);
 
-        $queryApartment->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
-        $queryApartment->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);
+        $queryApartmentNoPromo->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
+        $queryApartmentNoPromo->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);
 
-        return $queryApartment->get();
+        $queryApartmentPromo->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
+        $queryApartmentPromo->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);
+
+
+        $promo = $queryApartmentPromo->has('promos')->with('promos')->get();
+
+        $no_promo = $queryApartmentNoPromo->doesnthave('promos')->get();
+
+        return response()->json([
+            'nopromo' => $no_promo,
+            'promo' => $promo,
+        ]);
 
     }
 }
