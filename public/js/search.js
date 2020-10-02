@@ -56,12 +56,6 @@ $(document).ready(function () {
         $('#portineria').is(":checked") ? portineria = 'yes' : portineria = 'no';
         $('#sauna').is(":checked") ? sauna = 'yes' : sauna = 'no';
         $('#vistamare').is(":checked") ? vistamare = 'yes' : vistamare = 'no';
-        console.log(wifi);
-        console.log(car);
-        console.log(piscina);
-        console.log(portineria);
-        console.log(sauna);
-        console.log(vistamare);
         chiamaAppartamenti();
     });
 
@@ -85,8 +79,11 @@ $(document).ready(function () {
                 vistamare: vistamare,
             },
             success: function(dataResponse) {
-                console.log(dataResponse);
-                stampaAppartamenti(dataResponse);
+                $('.lista').html('');
+                console.log(dataResponse.promo);
+                console.log(dataResponse.nopromo);
+                stampaAppartamentiPromo(dataResponse.promo);
+                stampaAppartamentiNoPromo(dataResponse.nopromo);
             },
             error: function() {
                 alert('il server non funziona');
@@ -96,9 +93,21 @@ $(document).ready(function () {
 
 
     // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
-    function stampaAppartamenti(dataResponse) {
-        $('.lista').html('');
-        const source = $('#entry-template').html(); // questo e il path al nostro template html
+    function stampaAppartamentiNoPromo(dataResponse) {
+        // $('.lista').html('');
+        const source = $('#entry-templatenopromo').html(); // questo e il path al nostro template html
+        const template = Handlebars.compile(source); // passiamo a Handlebars il percorso del template html
+
+        for (var i = 0; i < dataResponse.length; i++) {
+            var context = dataResponse[i];
+            var html = template(context);
+            $('.lista').append(html);
+        }
+    }
+
+    function stampaAppartamentiPromo(dataResponse) {
+        // $('.lista').html('');
+        const source = $('#entry-templatepromo').html(); // questo e il path al nostro template html
         const template = Handlebars.compile(source); // passiamo a Handlebars il percorso del template html
 
         for (var i = 0; i < dataResponse.length; i++) {

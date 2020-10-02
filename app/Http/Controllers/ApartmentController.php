@@ -15,6 +15,7 @@ class ApartmentController extends Controller
   public function index() {
   $apartments = Apartment::all();
 
+  $now = Carbon::now('Europe/Rome');
   $evidence_apartments = [];
 
   $no_promo_apartments = [];
@@ -23,8 +24,10 @@ class ApartmentController extends Controller
       if (count($apartment->promos) != 0) {
           foreach ($apartment->promos as $promo) {
               $time_ending = $promo->pivot->time_ending;
-              if ($time_ending > Carbon::now()) {
+              if ($time_ending > $now) {
                   $evidence_apartments[] = $apartment;
+              } elseif ($time_ending < $now) {
+                  $apartment->promos()->detach($promo);
               }
           }
       } else {
