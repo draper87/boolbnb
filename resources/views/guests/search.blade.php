@@ -25,12 +25,12 @@
                         <ul class="gauge_spacing_search">
                           <div class="d-inline">
                               <label for="rooms">Numero stanze:</label>
-                              <input type="range" id="rooms" min="1" max="9" step="1" value="3">
+                              <input type="range" id="rooms" min="1" max="9" step="1" value="1">
                               <a id="roomsvalue"></a>
                           </div>
                           <div class="d-inline">
                               <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti:</label>
-                              <input type="range" id="beds" min="1" max="9" step="1" value="2">
+                              <input type="range" id="beds" min="1" max="9" step="1" value="1">
                               <a id="bedsvalue"></a>
                           </div>
                           <div class="d-inline">
@@ -84,7 +84,7 @@
     <a href="/apartments/@{{ id }}">
                 <div class="row my_padding">
                     <div class="col-sm-3">
-                        <img class="circle" src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
+                        <img class="circle new_rules" src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
                     </div>
                     <div class="col-sm-9">
                         <p><b>@{{ title }}</b></p>

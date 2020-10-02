@@ -1,0 +1,34 @@
+
+// Text-color
+.my_blue_text {
+  color:rgba(21,98,176,1)
+}
+
+.my_welcome_padding {
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.my_apartment_padding {
+  padding-bottom:20px;
+}
+
+.delete_color_btn {
+  background : red;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.btn.btn-warning {
+  background-color: #FFC107;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.new_rules {
+  max-width: 250px;
+  min-width: 250px;
+  max-height: 185px;
+  min-height: 185px;
+}
