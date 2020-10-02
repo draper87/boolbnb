@@ -59,7 +59,7 @@
         <!-- SPONSOR HOUSE -->
         <section>
           <div class="container-fluid relat">
-            <h2 class="text-center my_strong title_space_around">IN EVIDENZA</h2>
+            <h2 class="text-center my_strong title_space_around my_blue_text">IN EVIDENZA</h2>
             <!-- IMAGE CAROUSEL BASE -->
             <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel">
               <!--CONTROL LEFT-->
@@ -73,12 +73,12 @@
                 @foreach ($evidence_apartments as $apartment)
 
                           <div class="col-md-3 my_shadow " style="float:left">
-                              <div class="my_fix my_strong"> IN EVIDENZA <i class="fas fa-medal"></i></div>
-                              <div class="card mb-2">
+                              <div class="my_fix my_strong my_blue_text"> IN EVIDENZA <i class="fas fa-medal"></i></div>
+                              <div class="card mb-2 my_mb-2 my_mb-2">
                                   <img class="card-img-top relative my_img_max"
                                        src="{{asset('storage') . '/' . $apartment->image_path}}" alt="Card image cap">
                                   <div class="card-body">
-                                      <h4 class="card-title text-center">{{$apartment->title}}</h4>
+                                      <h4 class="card-title text-center my_blue_text text-uppercase">{{$apartment->title}}</h4>
                                       <p class="card-text"></p>
                                       <a class="btn btn-success spacing_my">Guarda ora</a>
                                   </div>
@@ -87,6 +87,10 @@
 
                 @endforeach
               </div>
+              </div>
+              <!--CONTROL RIGHT-->
+              <div class="controls-top move_me_my right_butt">
+              <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
               </div>
             </div>
             <!--END CAROUSEL BASE-->
@@ -97,7 +101,7 @@
         <section>
           <div class="container get_away_from_me">
             <hr>
-            <h3 class=" text-center my_strong">ALTRE CASE DAI NOSTRI UTENTI</h3>
+            <h3 class=" text-center my_strong my_blue_text">ALTRE CASE DAI NOSTRI UTENTI</h3>
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
               <div class="carousel-inner" role="listbox">
                 <!--FIRST PAGE-->
@@ -113,8 +117,8 @@
                                 <img class="card-img-top"
                                      src="{{asset('images/casa.jpg')}}" alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title text-center">{{$no_promo_apartments[$i]->title}}</h4>
-                                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                                    <h4 class="card-title text-center my_blue_text text-capitalize">{{$no_promo_apartments[$i]->title}}</h4>
+                                    <p class="card-text my_blue_text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
                                     <a class="btn btn-success spacing_my">Guarda ora</a>
                                 </div>
                             </div>
@@ -140,8 +144,8 @@
                                 <img class="card-img-top"
                                      src="{{asset('images/casa.jpg')}}" alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title text-center">{{$no_promo_apartments[$i]->title}}</h4>
-                                    <p class="card-text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
+                                    <h4 class="card-title text-center my_blue_text text-capitalize">{{$no_promo_apartments[$i]->title}}</h4>
+                                    <p class="card-text my_blue_text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
                                     <a class="btn btn-success spacing_my">Guarda ora</a>
                                 </div>
                             </div>
@@ -162,7 +166,7 @@
         <!-- ABOUT US -->
         <section class="my_spacing">
           <div class="col-md-12">
-            <h2 class="text-center my_strong">CHI SIAMO</h2>
+            <h2 class="text-center my_strong my_blue_text">CHI SIAMO</h2>
             <div id="carouselExample" class="carousel slide " data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExample" data-slide-to="0" class="active d-none d-md-block">
