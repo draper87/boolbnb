@@ -1,0 +1,144 @@
+/* Reset and general rules common to all page */
+* {
+  text-decoration: none;
+  margin: auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+p{
+  font-size: 16px;
+  color: #333;
+}
+section{
+  padding: 4%;
+}
+/* style change for all scrolling-navbar */
+.scrolled-nav {
+  background:red;
+  position:fixed;
+  opacity: 0.8;
+  z-index: 9000;
+  width: 100%;
+}
+/* fixed button for return */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #FFC107;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 25px;
+  font-size: 12px;
+}
+#myBtn:hover {
+  background-color: #555;
+}
+.my_nav_color {
+  background: linear-gradient(to right, rgba(23,89,151,1) 10%, rgba(21,98,176,1) 19%, rgba(18,117,230,1) 38%, rgba(0,71,153,1) 73%, rgba(19,70,129,1) 93%, rgba(19,70,129,1) 97%);
+}
+
+main {
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+}
+.edit_footer {
+  color:white;
+}
+
+/* FOOTER */
+
+.edit_footer {
+  color:white;
+}
+.edit_footer a{
+  color:white;
+}
+.my_footer_color {
+  background: linear-gradient(to bottom, rgba(64,159,247,1) 10%, rgba(54,151,247,1) 27%, rgba(35,136,246,1) 58%, rgba(20,125,245,1) 82%);
+}
+
+/* MAIN SECTION PAYMENT */
+// stile per pagamento e prodotti
+.ms_cards{
+  background-color: white;
+  padding: 30px;
+  border: 1px solid rgb(195,195,195);
+  border-radius: 5px;
+  margin: 1%;
+  padding-left: -1%;
+  padding-right: -1%;
+  box-shadow: 10px 10px 26px -8px rgba(0,0,0,0.75);
+}
+.ms_promo_decor{
+  width: 200px;
+  height: 60px;
+  margin: auto;
+  margin-bottom: 18px;
+  background: rgb(187,255,236);
+  background: linear-gradient(174deg, rgba(187,255,236,1) 0%, rgba(48,242,220,1) 35%, rgba(13,166,149,1) 100%);
+  padding: 30px;
+  color: white;
+  border: 5px solid #FFC107;
+  border-radius: 50px;
+}
+.ms_position_relative{
+  position: relative;
+}
+.ms_position_centered{
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.text-gray{
+  color: #555;
+}
+.ms_container_flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.ms_flex_item{
+  flex-wrap: wrap;
+  flex-grow: 3;
+}
+.space_my_payment {
+  padding-top: 30px;
+}
+.space_me {
+  margin-top: 40px;
+  border-radius: 25px;
+}
+.down_my_btn {
+  margin-bottom: 4px;
+}
+.space_under_me {
+  margin-bottom: 20px;
+  margin-top:10px;
+}
+/* REVIEW-SECTION */
+.ms_section{
+  height: 450px;
+}
+/* CUSTOMER REVIEVV */
+.my_padding {
+  padding: 40px 0 30px;
+}
+.space_my_h1 {
+  padding-bottom: 20px;
+}
+
+.my_orange {
+  color: #FFC107;
+}
+// padding titolo
+.ms_title_margin{
+  margin-bottom: 3%
+}
