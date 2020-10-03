@@ -1,5 +1,22 @@
 @extends('layouts.app')
 
+@section('head')
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+
+
+    <style>
+        .ap-icon-pin,.ap-icon-clear {
+            display: none;
+        }
+    </style>
+
+@endsection
+
+
 @section('content')
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -23,8 +40,11 @@
           <div class="row">
             <!-- searcbar position aboslute to carousel-jumbo -->
             <div class="absolute d-none d-lg-block">
-              <form action="" class="form-inline mr-auto">
-                <input class="form-control mr-sm-2" type="text" placeholder="Dove andiamo?" aria-label="Dove andiamo?">
+              <form action="{{route('search')}}" class="form-inline mr-auto">
+                <input class="form-control mr-sm-2" id="address" type="text" name="search" placeholder="Dove vuoi andare?" value="{{old('search')}}" required>
+                  <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" hidden>
+                  <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" hidden>
+{{--                <input class="form-control mr-sm-2" type="text" placeholder="Dove andiamo?" aria-label="Dove andiamo?" name="search">--}}
                 <button class="btn btn-warning" type="submit">Go!</button>
               </form>
             </div>
@@ -281,5 +301,32 @@
         </section>
       </main>
       <!-- Main End -->
+
+    {{--  Script relativo ad Algolia  --}}
+    <script>
+        (function() {
+            var placesAutocomplete = places({
+                appId: 'plNO17G18F5R',
+                apiKey: '9bc42c41773997040e2daf6810f20401',
+                container: document.querySelector('#address')
+            });
+
+            placesAutocomplete.on('change', function(e) {
+                document.querySelector('#lat-value').value = e.suggestion.latlng.lat
+            });
+
+            placesAutocomplete.on('change', function(e) {
+                document.querySelector('#lng-value').value = e.suggestion.latlng.lng
+            });
+
+            placesAutocomplete.on('clear', function() {
+                document.querySelector('#lat-value').value = '';
+                document.querySelector('#lng-value').value = '';
+                document.querySelector('#address').value = '';
+            });
+
+        })();
+    </script>
+    {{-- Fine Script relativo ad Algolia  --}}
 
 @endsection
