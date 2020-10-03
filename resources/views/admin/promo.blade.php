@@ -156,6 +156,7 @@
 
     <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
     <script>
+
         var form = document.querySelector('#payment-form');
         var client_token = "{{ $token }}";
 
@@ -185,6 +186,18 @@
                 });
             });
         });
+
+        // istruzioni per forzare il refresh della pagina quando si preme il tasto indietro del browser
+        window.addEventListener( "pageshow", function ( event ) {
+            var historyTraversal = event.persisted ||
+                ( typeof window.performance != "undefined" &&
+                    window.performance.navigation.type === 2 );
+            if ( historyTraversal ) {
+                // Handle page restore.
+                window.location.reload();
+            }
+        });
+
     </script>
 
     <script src="{{ asset('js/app.js') }}"></script>
