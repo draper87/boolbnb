@@ -41,7 +41,19 @@ Route::get('/', 'ApartmentController@index')->name('index');
 Route::get('/apartments/{apartment}', 'ApartmentController@show')->name('show');
 Route::post('/','ApartmentController@sendMessage')->name('send');
 Route::get('/search', function () {
-    return view('guests.search');
+
+    $datasearch = null;
+    $latitude = null;
+    $longitude = null;
+
+    if (isset($_GET["search"])) {
+        $datasearch = $_GET["search"];
+        $latitude = $_GET["latitude"];
+        $longitude = $_GET['longitude'];
+    }
+
+    return view('guests.search', compact('datasearch','latitude','longitude'));
+
 })->name('search');
 Route::get('/prova', function () {
     return view('homepage');

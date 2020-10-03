@@ -42,6 +42,16 @@ $(document).ready(function () {
     var sauna;
     var vistamare;
 
+    // se la ricerca parte dalla homepage faccio partire direttamente la chiamata ajax.
+    if ($('#address').val() !== 0) {
+        latitude = $('#lat-value').val();
+        longitude = $('#lng-value').val();
+        rooms = $('#rooms').val();
+        beds = $('#beds').val();
+        kmradius = $('#kmradius').val();
+        chiamaAppartamenti();
+    }
+
     // quando clicco il bottone Invia parte la chiamata Ajax
     $('#bottone').click(function() {
         event.preventDefault(); // impedisce il submit della form, da eliminare in quanto useremo un <a> con classe btn
@@ -92,7 +102,7 @@ $(document).ready(function () {
     }
 
 
-    // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
+    // funzione che usa handlebars per stampare i risultati no promo ottenuti dalla chiamata Ajax
     function stampaAppartamentiNoPromo(dataResponse) {
         const source = $('#entry-templatenopromo').html(); // questo e il path al nostro template html
         const template = Handlebars.compile(source); // passiamo a Handlebars il percorso del template html
@@ -104,7 +114,7 @@ $(document).ready(function () {
         }
     }
 
-
+    // funzione che usa handlebars per stampare i risultati promo ottenuti dalla chiamata Ajax
     function stampaAppartamentiPromo(dataResponse) {
         const source = $('#entry-templatepromo').html(); // questo e il path al nostro template html
         const template = Handlebars.compile(source); // passiamo a Handlebars il percorso del template html
