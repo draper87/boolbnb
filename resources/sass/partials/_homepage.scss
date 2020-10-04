@@ -20,7 +20,60 @@
 .btn.btn-warning {
   background-color: #FFC107;
 }
+// section card
+.gallery.caption-3 li figure {
+  overflow: hidden;
+}
 
+.gallery.caption-3 li img {
+  transform: scale(1.2);
+  transition: transform .3s ease-in-out;
+}
+
+.gallery.caption-3 figure figcaption {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  display: grid;
+  align-content: center;
+  text-align: center;
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.gallery.caption-3 figure h1,
+.gallery.caption-3 figure p {
+  opacity: 0;
+  transition: all .4s;
+}
+
+.gallery.caption-3 figure h1 {
+  margin: 0;
+  font-size: 21px;
+  transform: translate3d(0, -1rem, 0);
+}
+
+.gallery.caption-3 figure p {
+  font-size: 13px;
+  transform: translate3d(0, 1rem, 0);
+}
+
+.gallery.caption-3 figure:hover img {
+  filter: grayscale(100%);
+  transform: scale(1);
+}
+
+.gallery.caption-3 figure:hover figcaption {
+  transform: scale(1);
+}
+
+.gallery.caption-3 figure:hover h1,
+.gallery.caption-3 figure:hover p {
+  opacity: 1;
+  transform: scale(1);
+}
 
 /* MAIN SECTION SPONSOR */
 .my_img_max {
@@ -35,9 +88,8 @@
   color:white;
   opacity: 0.9;
   top:0%;
-  left:67%;
   background-color: #FFC107;
-  padding: 10px 10px 0px;
+  padding: 10px 20px 0px;
 }
 .title_space_around {
   margin-top : 25px;

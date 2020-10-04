@@ -11,4 +11,9 @@
 @import 'partials/_search.scss';
 @import 'partials/_board.scss';
 @import 'partials/_detail.scss';
-@import 'partials/_common.scss'
+@import 'partials/_common.scss';
+
+
+ul {
+    list-style-type: none;
+}
