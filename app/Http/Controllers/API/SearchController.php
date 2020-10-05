@@ -108,7 +108,7 @@ class SearchController extends Controller
 
         $promo = $queryApartmentPromo->has('promos')->with('promos')->get();
 
-        $no_promo = $queryApartmentNoPromo->doesnthave('promos')->paginate(2);
+        $no_promo = $queryApartmentNoPromo->doesnthave('promos')->paginate(8);
 
         return response()->json([
             'nopromo' => $no_promo,
