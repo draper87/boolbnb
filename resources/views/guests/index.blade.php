@@ -59,7 +59,14 @@
         <!-- SPONSOR HOUSE -->
         <section>
           <div class="container-fluid relat">
-            <h2 class="text-center my_strong title_space_around my_blue_text">IN EVIDENZA</h2>
+            <div class="box get_away_from_me ">
+              <div class="inner">
+                <span>IN EVIDENZA</span>
+              </div>
+              <div class="inner">
+                <span>IN EVIDENZA</span>
+              </div>
+            </div>
             <!-- IMAGE CAROUSEL BASE -->
             <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel" data-interval="3000">
               <!--CONTROL LEFT-->
@@ -81,7 +88,7 @@
                           </div>
                       @else
                           <div class="col-md-3 my_shadow " style="float:left">
-                              <div class="my_fix my_strong my_blue_text col-md-4 offset-md-6"> IN EVIDENZA <i class="fas fa-medal"></i></div>
+                              <div class="my_fix my_strong my_blue_text"> IN EVIDENZA <i class="fas fa-medal"></i></div>
                               <ul class="gallery caption-3">
                                 <li>
                                   <figure>
@@ -114,7 +121,7 @@
                           </div>
                       @else
                         <div class="col-md-3 my_shadow " style="float:left">
-                            <div class="my_fix my_strong my_blue_text col-md-4 offset-md-6"> IN EVIDENZA <i class="fas fa-medal"></i></div>
+                            <div class="my_fix my_strong my_blue_text "> IN EVIDENZA <i class="fas fa-medal"></i></div>
                             <ul class="gallery caption-3">
                               <li>
                                 <figure>
@@ -153,7 +160,7 @@
         <section>
           <div class="container get_away_from_me">
             <hr>
-            <h3 class=" text-center my_strong my_blue_text">ALTRE CASE DAI NOSTRI UTENTI</h3>
+            <h3 class=" text-center my_strong my_blue_text h3_my_spacing ">ALTRE CASE DAI NOSTRI UTENTI</h3>
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="2000">
               <div class="carousel-inner" role="listbox">
                 <!--FIRST PAGE-->
@@ -164,21 +171,22 @@
                           <div class="col-md-3" style="float:left">
                           </div>
                       @else
-                        <div class="col-md-3" style="float:left">
-                            <div class="card mb-2">
-                                <img class="card-img-top"
-                                     src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center my_blue_text text-capitalize">{{$no_promo_apartments[$i]->title}}</h4>
-                                    <p class="card-text my_blue_text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                                    <a class="btn btn-success spacing_my">Guarda ora</a>
-                                </div>
-                            </div>
+                        <div class="col-md-3 my_shadow " style="float:left">
+                            <ul class="gallery caption-3">
+                              <li>
+                                <figure>
+                                <a href="#">
+                                  <img class="card-img-top random_user_house_img"
+                                       src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
+                                  <figcaption>
+                                      <h4 class="card-title text-center my_blue_text text-capitalize ">{{$no_promo_apartments[$i]->title}}</h4>
+                                  </figcaption>
+                                </a>
+                                </figure>
+                              </li>
                         </div>
                       @endif
                     @endfor
-
-
 
                 </div>
                 <!--END FIRST PAGE-->
@@ -191,16 +199,19 @@
                           <div class="col-md-3" style="float:left">
                           </div>
                       @else
-                        <div class="col-md-3" style="float:left">
-                            <div class="card mb-2">
-                                <img class="card-img-top"
-                                     src="{{asset('storage') . '/' . $no_promo_apartments[$j]->image_path}}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center my_blue_text text-capitalize">{{$no_promo_apartments[$j]->title}}</h4>
-                                    <p class="card-text my_blue_text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                                    <a class="btn btn-success spacing_my">Guarda ora</a>
-                                </div>
-                            </div>
+                        <div class="col-md-3 my_shadow " style="float:left">
+                            <ul class="gallery caption-3">
+                              <li>
+                                <figure>
+                                <a href="#">
+                                  <img class="card-img-top random_user_house_img"
+                                       src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
+                                  <figcaption>
+                                      <h4 class="card-title text-center my_blue_text text-capitalize ">{{$no_promo_apartments[$i]->title}}</h4>
+                                  </figcaption>
+                                </a>
+                                </figure>
+                              </li>
                         </div>
                       @endif
                     @endfor
