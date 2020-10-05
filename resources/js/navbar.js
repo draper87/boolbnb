@@ -15,6 +15,23 @@ $(document).ready(function(){
 
 });
 
+// Change style navbar on scroll
+$(document).ready(function(){
+  var scrollHead = 0;
+  $(window).scroll(function(){
+    scrollHead = $(window).scrollTop();
+     $('.counter').html(scrollHead);
+
+    if (scrollHead >= 50) {
+      $('#special_my_navigator').addClass('jumbo_scroll');
+    } else if (scrollHead < 50) {
+      $('#special_my_navigator').removeClass('jumbo_scroll');
+    }
+
+  });
+
+});
+
 
 
 

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.jumbo')
 
 @section('head')
     <script
@@ -121,7 +121,6 @@
                                        src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="Card image cap">
                                   <figcaption>
                                     <h4 class="card-title text-center  text-uppercase">{{$evidence_apartments[$i]->title}}</h4>
-                                    {{-- <a class="btn btn-success spacing_my">Guarda ora</a> --}}
                                   </figcaption>
                                 </a>
                                 </figure>
@@ -170,7 +169,6 @@
                                   <img class="card-img-top random_user_house_img"
                                        src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                   <figcaption>
-                                      <h4 class="card-title text-center my_blue_text text-capitalize ">{{$no_promo_apartments[$i]->title}}</h4>
                                   </figcaption>
                                 </a>
                                 </figure>
@@ -198,7 +196,6 @@
                                   <img class="card-img-top random_user_house_img"
                                        src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                   <figcaption>
-                                      <h4 class="card-title text-center my_blue_text text-capitalize ">{{$no_promo_apartments[$i]->title}}</h4>
                                   </figcaption>
                                 </a>
                                 </figure>
