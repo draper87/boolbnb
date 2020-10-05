@@ -34,54 +34,34 @@
             @endif
         @endforeach
     </div> -->
+
     <main>
-        <!-- JUMBO W SEARCHBAR -->
-        <div class="container-fluid my_remove ">
-          <div class="row">
-            <!-- searcbar position aboslute to carousel-jumbo -->
-            <div class="absolute d-none d-lg-block">
-              <form action="{{route('search')}}" class="form-inline mr-auto">
-                <input class="form-control mr-sm-2" id="address" type="text" name="search" placeholder="Dove vuoi andare?" value="{{old('search')}}" required>
-                  <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" hidden>
-                  <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" hidden>
-{{--                <input class="form-control mr-sm-2" type="text" placeholder="Dove andiamo?" aria-label="Dove andiamo?" name="search">--}}
-                <button class="btn btn-warning" type="submit">Go!</button>
-              </form>
-            </div>
-            <div class="col-md-12 ">
-              <div class="carousel slide relative " data-ride="carousel">
-                <div class="carousel-inner">
-                  <!-- IMG 1 -->
-                  <div class="carousel-item active" data-interval="10000">
-                    <img class="img-fluid" src="{{asset('images/mare.png')}}" alt="">
-                  </div>
-                  <!-- IMG 2 -->
-                  <div class="carousel-item" data-interval="2000">
-                    <img class="img-fluid" src="{{asset('images/montagna.png')}}" alt="">
-                  </div>
-                  <!-- IMG 3 -->
-                  <div class="carousel-item">
-                    <img class="img-fluid" src="{{asset('images/spazio.jpg')}}" alt="">
-                  </div>
-                </div>
-                  <!-- Carousel control hidden -->
-                  <a class="carousel-control-prev" role="button" data-slide="prev">
-                  <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" role="button" data-slide="next">
-                  <span class="sr-only">Next</span>
-                  </a>
-                  <!-- End Carousel control hidden -->
-              </div>
-            </div>
-          </div>
-        </div>
+      <section class="hero hero--video">
+      <div class="container">
+      <div class="col-12">
+      <div class="search">
+
+      <form action="{{route('search')}}" class="mr-auto" id="form_my">
+      <input class="form-control " id="address" type="text" name="search" placeholder="Dove vuoi andare?" value="{{old('search')}}" required>
+      <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" hidden>
+      <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" hidden>
+      <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+
+      </div>
+      </div>
+      </div>
+      <video class="d-lg-block" autoplay loop muted>
+      <source src="https://raw.githubusercontent.com/solodev/hero-search-bar/master/images/hero-video.mp4" type="video/mp4">
+      </video>
+      </section>
+
         <!-- SPONSOR HOUSE -->
         <section>
           <div class="container-fluid relat">
-            <h2 class="text-center my_strong title_space_around my_blue_text">IN EVIDENZA</h2>
+            <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing other_spa ">IN EVIDENZA</h3></div>
             <!-- IMAGE CAROUSEL BASE -->
-            <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel">
+            <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel" data-interval="3000">
               <!--CONTROL LEFT-->
               @if(count($evidence_apartments) > 4)
               <div class="controls-top move_me_my left-butt">
@@ -102,15 +82,19 @@
                       @else
                           <div class="col-md-3 my_shadow " style="float:left">
                               <div class="my_fix my_strong my_blue_text"> IN EVIDENZA <i class="fas fa-medal"></i></div>
-                              <div class="card mb-2 my_mb-2 my_mb-2">
-                                  <img class="card-img-top relative my_img_max"
-                                       src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="Card image cap">
-                                  <div class="card-body">
-                                      <h4 class="card-title text-center my_blue_text text-uppercase">{{$evidence_apartments[$i]->title}}</h4>
-                                      <p class="card-text"></p>
-                                      <a class="btn btn-success spacing_my">Guarda ora</a>
-                                  </div>
-                              </div>
+                              <ul class="gallery caption-3">
+                                <li>
+                                  <figure>
+                                  <a href="#">
+                                    <img class="card-img-top relative my_img_max"
+                                         src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="Card image cap">
+                                    <figcaption>
+                                      <h4 class="card-title text-center  text-uppercase">{{$evidence_apartments[$i]->title}}</h4>
+                                      {{-- <a class="btn btn-success spacing_my">Guarda ora</a> --}}
+                                    </figcaption>
+                                  </a>
+                                  </figure>
+                                </li>
                           </div>
 
 
@@ -129,18 +113,22 @@
                           <div class="col-md-3" style="float:left">
                           </div>
                       @else
-                          <div class="col-md-3 my_shadow " style="float:left">
-                              <div class="my_fix my_strong my_blue_text"> IN EVIDENZA <i class="fas fa-medal"></i></div>
-                              <div class="card mb-2 my_mb-2 my_mb-2">
+                        <div class="col-md-3 my_shadow " style="float:left">
+                            <div class="my_fix my_strong my_blue_text "> IN EVIDENZA <i class="fas fa-medal"></i></div>
+                            <ul class="gallery caption-3">
+                              <li>
+                                <figure>
+                                <a href="#">
                                   <img class="card-img-top relative my_img_max"
                                        src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="Card image cap">
-                                  <div class="card-body">
-                                      <h4 class="card-title text-center my_blue_text text-uppercase">{{$evidence_apartments[$i]->title}}</h4>
-                                      <p class="card-text"></p>
-                                      <a class="btn btn-success spacing_my">Guarda ora</a>
-                                  </div>
-                              </div>
-                          </div>
+                                  <figcaption>
+                                    <h4 class="card-title text-center  text-uppercase">{{$evidence_apartments[$i]->title}}</h4>
+                                    {{-- <a class="btn btn-success spacing_my">Guarda ora</a> --}}
+                                  </figcaption>
+                                </a>
+                                </figure>
+                              </li>
+                        </div>
 
 
                       @endif
@@ -164,9 +152,9 @@
         <!-- OTHER HOUSE SECTION -->
         <section>
           <div class="container get_away_from_me">
-            <hr>
-            <h3 class=" text-center my_strong my_blue_text">ALTRE CASE DAI NOSTRI UTENTI</h3>
-            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+            <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing other_spa ">ALTRE CASE DAI NOSTRI UTENTI</h3></div>
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="2000">
               <div class="carousel-inner" role="listbox">
                 <!--FIRST PAGE-->
                 <div class="carousel-item active">
@@ -176,21 +164,22 @@
                           <div class="col-md-3" style="float:left">
                           </div>
                       @else
-                        <div class="col-md-3" style="float:left">
-                            <div class="card mb-2">
-                                <img class="card-img-top"
-                                     src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center my_blue_text text-capitalize">{{$no_promo_apartments[$i]->title}}</h4>
-                                    <p class="card-text my_blue_text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                                    <a class="btn btn-success spacing_my">Guarda ora</a>
-                                </div>
-                            </div>
+                        <div class="col-md-3 my_shadow " style="float:left">
+                            <ul class="gallery caption-3">
+                              <li>
+                                <figure>
+                                <a href="#">
+                                  <img class="card-img-top random_user_house_img"
+                                       src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
+                                  <figcaption>
+                                      <h4 class="card-title text-center my_blue_text text-capitalize ">{{$no_promo_apartments[$i]->title}}</h4>
+                                  </figcaption>
+                                </a>
+                                </figure>
+                              </li>
                         </div>
                       @endif
                     @endfor
-
-
 
                 </div>
                 <!--END FIRST PAGE-->
@@ -203,16 +192,19 @@
                           <div class="col-md-3" style="float:left">
                           </div>
                       @else
-                        <div class="col-md-3" style="float:left">
-                            <div class="card mb-2">
-                                <img class="card-img-top"
-                                     src="{{asset('storage') . '/' . $no_promo_apartments[$j]->image_path}}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center my_blue_text text-capitalize">{{$no_promo_apartments[$j]->title}}</h4>
-                                    <p class="card-text my_blue_text">Ho scritto del testo a caso tanto per fare spessore nel contenuto della card, quindi ciao!</p>
-                                    <a class="btn btn-success spacing_my">Guarda ora</a>
-                                </div>
-                            </div>
+                        <div class="col-md-3 my_shadow " style="float:left">
+                            <ul class="gallery caption-3">
+                              <li>
+                                <figure>
+                                <a href="#">
+                                  <img class="card-img-top random_user_house_img"
+                                       src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
+                                  <figcaption>
+                                      <h4 class="card-title text-center my_blue_text text-capitalize ">{{$no_promo_apartments[$i]->title}}</h4>
+                                  </figcaption>
+                                </a>
+                                </figure>
+                              </li>
                         </div>
                       @endif
                     @endfor
@@ -223,15 +215,22 @@
               </div>
             </div>
 
-            <hr>
+
           </div>
         </section>
         <!-- END OTHER HOUSE SECTION -->
         <!-- ABOUT US -->
         <section class="my_spacing">
           <div class="col-md-12">
-            <h2 class="text-center my_strong my_blue_text">CHI SIAMO</h2>
-            <div id="carouselExample" class="carousel slide " data-ride="carousel">
+          <div class="box get_away_from_me ">
+            <div class="inner">
+              <span>CHI SIAMO</span>
+            </div>
+            <div class="inner">
+              <span>CHI SIAMO</span>
+            </div>
+          </div>
+            <div id="carouselExample" class="carousel slide " data-ride="carousel" data-interval="400">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExample" data-slide-to="0" class="active d-none d-md-block">
                   <img class="rounded-circle" src="{{asset('images/oliver.jpg')}}" alt="First slide">

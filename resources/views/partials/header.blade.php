@@ -58,10 +58,6 @@
 
           {{-- <a href="#" class="nav-item nav-link">Register</a>
           <a href="#" class="nav-item nav-link">Login</a> --}}
-          <a href="#" class="nav-item nav-link d-none d-block d-sm-block d-md-none">
-            <input class="form-control mr-sm-2" type="text" placeholder="Dove andiamo?" aria-label="Dove andiamo?">
-            <button class="btn btn-warning" type="submit">Go!</button>
-          </a>
         </div>
       </div>
     </div>
