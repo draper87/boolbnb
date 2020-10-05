@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.jumbo')
 
 @section('head')
         <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>

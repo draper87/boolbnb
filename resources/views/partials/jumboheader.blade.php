@@ -1,6 +1,6 @@
 <!-- Header Start  -->
 <header>
-  <nav id="navigator_my" class="navbar navbar-expand-md navbar-dark my_nav_color">
+  <nav id="special_my_navigator" class="navbar navbar-expand-md navbar-dark z-index-nav">
     <!-- Navbar left-side -->
     <div class="container-fluid">
       <a href="{{ route('index') }}" class="navbar-brand mr-3">7BnB <i class="fas fa-rocket"></i></a>
