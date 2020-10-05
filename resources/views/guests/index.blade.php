@@ -59,14 +59,7 @@
         <!-- SPONSOR HOUSE -->
         <section>
           <div class="container-fluid relat">
-            <div class="box get_away_from_me ">
-              <div class="inner">
-                <span>IN EVIDENZA</span>
-              </div>
-              <div class="inner">
-                <span>IN EVIDENZA</span>
-              </div>
-            </div>
+            <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing other_spa ">IN EVIDENZA</h3></div>
             <!-- IMAGE CAROUSEL BASE -->
             <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel" data-interval="3000">
               <!--CONTROL LEFT-->
@@ -160,7 +153,7 @@
         <section>
           <div class="container get_away_from_me">
 
-            <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing ">ALTRE CASE DAI NOSTRI UTENTI</h3></div>
+            <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing other_spa ">ALTRE CASE DAI NOSTRI UTENTI</h3></div>
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="2000">
               <div class="carousel-inner" role="listbox">
                 <!--FIRST PAGE-->
@@ -229,7 +222,14 @@
         <!-- ABOUT US -->
         <section class="my_spacing">
           <div class="col-md-12">
-            <h2 class="text-center my_strong my_blue_text">CHI SIAMO</h2>
+          <div class="box get_away_from_me ">
+            <div class="inner">
+              <span>CHI SIAMO</span>
+            </div>
+            <div class="inner">
+              <span>CHI SIAMO</span>
+            </div>
+          </div>
             <div id="carouselExample" class="carousel slide " data-ride="carousel" data-interval="400">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExample" data-slide-to="0" class="active d-none d-md-block">

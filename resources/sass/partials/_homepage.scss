@@ -178,7 +178,7 @@
   top:0%;
   background-color: #FFC107;
   padding: 10px 0px 0px;
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 8px;
 }
 .title_space_around {
   margin-top : 25px;
@@ -252,8 +252,8 @@
 
 .box .inner {
 	width: 400px;
-	height: 200px;
-	line-height: 200px;
+	height: 50px;
+	line-height: 50px;
 	font-size: 4em;
 	font-family: sans-serif;
 	font-weight: bold;
@@ -322,4 +322,13 @@
 	to {
 		background-position: 200% center;
 	}
+}
+
+.other_space_title {
+  padding-top: 50px;
+}
+
+.who_are_we {
+  padding-top: 50px;
+  padding-bottom: 30px;
 }
