@@ -159,8 +159,8 @@
         <!-- OTHER HOUSE SECTION -->
         <section>
           <div class="container get_away_from_me">
-            <hr>
-            <h3 class=" text-center my_strong my_blue_text h3_my_spacing ">ALTRE CASE DAI NOSTRI UTENTI</h3>
+
+            <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing ">ALTRE CASE DAI NOSTRI UTENTI</h3></div>
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="2000">
               <div class="carousel-inner" role="listbox">
                 <!--FIRST PAGE-->
@@ -222,7 +222,7 @@
               </div>
             </div>
 
-            <hr>
+
           </div>
         </section>
         <!-- END OTHER HOUSE SECTION -->
