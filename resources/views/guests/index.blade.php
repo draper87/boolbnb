@@ -37,20 +37,18 @@
 
     <main>
       <section class="hero hero--video">
-      <div class="container">
-      <div class="col-12">
-      <div class="search">
-
-      <form action="{{route('search')}}" class="mr-auto" id="form_my">
-      <input class="form-control " id="address" type="text" name="search" placeholder="Dove vuoi andare?" value="{{old('search')}}" required>
-      <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" hidden>
-      <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" hidden>
-      <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-
-      </div>
-      </div>
-      </div>
+        <div class="container">
+          <div class="col-12">
+            <div class="search">
+            <form action="{{route('search')}}" class="mr-auto" id="form_my">
+            <input class="form-control " id="address" type="text" name="search" placeholder="Dove vuoi andare?" value="{{old('search')}}" required>
+            <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" hidden>
+            <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" hidden>
+            <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            </div>
+          </div>
+        </div>
       <video class="d-lg-block" autoplay loop muted>
       <source src="https://raw.githubusercontent.com/solodev/hero-search-bar/master/images/hero-video.mp4" type="video/mp4">
       </video>

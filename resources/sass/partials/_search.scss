@@ -1,18 +1,4 @@
 /* SECTION SEARCH */
-.my_section_padding {
-    padding-bottom: 30px;
-    background-image: url(/images/city.jpg);
-    background-repeat: no-repeat;
-    margin-bottom: 40px;
-    height: 400px;
-}
-.background_my {
-    padding-top: 25px;
-    border-radius:10px;
-}
-.add_red_my {
-    color:red;
-}
 .super_yellow_button {
   width: 100%;
   border-radius: 10px;
@@ -23,7 +9,7 @@
   padding-left:7%;
 }
 .my_selection_button_spacing {
-  margin-left:19%;
+  margin-left:12%;
 }
 .my_container_spacing_right {
   margin-right: 25%;
@@ -89,4 +75,16 @@ border-bottom: 2px solid #FFC107;
 .more_space_me {
     margin-bottom: 40px;
     margin-left: 6%;
+}
+
+.search_margin_top {
+  margin-top: 50px;
+}
+
+.margin_top_result {
+  padding-top: 100px;
+}
+
+.backround_evidence_my {
+  background-color: rgb(235,122,145);
 }
