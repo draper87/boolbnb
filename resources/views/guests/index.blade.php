@@ -57,7 +57,7 @@
         <!-- SPONSOR HOUSE -->
         <section>
           <div class="container-fluid relat">
-            <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing other_spa ">IN EVIDENZA</h3></div>
+            <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing other_spa title_space_around ">IN EVIDENZA</h3></div>
             <!-- IMAGE CAROUSEL BASE -->
             <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel" data-interval="3000">
               <!--CONTROL LEFT-->
@@ -81,7 +81,7 @@
 
                           <div class="col-lg-3 mb-3 mb-lg-0 my_shadow" style="float:left">
                               <div class="my_fix my_strong my_blue_text "> IN EVIDENZA <i class="fas fa-medal"></i></div>
-                            <div class="hover hover-2 text-white rounded"><img class="card-img-top relative my_img_max" src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="">
+                            <div class="hover hover-2 text-white"><img class="relative" src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="">
                               <div class="hover-overlay"></div>
                               <div class="hover-2-content px-5 py-4">
                                 <h3 class="hover-2-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">{{$evidence_apartments[$i]->title}}</span></h3>
@@ -106,10 +106,10 @@
                           <div class="col-lg-3 mb-3 mb-lg-0" style="float:left">
                           </div>
                       @else
-          
+
                         <div class="col-lg-3 mb-3 mb-lg-0 my_shadow" style="float:left">
                             <div class="my_fix my_strong my_blue_text "> IN EVIDENZA <i class="fas fa-medal"></i></div>
-                          <div class="hover hover-2 text-white rounded"><img class="card-img-top relative my_img_max" src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="">
+                          <div class="hover hover-2 text-white"><img class="relative" src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="">
                             <div class="hover-overlay"></div>
                             <div class="hover-2-content px-5 py-4">
                               <h3 class="hover-2-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">{{$evidence_apartments[$i]->title}}</span></h3>
@@ -152,18 +152,19 @@
                           <div class="col-md-3" style="float:left">
                           </div>
                       @else
-                        <div class="col-md-3 my_shadow " style="float:left">
+                        <div class="col-md-3  my_shadow " style="float:left">
                             <ul class="gallery caption-3">
                               <li>
                                 <figure>
                                 <a href="#">
-                                  <img class="card-img-top random_user_house_img"
+                                  <img class="random_user_house_img"
                                        src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                   <figcaption>
                                   </figcaption>
                                 </a>
                                 </figure>
                               </li>
+                            </ul>
                         </div>
                       @endif
                     @endfor
@@ -176,7 +177,7 @@
 
                     @for ($j=4; $j < 8; $j++)
                       @if (empty($no_promo_apartments[$j]))
-                          <div class="col-md-3" style="float:left">
+                          <div class="col-md-3 " style="float:left">
                           </div>
                       @else
                         <div class="col-md-3 my_shadow " style="float:left">
@@ -184,13 +185,14 @@
                               <li>
                                 <figure>
                                 <a href="#">
-                                  <img class="card-img-top random_user_house_img"
+                                  <img class="random_user_house_img"
                                        src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                   <figcaption>
                                   </figcaption>
                                 </a>
                                 </figure>
                               </li>
+                            </ul>
                         </div>
                       @endif
                     @endfor

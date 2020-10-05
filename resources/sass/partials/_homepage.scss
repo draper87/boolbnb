@@ -114,69 +114,7 @@
 .btn.btn-warning {
   background-color: #FFC107;
 }
-// section card
-// .gallery.caption-3 li figure {
-//   overflow: hidden;
-// }
-//
-// .gallery.caption-3 li img {
-//   transform: scale(1.2);
-//   transition: transform .3s ease-in-out;
-// }
-//
-// .gallery.caption-3 figure figcaption {
-//   position: absolute;
-//   top: 5%;
-//   left: 5%;
-//   width: 90%;
-//   height: 90%;
-//   display: grid;
-//   align-content: center;
-//   text-align: center;
-//   color: #fff;
-//   transform: scale(1.2);
-// }
-//
-// .gallery.caption-3 figure h1,
-// .gallery.caption-3 figure p {
-//   opacity: 0;
-//   transition: all .4s;
-// }
-//
-// .gallery.caption-3 figure h1 {
-//   margin: 0;
-//   font-size: 21px;
-//   transform: translate3d(0, -1rem, 0);
-// }
-//
-// .gallery.caption-3 figure p {
-//   font-size: 13px;
-//   transform: translate3d(0, 1rem, 0);
-// }
-//
-// .gallery.caption-3 figure:hover img {
-//   filter: grayscale(100%);
-//   transform: scale(1);
-// }
-//
-// .gallery.caption-3 figure:hover figcaption {
-//   transform: scale(1);
-// }
-//
-// .gallery.caption-3 figure:hover h1,
-// .gallery.caption-3 figure:hover p {
-//   opacity: 1;
-//   transform: scale(1);
-// }
 
-
-/* MAIN SECTION SPONSOR */
-// .my_img_max {
-//   max-width: 436.25px;
-//   max-height: 330px;
-//   min-width: 420px;
-//   min-height: 330px;
-// }
 .my_fix {
   position:fixed;
   z-index:2;
@@ -218,11 +156,6 @@
   box-shadow: 1 1 1px black;
   -moz-osx-font-smoothing: grayscale;
 }
-
-// .my_shadow:hover,
-// .my_shadow:active {
-//     transform: scale(1.04);
-// }
 .my_mb-2 {
   margin-bottom: 2.5rem !important;
 }
@@ -269,14 +202,15 @@
 }
 
 .box .inner:first-child {
-	background-color: rgba(23,89,151,1);
+	background-color: #663399;
 	color: white;
 	transform-origin: right;
 	transform: perspective(100px) rotateY(-15deg);
 }
 
+
 .box .inner:last-child {
-	background-color: rgba(0,71,153,1);
+	background-color: #9D65D0;
 	color: antiquewhite;
 	transform-origin: left;
 	transform: perspective(100px) rotateY(15deg);
@@ -338,4 +272,75 @@
 .who_are_we {
   padding-top: 50px;
   padding-bottom: 30px;
+}
+
+// CARD BOX
+.hover {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60%;
+}
+
+.hover-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  transition: all 0.4s;
+}
+
+.hover img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+}
+
+.hover-content {
+  position: relative;
+  z-index: 99;
+}
+
+
+// / DEMO 2 ============================== */
+.hover-2 .hover-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+}
+
+.hover-2-title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.3s;
+}
+
+.hover-2-description {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+  transition: all 0.3s;
+}
+
+.hover-2:hover .hover-2-title {
+  transform: translateY(-1.5rem);
+}
+
+.hover-2:hover .hover-2-description {
+  bottom: 0.5rem;
+  opacity: 1;
+}
+
+.hover-2:hover .hover-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
 }

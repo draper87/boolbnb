@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+ul {
+  list-style-type: none;
+}
 /* style change for all scrolling-navbar */
 .scrolled-nav {
   background:red;
@@ -41,7 +44,7 @@
   background-color: #555;
 }
 .my_nav_color {
-  background: linear-gradient(to right, rgba(23,89,151,1) 10%, rgba(21,98,176,1) 19%, rgba(18,117,230,1) 38%, rgba(0,71,153,1) 73%, rgba(19,70,129,1) 93%, rgba(19,70,129,1) 97%);
+  background-image: linear-gradient(319deg, #663dff 0%, #aa00ff 37%, #cc4499 100%);
 }
 
 main {
@@ -62,23 +65,23 @@ main {
   color:white;
 }
 .my_footer_color {
-  background: linear-gradient(to bottom, rgba(64,159,247,1) 10%, rgba(54,151,247,1) 27%, rgba(35,136,246,1) 58%, rgba(20,125,245,1) 82%);
+  background-image: linear-gradient(315deg, #6617cb 0%, #cb218e 74%);
 }
 
 /* SECTION SEARCH */
 .my_section_padding {
-    padding-bottom: 30px;
-    background-image: url(/images/city.jpg);
-    background-repeat: no-repeat;
-    margin-bottom: 40px;
-    height: 400px;
+  padding-bottom: 30px;
+  background-image: url(/images/city.jpg);
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+  height: 400px;
 }
 .background_my {
-    padding-top: 25px;
-    border-radius:10px;
+  padding-top: 25px;
+  border-radius:10px;
 }
 .add_red_my {
-    color:red;
+  color:red;
 }
 .super_yellow_button {
   width: 100%;
@@ -95,141 +98,7 @@ main {
 .my_container_spacing_right {
   margin-right: 25%;
 }
-/* SECTION MAIN ROW */
-
-.card {
-    display:block;
-    width:100%;
-    max-width:800px;
-    margin-bottom: 25px;
-}
-img {
-    border-bottom: 2px solid #FFC107;
-}
-.innerLeft {
-    display:inline-block;
-    margin-right:-4px;
-    vertical-align:top;
-    width:30%;
-    text-align:center;
-    padding:5px;
-}
-.innerRight {
-    display:inline-block;
-    vertical-align:top;
-    width:70%;
-    text-align:left;
-    padding:5px;
-}
-.card-text {
-    display:inline-block;
-}
-
-.my_padding {
-    padding-bottom:25px;
-    border-bottom: 1px solid #FFC107;
-    border-right: 1px solid #FFC107;
-
-}
-.extra_padding {
-    padding-bottom: 50px;
-}
-
-.row.my_padding:hover{
-    -webkit-box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65);
-    -moz-box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65);
-    box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65)
-
-}
-.circle {
-  max-width: 250px;
-max-height: 160px;
-height: auto;
-border-bottom: 2px solid #FFC107;
-}
-
-.more_space_my {
-    margin-top: 50px;
-    margin-bottom: 20px;
-    margin-left:15%;
-}
-.more_space_me {
-    margin-bottom: 40px;
-    margin-left: 6%;
-}
 
 .z-index-nav {
   z-index: 1000;
 }
-
-
-// CARD BOX
-
-.hover {
-       overflow: hidden;
-       position: relative;
-       padding-bottom: 60%;
-       }
-
-       .hover-overlay {
-       width: 100%;
-       height: 100%;
-       position: absolute;
-       top: 0;
-       left: 0;
-       z-index: 90;
-       transition: all 0.4s;
-       }
-
-       .hover img {
-       width: 100%;
-       position: absolute;
-       top: 0;
-       left: 0;
-       transition: all 0.3s;
-       }
-
-       .hover-content {
-       position: relative;
-       z-index: 99;
-       }
-
-
-       // / DEMO 2 ============================== */
-       .hover-2 .hover-overlay {
-         background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
-       }
-
-       .hover-2-title {
-         position: absolute;
-         top: 50%;
-         left: 0;
-         text-align: center;
-         width: 100%;
-         z-index: 99;
-         transition: all 0.3s;
-       }
-
-       .hover-2-description {
-         width: 100%;
-         position: absolute;
-         bottom: 0;
-         opacity: 0;
-         left: 0;
-         text-align: center;
-         z-index: 99;
-         transition: all 0.3s;
-       }
-
-       .hover-2:hover .hover-2-title {
-         transform: translateY(-1.5rem);
-       }
-
-       .hover-2:hover .hover-2-description {
-         bottom: 0.5rem;
-         opacity: 1;
-       }
-
-       .hover-2:hover .hover-overlay {
-         background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
-       }
