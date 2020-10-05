@@ -20,8 +20,8 @@
 
 
 
-            <div><canvas id="myChartVisualizzazioni" width="300" height="200"></canvas></div>
-            <div><canvas id="myChartMessaggio" width="300" height="200"></canvas></div>
+            <div><canvas id="myChartvisualizzazioni" width="300" height="200"></canvas></div>
+            <div><canvas id="myChartmessaggi" width="300" height="200"></canvas></div>
 
             <div id="appartamento" hidden>{{ $apartment->id }}</div>
 

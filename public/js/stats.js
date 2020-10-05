@@ -2,8 +2,8 @@
 
 $( document ).ready(function() {
   // select per la gestione del tempo
-  var stats = 'Visualizzazioni';
-  var messaggio = 'Messaggio';
+  var stats = 'visualizzazioni';
+  var messaggio = 'messaggi';
   printStats(6 ,stats);
   printStats(6 ,messaggio);
 
@@ -25,7 +25,7 @@ $( document ).ready(function() {
         method: 'GET',
         success: function(dataResponse) {
             // NOTE: per il data
-            if (coseDaVisualizzare == 'Visualizzazioni') {
+            if (coseDaVisualizzare == 'visualizzazioni') {
               var gennaio = dataResponse.gennaio.length;
               var febbraio = dataResponse.febbraio.length;
               var marzo = dataResponse.marzo.length;
@@ -38,7 +38,7 @@ $( document ).ready(function() {
               var ottobre = dataResponse.ottobre.length;
               var novembre = dataResponse.novembre.length;
               var dicembre = dataResponse.dicembre.length;
-            } else if (coseDaVisualizzare == 'Messaggio') {
+            } else if (coseDaVisualizzare == 'messaggi') {
               var gennaio = dataResponse.gennaio_messaggio.length;
               var febbraio = dataResponse.febbraio_messaggio.length;
               var marzo = dataResponse.marzo_messaggio.length;
@@ -82,7 +82,7 @@ $( document ).ready(function() {
                 data: {
                     labels: arrayMesiDaPassare.reverse(),
                     datasets: [{
-                        label: 'dati degli ultimi 6 mesi',
+                        label: 'dati degli ultimi ' + numeroMesiDaVisualizzare  +' mesi: ' + coseDaVisualizzare,
                         // backgroundColor: 'rgb(255, 99, 132)',
                         borderColor: 'rgb(255, 99, 132)',
                         data: arrayValoriDaPassare.reverse(),
