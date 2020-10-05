@@ -34,7 +34,7 @@
   background-color: #555;
 }
 .my_nav_color {
-  background: linear-gradient(to right, rgba(23,89,151,1) 10%, rgba(21,98,176,1) 19%, rgba(18,117,230,1) 38%, rgba(0,71,153,1) 73%, rgba(19,70,129,1) 93%, rgba(19,70,129,1) 97%);
+  z-index: 1000;
 }
 
 main {

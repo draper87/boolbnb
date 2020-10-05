@@ -15,11 +15,12 @@
   -ms-flex-align: center;
   align-items: center;
   min-height: 600px;
+  margin-top: -56px;
 }
 
 .hero video {
   position: absolute;
-  z-index: 1;
+  // z-index: 1;
   width: 100%;
   height: 600px;
   margin: 0 auto;
@@ -27,6 +28,12 @@
   left: 0;
   -o-object-fit: cover;
   object-fit: cover;
+
+}
+
+.hero .box_pos {
+  position: absolute;
+  z-index: 1;
 }
 
 .hero .search {

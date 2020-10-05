@@ -9,66 +9,74 @@
 
     <!-- Main Start -->
     <main>
-        <!-- SEARCH BAR -->
-        <section>
-            <div class="container-fluid my_section_padding">
-                <div class="container main-search background_my text-white my_container_spacing_right">
-                    <div class="search_box more_space_my">
-                        <input id="address" type="text" name="address" placeholder="Dove vuoi andare?" value="{{isset($datasearch)? $datasearch : old('address')}}" required>
-                        <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{isset($latitude)? $latitude : old('latitude')}}" hidden>
-                        <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{isset($longitude)? $longitude : old('longitude')}}" hidden>
-                        <button class="btn_search btn btn-warning super_yellow_button" id='bottone'>Search</button>
-                        <ul class="gauge_spacing_search">
-                          <div class="d-inline">
-                              <label for="rooms">Numero stanze:</label>
-                              <input type="range" id="rooms" min="1" max="9" step="1" value="2">
-                              <a id="roomsvalue"></a>
-                          </div>
-                          <div class="d-inline">
-                              <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti:</label>
-                              <input type="range" id="beds" min="1" max="9" step="1" value="1">
-                              <a id="bedsvalue"></a>
-                          </div>
-                          <div class="d-inline">
-                              <label for="kmradius"><i class="fas fa-map-marker-alt option_icon add_red_my"></i> Raggio di ricerca (km):</label>
-                              <input type="range" id="kmradius" min="2" max="200" step="2" value="20">
-                              <a id="kmradiusvalue"></a>
-                          </div>
-                        </ul>
-                        <ul class="my_selection_button_spacing">
-                          <div class="d-inline">
-                              <label for="wifi"><i class="fas fa-wifi extra_icon"></i> Wifi: </label>
-                              <input type="checkbox" id="wifi" value="">
-                          </div>
-                          <div class="d-inline">
-                              <label for="car"><i class="fas fa-parking extra_icon"></i> Posto macchina: </label>
-                              <input type="checkbox" id="car" value="">
-                          </div>
-                          <div class="d-inline">
-                              <label for="piscina"><i class="fas fa-swimmer extra_icon"></i> Piscina </label>
-                              <input type="checkbox" id="piscina" value="">
-                          </div>
-                          <div class="d-inline">
-                              <label for="portineria"><i class="fas fa-concierge-bell extra_icon"></i> Portineria </label>
-                              <input type="checkbox" id="portineria" value="">
-                          </div>
-                          <div class="d-inline">
-                              <label for="sauna"><i class="fas fa-hot-tub extra_icon"></i> Sauna </label>
-                              <input type="checkbox" id="sauna" value="">
-                          </div>
-                          <div class="d-inline">
-                              <label for="vistamare"><i class="fas fa-water"></i> Vista mare </label>
-                              <input type="checkbox" id="vistamare" value="">
-                          </div>
-                        </ul>
-                    </div>
+      <section class="hero hero--video">
+      <div class="container ">
+      <div class="col-12">
+      <div class="search">
 
-                </div>
+      <form action="{{route('search')}}" class="mr-auto" id="form_my">
+        <input id="address" type="text" name="address" placeholder="Dove vuoi andare?" value="{{isset($datasearch)? $datasearch : old('address')}}" required>
+        <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{isset($latitude)? $latitude : old('latitude')}}" hidden>
+        <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{isset($longitude)? $longitude : old('longitude')}}" hidden>
+        <button id='bottone'><i class="fa fa-search"></i></button>
+      </form>
+
+      </div>
+      </div>
+      <div class="search_box search_margin_top box_pos md-10 offset-md-1 font-weight-bold">
+          <ul>
+            <div class="d-inline">
+                <label for="rooms">Numero stanze:</label>
+                <input type="range" id="rooms" min="1" max="9" step="1" value="2">
+                <a id="roomsvalue"></a>
             </div>
-        </section>
+            <div class="d-inline">
+                <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti:</label>
+                <input type="range" id="beds" min="1" max="9" step="1" value="1">
+                <a id="bedsvalue"></a>
+            </div>
+            <div class="d-inline">
+                <label for="kmradius"><i class="fas fa-map-marker-alt option_icon add_red_my"></i> Raggio di ricerca (km):</label>
+                <input type="range" id="kmradius" min="2" max="200" step="2" value="20">
+                <a id="kmradiusvalue"></a>
+            </div>
+          </ul>
+          <ul class="my_selection_button_spacing">
+            <div class="d-inline">
+                <label for="wifi"><i class="fas fa-wifi extra_icon"></i> Wifi: </label>
+                <input type="checkbox" id="wifi" value="">
+            </div>
+            <div class="d-inline">
+                <label for="car"><i class="fas fa-parking extra_icon"></i> Posto macchina: </label>
+                <input type="checkbox" id="car" value="">
+            </div>
+            <div class="d-inline">
+                <label for="piscina"><i class="fas fa-swimmer extra_icon"></i> Piscina </label>
+                <input type="checkbox" id="piscina" value="">
+            </div>
+            <div class="d-inline">
+                <label for="portineria"><i class="fas fa-concierge-bell extra_icon"></i> Portineria </label>
+                <input type="checkbox" id="portineria" value="">
+            </div>
+            <div class="d-inline">
+                <label for="sauna"><i class="fas fa-hot-tub extra_icon"></i> Sauna </label>
+                <input type="checkbox" id="sauna" value="">
+            </div>
+            <div class="d-inline">
+                <label for="vistamare"><i class="fas fa-water"></i> Vista mare </label>
+                <input type="checkbox" id="vistamare" value="">
+            </div>
+          </ul>
+      </div>
+      </div>
+      <video autoplay loop muted>
+      <source src="https://raw.githubusercontent.com/solodev/hero-search-bar/master/images/hero-video.mp4" type="video/mp4">
+      </video>
+      </section>
+        <!-- SEARCH BAR -->
         <!-- RESULT -->
         <section>
-            <div class="lista container extra_padding">
+            <div class="lista container extra_padding margin_top_result">
 
             </div>
         </section>
@@ -96,7 +104,7 @@
 
     <script id="entry-templatepromo" type="text/x-handlebars-template">
     <a href="/apartments/@{{ id }}">
-                <div class="row my_padding">
+                <div class="row my_padding backround_evidence_my">
                     <div class="col-sm-3">
                         <img class="circle" src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
                     </div>
