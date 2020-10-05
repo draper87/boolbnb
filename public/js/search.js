@@ -155,7 +155,7 @@ $(document).ready(function () {
     }
 
     function stampaPagination() {
-        var html = "<ul class=\"pagination justify-content-center align-content-center\"><li class=\"page-item\"><a class=\"page-link previous\" href=\"#\">Indietro</a></li>" + " <li class=\"page-item\"><a class=\"page-link next\" href=\"#\">Avanti</a></li></ul>";
+        var html = "<ul class=\"pagination justify-content-center align-content-center\"><li class=\"page-item\"><a class=\"page-link previous\">Indietro</a></li>" + " <li class=\"page-item\"><a class=\"page-link next\" >Avanti</a></li></ul>";
         $('.lista').append(html);
     }
 
