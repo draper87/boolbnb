@@ -34,54 +34,34 @@
             @endif
         @endforeach
     </div> -->
+
     <main>
-        <!-- JUMBO W SEARCHBAR -->
-        <div class="container-fluid my_remove ">
-          <div class="row">
-            <!-- searcbar position aboslute to carousel-jumbo -->
-            <div class="absolute d-none d-lg-block">
-              <form action="{{route('search')}}" class="form-inline mr-auto">
-                <input class="form-control mr-sm-2" id="address" type="text" name="search" placeholder="Dove vuoi andare?" value="{{old('search')}}" required>
-                  <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" hidden>
-                  <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" hidden>
-{{--                <input class="form-control mr-sm-2" type="text" placeholder="Dove andiamo?" aria-label="Dove andiamo?" name="search">--}}
-                <button class="btn btn-warning" type="submit">Go!</button>
-              </form>
-            </div>
-            <div class="col-md-12 ">
-              <div class="carousel slide relative " data-ride="carousel">
-                <div class="carousel-inner">
-                  <!-- IMG 1 -->
-                  <div class="carousel-item active" data-interval="10000">
-                    <img class="img-fluid" src="{{asset('images/mare.png')}}" alt="">
-                  </div>
-                  <!-- IMG 2 -->
-                  <div class="carousel-item" data-interval="2000">
-                    <img class="img-fluid" src="{{asset('images/montagna.png')}}" alt="">
-                  </div>
-                  <!-- IMG 3 -->
-                  <div class="carousel-item">
-                    <img class="img-fluid" src="{{asset('images/spazio.jpg')}}" alt="">
-                  </div>
-                </div>
-                  <!-- Carousel control hidden -->
-                  <a class="carousel-control-prev" role="button" data-slide="prev">
-                  <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" role="button" data-slide="next">
-                  <span class="sr-only">Next</span>
-                  </a>
-                  <!-- End Carousel control hidden -->
-              </div>
-            </div>
-          </div>
-        </div>
+      <section class="hero hero--video">
+      <div class="container">
+      <div class="col-12">
+      <div class="search">
+
+      <form action="{{route('search')}}" class="mr-auto" id="form_my">
+      <input class="form-control " id="address" type="text" name="search" placeholder="Dove vuoi andare?" value="{{old('search')}}" required>
+      <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" hidden>
+      <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" hidden>
+      <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+
+      </div>
+      </div>
+      </div>
+      <video class="d-lg-block" autoplay loop muted>
+      <source src="https://raw.githubusercontent.com/solodev/hero-search-bar/master/images/hero-video.mp4" type="video/mp4">
+      </video>
+      </section>
+
         <!-- SPONSOR HOUSE -->
         <section>
           <div class="container-fluid relat">
             <h2 class="text-center my_strong title_space_around my_blue_text">IN EVIDENZA</h2>
             <!-- IMAGE CAROUSEL BASE -->
-            <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel">
+            <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel" data-interval="3000">
               <!--CONTROL LEFT-->
               @if(count($evidence_apartments) > 4)
               <div class="controls-top move_me_my left-butt">
@@ -174,7 +154,7 @@
           <div class="container get_away_from_me">
             <hr>
             <h3 class=" text-center my_strong my_blue_text">ALTRE CASE DAI NOSTRI UTENTI</h3>
-            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="2000">
               <div class="carousel-inner" role="listbox">
                 <!--FIRST PAGE-->
                 <div class="carousel-item active">
@@ -239,7 +219,7 @@
         <section class="my_spacing">
           <div class="col-md-12">
             <h2 class="text-center my_strong my_blue_text">CHI SIAMO</h2>
-            <div id="carouselExample" class="carousel slide " data-ride="carousel">
+            <div id="carouselExample" class="carousel slide " data-ride="carousel" data-interval="400">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExample" data-slide-to="0" class="active d-none d-md-block">
                   <img class="rounded-circle" src="{{asset('images/oliver.jpg')}}" alt="First slide">
