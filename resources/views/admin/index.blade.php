@@ -44,7 +44,7 @@
             position: relative;
             background: #333;
             width: 400px;
-            height: 75vh;
+            height: 600px;
             border-radius: 6px;
             padding: 2rem;
             color: #aaa;
