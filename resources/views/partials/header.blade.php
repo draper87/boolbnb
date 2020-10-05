@@ -30,17 +30,23 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->firstname }}
+                            {{-- @dd(count(Auth::user()->apartments)) --}}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('admin.apartments.index') }}">
-                                La tua bacheca
-                            </a>
+
+                            {{-- se l'utente ha almeno un appartamento, mostra nella dropdown bacheca e messaggi --}}
+                            @if (count(Auth::user()->apartments) > 0)
+                                <a class="dropdown-item" href="{{ route('admin.apartments.index') }}">
+                                    La tua bacheca
+                                </a>
+                                <a class="dropdown-item" href="{{ route('admin.message') }}">
+                                    I tuoi messaggi
+                                </a>
+                            @endif
+                            
                             <a class="dropdown-item" href="{{ route('admin.apartments.create') }}">
                                 Inserisci appartamento
-                            </a>
-                            <a class="dropdown-item" href="{{ route('admin.message') }}">
-                                I tuoi messaggi
                             </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
