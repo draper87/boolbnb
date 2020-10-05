@@ -76,14 +76,14 @@
                         <div id="mapid" style="height: 300px; width: 500px"></div>
 {{--                        <a class="btn btn-danger d-flex justify-content-center bottom-img_my" href="...">Contatta l'Host!</a>--}}
                     </div>
-
+                    
                     <div class="text-center">
                         <form action="{{ route('send') }}" method="post">
 
                             @csrf
                             @method('POST')
                             <label for="email" hidden>Email</label>
-                            <input class="form-control" type="email" name="email" placeholder="Email" value="{{old('email')}}" required>
+                            <input class="form-control" type="email" name="email" placeholder="Email" value="{{ (Auth::check()) ? (Auth::user()->email) : (old('email')) }}" required>
 
                             <label for="messagge" hidden>Messaggio</label>
                             <textarea class="form-control" name="messagge" placeholder="Inserisci messaggio" value="{{ old('messagge')}}" required rows="4" cols="50"></textarea>
