@@ -79,7 +79,7 @@
                     </div>
                   <!-- fine indirizzo -->
                   <!-- inizio riga latitudine e longitudine -->
-                  <fieldset disabled>
+              
                     <div class="form-group row">
                       <div class="col-lg-6">
                         <label for="longitude">Longitude</label>
@@ -90,7 +90,7 @@
                         <input class="form-control" type="text" name="latitude" placeholder="latitude" value="{{ isset($apartment->latitude)? $apartment->latitude :old('latitude')}}" required>
                       </div>
                     </div>
-                  </fieldset>
+
                   <!-- fine riga latitudine e longitudine -->
                   <!-- inizio checkbox -->
                   <div class="row">
