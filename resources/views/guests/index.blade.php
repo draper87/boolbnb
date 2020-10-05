@@ -75,24 +75,19 @@
                 @for ($i=0; $i < 4; $i++)
 
                       @if (empty($evidence_apartments[$i]))
-                          <div class="col-md-3" style="float:left">
+                          <div class="col-lg-3 mb-3 mb-lg-0" style="float:left">
                           </div>
                       @else
-                          <div class="col-md-3 my_shadow " style="float:left">
-                              <div class="my_fix my_strong my_blue_text"> IN EVIDENZA <i class="fas fa-medal"></i></div>
-                              <ul class="gallery caption-3">
-                                <li>
-                                  <figure>
-                                  <a href="#">
-                                    <img class="card-img-top relative my_img_max"
-                                         src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="Card image cap">
-                                    <figcaption>
-                                      <h4 class="card-title text-center  text-uppercase">{{$evidence_apartments[$i]->title}}</h4>
-                                      {{-- <a class="btn btn-success spacing_my">Guarda ora</a> --}}
-                                    </figcaption>
-                                  </a>
-                                  </figure>
-                                </li>
+
+                          <div class="col-lg-3 mb-3 mb-lg-0 my_shadow" style="float:left">
+                              <div class="my_fix my_strong my_blue_text "> IN EVIDENZA <i class="fas fa-medal"></i></div>
+                            <div class="hover hover-2 text-white rounded"><img class="card-img-top relative my_img_max" src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="">
+                              <div class="hover-overlay"></div>
+                              <div class="hover-2-content px-5 py-4">
+                                <h3 class="hover-2-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">{{$evidence_apartments[$i]->title}}</span></h3>
+                                <p class="hover-2-description text-uppercase mb-0">{{$evidence_apartments[$i]->address}}</p>
+                              </div>
+                            </div>
                           </div>
 
 
@@ -108,23 +103,19 @@
                   @for ($i=4; $i < 8; $i++)
 
                       @if (empty($evidence_apartments[$i]))
-                          <div class="col-md-3" style="float:left">
+                          <div class="col-lg-3 mb-3 mb-lg-0" style="float:left">
                           </div>
                       @else
-                        <div class="col-md-3 my_shadow " style="float:left">
+          
+                        <div class="col-lg-3 mb-3 mb-lg-0 my_shadow" style="float:left">
                             <div class="my_fix my_strong my_blue_text "> IN EVIDENZA <i class="fas fa-medal"></i></div>
-                            <ul class="gallery caption-3">
-                              <li>
-                                <figure>
-                                <a href="#">
-                                  <img class="card-img-top relative my_img_max"
-                                       src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="Card image cap">
-                                  <figcaption>
-                                    <h4 class="card-title text-center  text-uppercase">{{$evidence_apartments[$i]->title}}</h4>
-                                  </figcaption>
-                                </a>
-                                </figure>
-                              </li>
+                          <div class="hover hover-2 text-white rounded"><img class="card-img-top relative my_img_max" src="{{asset('storage') . '/' . $evidence_apartments[$i]->image_path}}" alt="">
+                            <div class="hover-overlay"></div>
+                            <div class="hover-2-content px-5 py-4">
+                              <h3 class="hover-2-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">{{$evidence_apartments[$i]->title}}</span></h3>
+                              <p class="hover-2-description text-uppercase mb-0">{{$evidence_apartments[$i]->address}}</p>
+                            </div>
+                          </div>
                         </div>
 
 
