@@ -15,7 +15,7 @@
       <div class="search">
 
       <form action="{{route('search')}}" class="mr-auto" id="form_my">
-        <input id="address" type="text" name="address" placeholder="Dove vuoi andare?" value="{{isset($datasearch)? $datasearch : old('address')}}" required>
+        <input id="address" type="text" name="address" placeholder="Dove vuoi andare?" value="{{isset($datasearch)? $datasearch : null}}" required>
         <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{isset($latitude)? $latitude : old('latitude')}}" hidden>
         <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{isset($longitude)? $longitude : old('longitude')}}" hidden>
         <button id='bottone'><i class="fa fa-search"></i></button>
@@ -120,6 +120,8 @@
                     </div>
                 </div></a><br>
     </script>
+
+
     {{--          Fine Sezione relativa ad Handlebars             --}}
 
     {{--  Script relativo ad Algolia  --}}

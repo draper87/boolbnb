@@ -43,7 +43,7 @@ $(document).ready(function () {
     var vistamare;
 
     // se la ricerca parte dalla homepage faccio partire direttamente la chiamata ajax.
-    if ($('#address').val() !== 0) {
+    if ($('#address').val() !== '') {
         latitude = $('#lat-value').val();
         longitude = $('#lng-value').val();
         rooms = $('#rooms').val();
@@ -105,7 +105,7 @@ $(document).ready(function () {
 
     // logica per la numerazione delle pagine
     function numeroPagina(pagina, ultimaPagina) {
-        var currentPage = pagina;
+        let currentPage = pagina;
         if (currentPage < ultimaPagina) {
             var paginaSuccessiva = pagina + 1;
             var paginaIndietro = pagina - 1;
@@ -155,7 +155,7 @@ $(document).ready(function () {
     }
 
     function stampaPagination() {
-        var html = "<a class=\"page-link previous\" href=\"#\">Indietro</a>" + "<a class=\"page-link next\" href=\"#\">Avanti</a>";
+        var html = "<ul class=\"pagination justify-content-center align-content-center\"><li class=\"page-item\"><a class=\"page-link previous\" href=\"#\">Indietro</a></li>" + " <li class=\"page-item\"><a class=\"page-link next\" href=\"#\">Avanti</a></li></ul>";
         $('.lista').append(html);
     }
 
