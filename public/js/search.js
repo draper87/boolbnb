@@ -119,7 +119,7 @@ $(document).ready(function () {
                 chiamaAppartamenti(paginaIndietro);
             });
         }
-        if (currentPage === 1) {
+        if (currentPage === 1 && currentPage !== ultimaPagina) {
             paginaSuccessiva = pagina + 1;
             $(document).on('click', '.next', function (event) {
                 event.preventDefault();
