@@ -6,55 +6,129 @@
 @endsection
 
 @section('content')
-    <h1>Crea nuovo appartamento</h1>
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <form action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
-        @csrf
-        @method('POST')
-        <label for="title">Titolo</label>
-        <input type="text" name="title" placeholder="title" value="{{ old('title')}}" required>
 
-        <label for="rooms">Rooms</label>
-        <input type="number" name="rooms" placeholder="rooms" value="{{ old('rooms')}}" required>
+    <div class="container">
 
-        <label for="beds">Beds</label>
-        <input type="number" name="beds" placeholder="beds" value="{{ old('beds')}}" required>
-
-        <label for="bathrooms">bathrooms</label>
-        <input type="number" name="bathrooms" placeholder="bathrooms" value="{{ old('bathrooms')}}" required>
-
-        <label for="square">square</label>
-        <input type="number" name="square" placeholder="square" value="{{ old('square')}}" required>
-
-        <label for="image_path">image_path</label>
-        <input type="file" name="image_path" placeholder="image_path" accept="image/*" required>
-
-        <label for="address">address</label>
-        <input id="address" type="text" name="address" placeholder="address" value="{{ old('address')}}" required>
-
-        <label for="longitude">Longitude</label>
-        <input id="lng-value" type="text" name="longitude" placeholder="longitude" value="{{ old('longitude')}}" required>
-
-        <label for="latitude">Latitude</label>
-        <input id="lat-value" type="text" name="latitude" placeholder="latitude" value="{{ old('latitude')}}" required>
-
-        @foreach ($facilities as $facility)
-            <div>
-                <input type="checkbox" name="facilities[]" value="{{ $facility->id }}">
-                <span>{{ $facility->facility }}</span>
+    <div class="row">
+      <div class="offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10 offset-xl-1 col-xl-10">
+        <div class="ms_form">
+          <!-- inizio titolo -->
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+                <h1>Inserisci i dati sul locale che vorresti affittare</h1>
+              </div>
+              <!-- In caso di errore -->
+                  @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                    </div>
+                  @endif
+              <!--END - In caso di errore -->
             </div>
-        @endforeach
+          <!-- fine titolo -->
+          <!-- inizio form -->
+          <form action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
+              @csrf
+              @method('POST')
+            <!-- inizio righe titolo e camere -->
+            <div class="form-group row">
+              <div class="col-lg-6">
+                  <label for="title">Titolo</label><br>
+                  <input class="form-control" type="text" name="title" placeholder="Title" value="{{ old('title')}}" required>
+              </div>
+              <div class="col-lg-6">
+                  <label for="rooms">Rooms</label><br>
+                  <input class="form-control" type="number" name="rooms" placeholder="Rooms" value="{{ old('rooms')}}" required>
+              </div>
+            </div>
+            <!-- fine righe titolo e camere -->
+            <!-- inizio righe letti e bagni -->
+            <div class="form-group row">
+              <div class="col-lg-6">
+                  <label for="beds">Beds</label><br>
+                  <input class="form-control" type="number" name="beds" placeholder="Beds" value="{{ old('beds')}}" required>
+              </div>
+              <div class="col-lg-6">
+                  <label for="bathrooms">Bathrooms</label><br>
+                  <input class="form-control" type="number" name="bathrooms" placeholder="Bathrooms" value="{{ old('bathrooms')}}" required>
+              </div>
+            </div>
+            <!-- fine righe letti e bagni -->
+            <!-- inizio input metri quadri -->
+            <div class="form-group row">
+              <div class="col-lg-12">
+                  <label for="square">Square</label><br>
+                  <input class="form-control" type="number" name="square" placeholder="Square" value="{{ old('square')}}" required>
+              </div>
+            </div>
+            <!-- fine input metri quadri -->
+            <!-- inizio input immagine -->
+            <div class="form-group row">
+              <div class="col-lg-12">
+                  <label for="image_path">Scegli l'immagine di percorso</label><br>
+                  <input type="file" name="image_path" placeholder="Image_path" accept="image/*" required>
+              </div>
+            </div>
+            <!-- fine input immagine -->
+            <!-- inizio indirizzo -->
+            <div class="form-group row">
+              <div class="col-lg-12">
+                  <label for="address">Address</label><br>
+                  <input class="form-control" id="address" type="text" name="address" placeholder="Address" value="{{ old('address')}}" required>
+              </div>
+            </div>
+            <!-- fine riga indirizzo -->
+            <!-- inizio riga latitudine e longitudine -->
+            <fieldset disabled>
+              <div class="form-group row">
+                <div class="col-lg-6">
+                    <label for="longitude">Longitude</label><br>
+                    <input class="form-control" id="lng-value" type="text" name="longitude" placeholder="Longitude" value="{{ old('longitude')}}" required>
+                </div>
+                <div class="col-lg-6">
+                    <label for="latitude">Latitude</label><br>
+                    <input class="form-control" id="lat-value" type="text" name="latitude" placeholder="Latitude" value="{{ old('latitude')}}" required>
+                </div>
+              </div>
+            </fieldset>
+            <!-- fine riga latitudine e longitudine -->
+            <!-- inizio check box -->
+            <div class="row">
+              <div class="col-12">
+                <h5>Facilities:</h5>
+              </div>
+            </div>
+            <div class="form-group row">
+                @foreach ($facilities as $facility)
 
-        <input type="submit" value="Invia">
-    </form>
+                  <div class="offset-lg-1 col-lg-3">
+                    <input class="form-check-input" type="checkbox" name="facilities[]" value="{{ $facility->id }}">
+                    <label class="text-capitalize" for="facilities[]">{{ $facility->facility }}</label>
+                  </div>
+
+                @endforeach
+            </div>
+            <!-- fine check-box -->
+            <!-- inizio button -->
+            <div class="form-group row">
+              <div class="offset-lg-10 col-lg-2">
+                <input class="btn btn-success" type="submit" value="Invia i dati">
+              </div>
+            </div>
+            <!-- fine button -->
+          </form>
+          <!-- fine form -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 
     <script>
         (function() {
@@ -112,5 +186,3 @@
     </script>
 
 @endsection
-
-
