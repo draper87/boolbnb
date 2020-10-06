@@ -27,43 +27,68 @@
     <main>
         <!-- DETAIL IMAGE FULL WIDTH -->
         <div class="container-fluid bottom-img_my my_remove">
-            <img class="img-fluid" src="{{asset('storage') . '/' . $apartment->image_path}}" alt="">
+            <div class="apartment-img">
+                <img class="img-fluid" src="{{asset('storage') . '/' . $apartment->image_path}}" alt="">
+            </div>
         </div>
         <div class="main_show">
             <div class="container">
                 <hr>
                 <div class="row">
                     <!-- DESCRIPTION -->
-                    <div class="col-xs-12 col-md-7">
-                        <img class="img_show" src="" alt="">
-                        <h3 class="address-map text-center my_strong my_custom_title">{{$apartment->title}}</h3>
-                        <p class="host_name text-center">HOST: {{$apartment->user->firstname}} {{$apartment->user->lastname}} </p>
-                        <h3 class=" text-center bottom-img_my my_strong">DESCRIZIONE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="col-xs-12 col-md-12 col-lg-7">
+                        <div class="title">
+                            <h3 class="address-map my_strong">{{$apartment->title}}</h3>
+                            <p class="host_name">HOST: {{$apartment->user->firstname}} {{$apartment->user->lastname}} </p>
+                        </div>
+                        <div class="description">
+                            <h4 class="bottom-img_my my_strong">DESCRIZIONE</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
                     </div>
                     <!-- SERVICE AND UTILITY -->
-                    <div class="col-xs-12 col-md-5">
+                    <div class="col-xs-12 col-md-12 col-lg-5">
                         <div class="service_container">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-12 card_box">
-                                        <div class="card_title  bottom-img_my  my_strong"> <h4 class=" text-center">INFO </h4> </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-12 card_box">
+                                        <div class="card_title bottom-img_my my_strong">
+                                            <h5>INFO</h5>
+                                        </div>
                                         <ul class="list_box">
-                                            <li class="list_service"><i class="fas fa-home"></i><span> {{$apartment->square}}</span></li>
-                                            <li class="list_service"><i class="fas fa-door-open"></i> {{$apartment->rooms}}</li>
-                                            <li class="list_service"><i class="fas fa-bed"></i> {{$apartment->beds}}</li>
-                                            <li class="list_service"><i class="fas fa-toilet"></i> {{$apartment->bathrooms}}</li>
+                                            <li class="list_service">
+                                                <span>{{$apartment->square}} mq.</span>
+                                                <i class="fas fa-home"></i>
+                                            </li>
+                                            <li class="list_service">
+                                                <span>{{$apartment->rooms}} stanze</span>
+                                                <i class="fas fa-door-open"></i>
+                                            </li>
+                                            <li class="list_service">
+                                                <span>{{$apartment->beds}} letti</span>
+                                                <i class="fas fa-bed"></i>
+                                            </li>
+                                            <li class="list_service">
+                                                <span>{{$apartment->bathrooms}} bagni</span>
+                                                <i class="fas fa-toilet"></i>
+                                            </li>
                                         </ul>
                                     </div>
-                                    <div class="col-xs-12 col-md-12 card_box">
-                                        <div class="card_title  bottom-img_my  my_strong"> <h4 class=" text-center">SERVIZI </h4> </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-5 offset-md-2 col-lg-12 offset-lg-0 card_box">
+                                        <div class="card_title bottom-img_my my_strong">
+                                            <h5>SERVIZI</h5>
+                                        </div>
                                         <ul class="list_box">
                                             @foreach ($facilities as $facility)
                                                 <li class="list_service">
-                                                    <input  onclick="return false;" type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
-                                                    <span>{{ $facility->facility }}</span>
+                                                    <label class="label_container">
+                                                        {{ $facility->facility }}
+                                                        <input class="checkbox" onclick="return false;" type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -72,12 +97,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-6 container">
-                        <div id="mapid" style="height: 300px; width: 500px"></div>
-{{--                        <a class="btn btn-danger d-flex justify-content-center bottom-img_my" href="...">Contatta l'Host!</a>--}}
+                    <div class="map_container">
+                        <div id="mapid" style="height: 400px; width: 90%"></div>
                     </div>
-                    
-                    <div class="text-center">
+
+                    <div class="send_message">
+                        <h4>CONTATTA L'HOST</h4>
                         <form action="{{ route('send') }}" method="post">
 
                             @csrf
@@ -90,7 +115,7 @@
 
                             <input class="form-control" type="text" name="apartment_id" placeholder="apartment_id" value="{{ $apartment->id }}" hidden>
 
-                            <input class="btn btn-primary mt-1" type="submit" value="Invia">
+                            <input class="btn" type="submit" value="Invia messaggio">
                         </form>
                     </div>
 
