@@ -11,7 +11,8 @@ use Carbon\Carbon;
 
 class SearchController extends Controller
 {
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
 
         $apartments = Apartment::all();
         $now = Carbon::now('Europe/Rome');
@@ -50,10 +51,10 @@ class SearchController extends Controller
 
         // parametri che trasformano il mio raggio espresso in km in gradi longitudinali e latitudinali
         $params = [
-            "maxLat" => $lat + rad2deg($rad/$R),
-            "minLat" => $lat - rad2deg($rad/$R),
-            "maxLon" => $lon + rad2deg(asin($rad/$R) / cos(deg2rad($lat))),
-            "minLon" => $lon - rad2deg(asin($rad/$R) / cos(deg2rad($lat))),
+            "maxLat" => $lat + rad2deg($rad / $R),
+            "minLat" => $lat - rad2deg($rad / $R),
+            "maxLon" => $lon + rad2deg(asin($rad / $R) / cos(deg2rad($lat))),
+            "minLon" => $lon - rad2deg(asin($rad / $R) / cos(deg2rad($lat))),
         ];
 
         // inizializzo la mia query
@@ -96,11 +97,22 @@ class SearchController extends Controller
             });
         }
 
-        $queryApartmentNoPromo->where('rooms', '>=' ,$rooms);
-        $queryApartmentNoPromo->where('beds', '>=' ,$beds);
+        $queryApartmentNoPromo->where('rooms', '>=', $rooms);
+        $queryApartmentNoPromo->where('beds', '>=', $beds);
 
         $queryApartmentNoPromo->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
         $queryApartmentNoPromo->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);
+
+        // Ordino i risultati in base alla distanza dal punto ricercato
+        $queryApartmentNoPromo->selectRaw(
+            "*,
+        ( 6371 * acos( cos( radians(?))
+        * cos( radians( latitude ))
+        * cos( radians( longitude )
+        - radians(?))
+        + sin( radians(?))
+        * sin( radians( latitude )))) AS distance", [$lat, $lon, $lat]);
+        $queryApartmentNoPromo->orderBy('distance', 'asc');
 
         $queryApartmentPromo->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
         $queryApartmentPromo->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);
