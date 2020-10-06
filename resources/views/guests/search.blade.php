@@ -23,51 +23,6 @@
 
       </div>
       </div>
-      <div class="search_box search_margin_top box_pos md-10 offset-md-1 font-weight-bold">
-          <ul>
-            <div class="d-inline">
-                <label for="rooms">Numero stanze:</label>
-                <input type="range" id="rooms" min="1" max="9" step="1" value="2">
-                <a id="roomsvalue"></a>
-            </div>
-            <div class="d-inline">
-                <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti:</label>
-                <input type="range" id="beds" min="1" max="9" step="1" value="1">
-                <a id="bedsvalue"></a>
-            </div>
-            <div class="d-inline">
-                <label for="kmradius"><i class="fas fa-map-marker-alt option_icon add_red_my"></i> Raggio di ricerca (km):</label>
-                <input type="range" id="kmradius" min="2" max="200" step="2" value="20">
-                <a id="kmradiusvalue"></a>
-            </div>
-          </ul>
-          <ul class="my_selection_button_spacing">
-            <div class="d-inline">
-                <label for="wifi"><i class="fas fa-wifi extra_icon"></i> Wifi: </label>
-                <input type="checkbox" id="wifi" value="">
-            </div>
-            <div class="d-inline">
-                <label for="car"><i class="fas fa-parking extra_icon"></i> Posto macchina: </label>
-                <input type="checkbox" id="car" value="">
-            </div>
-            <div class="d-inline">
-                <label for="piscina"><i class="fas fa-swimmer extra_icon"></i> Piscina </label>
-                <input type="checkbox" id="piscina" value="">
-            </div>
-            <div class="d-inline">
-                <label for="portineria"><i class="fas fa-concierge-bell extra_icon"></i> Portineria </label>
-                <input type="checkbox" id="portineria" value="">
-            </div>
-            <div class="d-inline">
-                <label for="sauna"><i class="fas fa-hot-tub extra_icon"></i> Sauna </label>
-                <input type="checkbox" id="sauna" value="">
-            </div>
-            <div class="d-inline">
-                <label for="vistamare"><i class="fas fa-water"></i> Vista mare </label>
-                <input type="checkbox" id="vistamare" value="">
-            </div>
-          </ul>
-      </div>
       </div>
       <video autoplay loop muted>
       <source src="https://raw.githubusercontent.com/solodev/hero-search-bar/master/images/hero-video.mp4" type="video/mp4">
@@ -75,10 +30,60 @@
       </section>
         <!-- SEARCH BAR -->
         <!-- RESULT -->
-        <section>
-            <div class="lista container extra_padding margin_top_result">
+        <section class="clearfix">
+          <div class="container-fluid">
+            <div class="row justify-content-md-center">
+              <div id="tv" class="search_box search_margin_top font-weight-bold col-md-auto text-center">
+                <h3>RICERCA</h3>
+                  <ul>
+                    <div class="">
+                        <label for="rooms">Numero stanze:</label>
+                        <input type="range" id="rooms" min="1" max="9" step="1" value="2">
+                        <a id="roomsvalue"></a>
+                    </div>
+                    <div class="">
+                        <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti:</label>
+                        <input type="range" id="beds" min="1" max="9" step="1" value="1">
+                        <a id="bedsvalue"></a>
+                    </div>
+                    <div class="">
+                        <label for="kmradius"><i class="fas fa-map-marker-alt option_icon add_red_my"></i> Raggio di ricerca (km):</label>
+                        <input type="range" id="kmradius" min="2" max="200" step="2" value="20">
+                        <a id="kmradiusvalue"></a>
+                    </div>
+                  </ul>
+                  <ul class="">
+                    <div class="">
+                        <label for="wifi"><i class="fas fa-wifi extra_icon"></i> Wifi: </label>
+                        <input type="checkbox" id="wifi" value="">
+                    </div>
+                    <div class="">
+                        <label for="car"><i class="fas fa-parking extra_icon"></i> Posto macchina: </label>
+                        <input type="checkbox" id="car" value="">
+                    </div>
+                    <div class="">
+                        <label for="piscina"><i class="fas fa-swimmer extra_icon"></i> Piscina </label>
+                        <input type="checkbox" id="piscina" value="">
+                    </div>
+                    <div class="">
+                        <label for="portineria"><i class="fas fa-concierge-bell extra_icon"></i> Portineria </label>
+                        <input type="checkbox" id="portineria" value="">
+                    </div>
+                    <div class="">
+                        <label for="sauna"><i class="fas fa-hot-tub extra_icon"></i> Sauna </label>
+                        <input type="checkbox" id="sauna" value="">
+                    </div>
+                    <div class="">
+                        <label for="vistamare"><i class="fas fa-water"></i> Vista mare </label>
+                        <input type="checkbox" id="vistamare" value="">
+                    </div>
+                  </ul>
+              </div>
+                <div class="lista container extra_padding margin_top_result offset-md-1 col-{breakpoint}-auto text-white" >
 
+                </div>
             </div>
+          </div>
         </section>
     </main>
     <!-- Main End -->
@@ -88,16 +93,16 @@
     <a href="/apartments/@{{ id }}">
                 <div class="row my_padding">
                     <div class="col-sm-3">
-                        <img class="circle new_rules" src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
+                        <img class="circle" src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
                     </div>
                     <div class="col-sm-9">
-                        <p><b>@{{ title }}</b></p>
-                        <span>Stanze @{{ rooms }} </span>
-                        <span>Letti @{{ beds }} </span>
-                        <span>Bagni @{{ bathrooms }} </span>
-                        <span>Metri quadri @{{ square }} </span>
-                        <span>Stanze @{{ address }} </span>
-                        <span>Stanze @{{ id }} </span>
+                        <p class="text-black"><b>@{{ title }}</b></p>
+                        <span class="text-black">Stanze @{{ rooms }} </span>
+                        <span class="text-black">Letti @{{ beds }} </span>
+                        <span class="text-black">Bagni @{{ bathrooms }} </span>
+                        <span class="text-black">Metri quadri @{{ square }} </span>
+                        <span class="text-black">Stanze @{{ address }} </span>
+                        <span class="text-black">Stanze @{{ id }} </span>
                     </div>
                 </div></a><br>
     </script>
@@ -109,14 +114,14 @@
                         <img class="circle" src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
                     </div>
                     <div class="col-sm-9">
-                        <p><b>@{{ title }}</b></p>
-                        <span>Stanze @{{ rooms }} </span>
-                        <span>Letti @{{ beds }} </span>
-                        <span>IN EVIDENZA</span>
-                        <span>Bagni @{{ bathrooms }} </span>
-                        <span>Metri quadri @{{ square }} </span>
-                        <span>Stanze @{{ address }} </span>
-                        <span>Stanze @{{ id }} </span>
+                        <p class="text-white"><b>@{{ title }}</b></p>
+                        <span class="text-white">Stanze @{{ rooms }} </span>
+                        <span class="text-white">Letti @{{ beds }} </span>
+                        <span class="text-white">IN EVIDENZA</span>
+                        <span class="text-white">Bagni @{{ bathrooms }} </span>
+                        <span class="text-white">Metri quadri @{{ square }} </span>
+                        <span class="text-white">Stanze @{{ address }} </span>
+                        <span class="text-white">Stanze @{{ id }} </span>
                     </div>
                 </div></a><br>
     </script>

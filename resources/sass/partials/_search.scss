@@ -17,55 +17,55 @@
 /* SECTION MAIN ROW */
 
 .card {
-    display:block;
-    width:100%;
-    max-width:800px;
-    margin-bottom: 25px;
+  display:block;
+  width:100%;
+  max-width:800px;
+  margin-bottom: 25px;
 }
-img {
-    border-bottom: 2px solid #FFC107;
+.card img {
+  border-bottom: 2px solid #FFC107;
 }
 .innerLeft {
-    display:inline-block;
-    margin-right:-4px;
-    vertical-align:top;
-    width:30%;
-    text-align:center;
-    padding:5px;
+  display:inline-block;
+  margin-right:-4px;
+  vertical-align:top;
+  width:30%;
+  text-align:center;
+  padding:5px;
 }
 .innerRight {
-    display:inline-block;
-    vertical-align:top;
-    width:70%;
-    text-align:left;
-    padding:5px;
+  display:inline-block;
+  vertical-align:top;
+  width:70%;
+  text-align:left;
+  padding:5px;
 }
 .card-text {
-    display:inline-block;
+  display:inline-block;
 }
 
 .my_padding {
-    padding-bottom:25px;
-    border-bottom: 1px solid #FFC107;
-    border-right: 1px solid #FFC107;
+  padding-bottom:25px;
+  border-bottom: 1px solid #FFC107;
+  border-right: 1px solid #FFC107;
 
 }
 .extra_padding {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .row.my_padding:hover{
-    -webkit-box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65);
-    -moz-box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65);
-    box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65)
+  -webkit-box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65);
+  -moz-box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65);
+  box-shadow: 7px 15px 10px -2px rgba(0,0,0,0.65)
 
 }
 .circle {
-  max-width: 250px;
-max-height: 160px;
-height: auto;
-border-bottom: 2px solid #FFC107;
+  width: 250px;
+  height: 160px;
+  border-bottom: 2px solid #FFC107;
 }
+
 
 .more_space_my {
     margin-top: 50px;
@@ -78,7 +78,8 @@ border-bottom: 2px solid #FFC107;
 }
 
 .search_margin_top {
-  margin-top: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .margin_top_result {
@@ -86,5 +87,18 @@ border-bottom: 2px solid #FFC107;
 }
 
 .backround_evidence_my {
-  background-color: rgb(235,122,145);
+  background-color:#663399;
+}
+#tv {
+  position: relative;
+  width: 350px;
+  height: 400px;
+  background-image: linear-gradient(315deg, #eaf818 0%, #f6fc9c 74%);
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+  box-shadow: 20px 20px rgba(0,0,0,.15);
+  transition: all .4s ease;
+}
+#tv:hover {
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+  box-shadow: 10px 10px rgba(0,0,0,.25);
 }

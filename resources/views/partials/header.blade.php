@@ -16,7 +16,7 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('search') }}">Ricerca <i class="fas fa-search-location "></i></a>
+                    <a class="nav-link" href="{{ route('search') }}">Ricerca <i class="fas fa-search-location text-white"></i></a>
                 </li>
                 @guest
                     <li class="nav-item">

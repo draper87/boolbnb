@@ -4,7 +4,7 @@
 
     <style>
         #bachecajumbo {
-            background: #d51c5e;
+            background-image: linear-gradient(319deg, #663dff 0%, #aa00ff 37%, #cc4499 100%);
             color: whitesmoke;
         }
 
@@ -147,13 +147,13 @@
                     </svg>
 
                     <div class="card__content">
-                        <h1 class="card__title">{{$apartment->title}}</h1>
+                        <h1 class="card__title text-capitalize">{{$apartment->title}}</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolor praesentium at quod autem omnis, amet eaque unde perspiciatis adipisci possimus quam facere illo et quisquam quia earum nesciunt porro.</p>
-                        <span><a class="btn btn-outline-success" href="{{ route('admin.apartments.show' , $apartment->id)}}">Visualizza</a></span><span><a class="btn btn-outline-info" href="{{ route('admin.apartments.edit' , $apartment->id)}}">Modifica</a></span>
+                        <span><a class="btn btn-outline-success" href="{{ route('admin.apartments.show' , $apartment->id)}}"><i class="fas fa-eye"></i></a></span><span><a class="btn btn-outline-info" href="{{ route('admin.apartments.edit' , $apartment->id)}}"><i class="far fa-edit"></i></a></span>
                                 <form action="{{route('admin.apartments.destroy', $apartment)}}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <input class="btn btn-outline-danger" type="submit" name="" value="Elimina">
+                                    <button class="btn btn-outline-danger" type="submit" name="" value="Elimina"><i class="fas fa-skull"></i></button>
                                 </form>
                     </div>
                 </div>
