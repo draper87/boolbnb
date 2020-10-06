@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('head')
     <link rel="stylesheet" href="{{asset('css/paybutton.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -96,14 +97,38 @@
         <main class="text-center">
             <!-- Payment simulation -->
             <section>
-                <div class="container">
+                <div class="container mb-5">
                     <div class="row">
                         <!-- inizio headline -->
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <h1 class="space_my_payment text-gray ms_title_margin mt-3">Tre pacchetti
-                                per mettere subito inevidenza i tuoi risultati di ricerca.</h1>
+                                per mettere subito in evidenza i tuoi risultati di ricerca.</h1>
                         </div>
                         <!-- fine headline -->
+
+                        <!-- Plane description -->
+
+                            <div class="container">
+                                <div class="ms_container_flex">
+                                    @foreach($promos as $promo)
+                                        <div class="ms_flex_item ms_cards">
+                                            <h6 class="ms_position_relative"><span>{{$promo->name}}</span></h6>
+                                            <div class="pb-3 pt-3">
+                                                <sup>€</sup>
+                                                {{$promo->price}}
+                                            </div>
+                                            <ul class="text-left">
+                                                <li><i class="far fa-check-circle pt-2"></i> {{$promo->timing}} ore in evidenza</li>
+                                                <li><i class="far fa-check-circle pt-2"></i> Supporto Email</li>
+                                                <li><i class="far fa-check-circle pt-2"></i> Supporto Chat</li>
+                                                <li><i class="far fa-check-circle pt-2"></i> Assistenza telefonica</li>
+                                            </ul>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
+                        <!-- Plane description -->
 
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
@@ -114,9 +139,9 @@
 
 
                                 <div class="form-row justify-content-center align-content-center">
-                                    <div class="col-sm-12 col-md-12 col-lg-6 mt-5">
+                                    <div class="col-sm-12 col-md-12 col-lg-6 mt-1">
                                         <!-- select promo -->
-                                        <label>Seleziona promo</label><br>
+                                        <label></label><br>
                                         <select id="promo_selected" name="promo_selected"
                                                 class="custom-select mb-2">
                                             <option default="">Seleziona promo</option>
@@ -131,7 +156,7 @@
                                             <span class="input-label">Importo</span>
                                             <div class="input-wrapper amount-wrapper">
                                                 <input class="form-control" id="amount" name="amount" type="tel"
-                                                       min="1" placeholder="Amount" value="" readonly>
+                                                       min="1" placeholder="Importo" value="" readonly>
                                             </div>
                                         </label>
 
@@ -171,96 +196,6 @@
                 </div>
             </section>
 
-            <hr>
-
-            <!-- Plane description -->
-            <section>
-                <div class="container">
-                    <div class="ms_container_flex">
-                        @foreach($promos as $promo)
-                            <div class="ms_flex_item ms_cards">
-                                <h2 class=" font-weight-bold ms_promo_decor text-center ms_position_relative"><span
-                                        class="ms_position_centered">{{$promo->name}}h</span></h2>
-                                <p class="text-center">Metti in evidenza il <br> tuo appartamento
-                                    per<br> {{$promo->timing}} ore</p>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </section>
-            <!-- CUSTOMER REVIEVV -->
-            <section class="ms_section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="text-center carousel-title space_my_h1 font-weight-bold text-gray ms_title_margin">
-                                Ecco cosa dicono i nostri clienti:</h1>
-                        </div>
-                        <div class="col-md-12">
-                            <div id="carouselExample" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="row">
-                                            <div class="col-md-2 offset-md-2">
-                                                <img class="rounded-circle" src="icon.png" alt="First slide">
-                                            </div>
-                                            <div class="col-md-6 text-left">
-                                                <blockquote class="blockquote">
-                                                    “I'm the one that's got to die when it's time for me to die, so let
-                                                    me live my life the way I want to.”
-                                                </blockquote>
-                                                <small>
-                                                    -Jimi Hendrix
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="row">
-                                            <div class="col-md-2 offset-md-2">
-                                                <img class="rounded-circle" src="icon3.jpg" alt="First slide">
-                                            </div>
-                                            <div class="col-md-6 text-left">
-                                                <blockquote class="blockquote">
-                                                    "There are no limits, you are only limited by however far you want
-                                                    to be limited"
-                                                </blockquote>
-                                                <small>
-                                                    -Chuck Schuldiner
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="row">
-                                            <div class="col-md-2 offset-md-2">
-                                                <img class="rounded-circle" src="icon2.jpg" alt="First slide">
-                                            </div>
-                                            <div class="col-md-6 text-left">
-                                                <blockquote class="blockquote">
-                                                    "We live to avoid death. We exist to avoid nonexistence."
-                                                </blockquote>
-                                                <small>
-                                                    -Peter Steele
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Carousel control -->
-                                <a class="carousel-control-prev my_orange" href="#carouselExample" role="button"
-                                   data-slide="prev">
-                                    <i class="fas fa-chevron-circle-left fa-2x"></i>
-                                </a>
-                                <a class="carousel-control-next my_orange" href="#carouselExample" role="button"
-                                   data-slide="next">
-                                    <i class="fas fa-chevron-circle-right fa-2x"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
         <!-- Main End -->
 
