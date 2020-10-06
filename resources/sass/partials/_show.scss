@@ -1,4 +1,9 @@
 main {
+    @media (max-width: 991.98px) {
+        .row {
+            width: auto;
+        }
+    }
     .apartment-img {
         width: 60%;
         margin: 50px auto 0;
@@ -34,6 +39,12 @@ main {
         }
         .description {
             padding: 40px 0;
+
+            h4 {
+                padding: 5px 0;
+                border-bottom: 2px solid lightgray;
+
+            }
         }
         .service_container {
             width: 60%;
