@@ -28,28 +28,28 @@
         }
 
         .bacheca {
-            width: 100%;
-            margin: 0 auto;
-            display: inline-flex;
-            justify-content: center;
-            align-content: space-between;
-            flex-wrap: wrap;
+          margin: 0 auto;
+          display: inline-flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+
         }
         .bacheca span:first-of-type {
             padding-right: 3px;
         }
 
         .card-bacheca {
-            margin: 0 20px 20px 0;
-            position: relative;
-            background: #333;
-            width: 400px;
-            height: 600px;
-            border-radius: 6px;
-            padding: 2rem;
-            color: #aaa;
-            box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
-            overflow: hidden;
+          margin-bottom: 20px;
+          position: relative;
+          background: #333;
+          width: 400px;
+          height: 600px;
+          border-radius: 6px;
+          padding: 2rem;
+          color: #aaa;
+          box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+          overflow: hidden;
+
         }
         .card span {
             padding-right: 1em;
@@ -60,12 +60,13 @@
         .card__title {
             color: white;
             margin-top: 0;
-            font-weight: 800;
+            font-size: 25px;
             letter-spacing: 0.01em;
         }
         .card__content {
             margin-top: -1rem;
             opacity: 0;
+            font-size: 18px;
             animation: ContentFadeIn .8s 1.6s forwards;
         }
         .card__svg {
@@ -83,7 +84,11 @@
                 opacity: 1;
             }
         }
-
+        @media screen and (min-device-aspect-ratio: 21/9) {
+                    .card-bacheca {
+                      height: 650px;
+                    }
+                }
 
 
     </style>
