@@ -57,9 +57,8 @@
         <!-- SPONSOR HOUSE -->
         <section>
           <div class="container-fluid relat">
-            <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing other_spa title_space_around ">IN EVIDENZA</h3></div>
             <!-- IMAGE CAROUSEL BASE -->
-            <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around" data-ride="carousel" data-interval="3000">
+            <div id="multi-item-example" class="carousel slide carousel-multi-item title_space_around my_padding_evidence_x" data-ride="carousel" data-interval="3000">
               <!--CONTROL LEFT-->
               @if(count($evidence_apartments) > 4)
               <div class="controls-top move_me_my left-butt">
@@ -142,7 +141,67 @@
           <div class="container get_away_from_me">
 
             <div class="wrapper"><h3 class=" text-center my_strong my_blue_text h3_my_spacing other_spa ">ALTRE CASE DAI NOSTRI UTENTI</h3></div>
-            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="2000">
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="15000">
+              <div class="carousel-inner" role="listbox">
+                <!--FIRST PAGE-->
+                <div class="carousel-item active">
+
+                    @for ($i=0; $i < 4; $i++)
+                      @if (empty($no_promo_apartments[$i]))
+                          <div class="col-md-3" style="float:left">
+                          </div>
+                      @else
+                        <div class="col-md-3  my_shadow " style="float:left">
+                            <ul class="gallery caption-3">
+                              <li>
+                                <figure>
+                                <a href="#">
+                                  <img class="random_user_house_img"
+                                       src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
+                                  <figcaption>
+                                  </figcaption>
+                                </a>
+                                </figure>
+                              </li>
+                            </ul>
+                        </div>
+                      @endif
+                    @endfor
+
+                </div>
+                <!--END FIRST PAGE-->
+
+                <!--SECOND PAGE-->
+                <div class="carousel-item">
+
+                    @for ($j=4; $j < 8; $j++)
+                      @if (empty($no_promo_apartments[$j]))
+                          <div class="col-md-3 " style="float:left">
+                          </div>
+                      @else
+                        <div class="col-md-3 my_shadow " style="float:left">
+                            <ul class="gallery caption-3">
+                              <li>
+                                <figure>
+                                <a href="#">
+                                  <img class="random_user_house_img"
+                                       src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
+                                  <figcaption>
+                                  </figcaption>
+                                </a>
+                                </figure>
+                              </li>
+                            </ul>
+                        </div>
+                      @endif
+                    @endfor
+
+
+                </div>
+                <!--END SECOND PAGE-->
+              </div>
+            </div>
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="12000">
               <div class="carousel-inner" role="listbox">
                 <!--FIRST PAGE-->
                 <div class="carousel-item active">
@@ -210,15 +269,7 @@
         <!-- ABOUT US -->
         <section class="my_spacing">
           <div class="col-md-12">
-          <div class="box get_away_from_me ">
-            <div class="inner">
-              <span>CHI SIAMO</span>
-            </div>
-            <div class="inner">
-              <span>CHI SIAMO</span>
-            </div>
-          </div>
-            <div id="carouselExample" class="carousel slide " data-ride="carousel" data-interval="400">
+            <div id="carouselExample" class="carousel slide custom_we_are" data-ride="carousel" data-interval="7500">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExample" data-slide-to="0" class="active d-none d-md-block">
                   <img class="rounded-circle" src="{{asset('images/oliver.jpg')}}" alt="First slide">
@@ -237,7 +288,7 @@
                 </li>
               </ol>
 
-            <div class="carousel-inner">
+            <div class="carousel-inner we_are_padding">
               <div class="carousel-item active">
                 <blockquote class="blockquote">
                 OLIVER BENOIT
