@@ -1,0 +1,187 @@
+main {
+    .apartment-img {
+        width: 60%;
+        margin: 50px auto 0;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .apartment-img {
+            width: 100%;
+            margin: 50px auto 0;
+
+            img {
+                border-radius: 10px;
+            }
+        }
+    }
+    .main_show {
+        hr {
+            margin: 50px;
+            background-color: lightgray;
+        }
+        .title {
+            h3 {
+                padding: 5px 0;
+                border-bottom: 2px solid lightgray;
+
+            }
+            .host_name {
+                margin: 0;
+            }
+        }
+        .description {
+            padding: 40px 0;
+        }
+        .service_container {
+            width: 60%;
+            margin-left: auto;
+            text-align: right;
+            font-size: 16px;
+
+            @media screen and (max-width: 992px) {
+                width: 100%;
+            }
+            .card_box {
+                padding: 10px 20px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                border: 2px solid lightgray;
+                box-shadow: 10px 10px 26px -8px rgba(0,0,0,0.75);
+
+                .card_title {
+                    h5 {
+                        margin: 0;
+                    }
+                }
+                .list_box {
+                    margin: 0;
+
+                    .list_service {
+                        padding: 5px 0;
+                    }
+
+                    i {
+                        width: 30px;
+                        color: rebeccapurple;
+                        font-size: 20px;
+                        text-align: center;
+                    }
+                    .label_container {
+                        display: block;
+                        position: relative;
+                        padding-right: 30px;
+                        margin-bottom: 12px;
+                        cursor: pointer;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                    }
+
+                    /* Hide the browser's default checkbox */
+                    .label_container input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                    }
+
+                    /* Create a custom checkbox */
+                    .checkmark {
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                        height: 20px;
+                        width: 20px;
+                        background-color: #eee;
+                        border: 1px solid rebeccapurple;
+                    }
+
+                    /* On mouse-over, add a grey background color */
+                    .label_container:hover input ~ .checkmark {
+                        background-color: #ccc;
+                    }
+
+                    /* When the checkbox is checked, add a rebeccapurple background */
+                    .label_container input:checked ~ .checkmark {
+                        background-color: rebeccapurple;
+                    }
+
+                    /* Create the checkmark/indicator (hidden when not checked) */
+                    .checkmark:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+
+                    /* Show the checkmark when checked */
+                    .label_container input:checked ~ .checkmark:after {
+                        display: block;
+                    }
+
+                    /* Style the checkmark/indicator */
+                    .label_container .checkmark:after {
+                        left: 7px;
+                        top: 3.5px;
+                        width: 5px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+
+        }
+        .map_container {
+            width: 100%;
+            padding-top: 50px;
+            margin-top: 30px;
+            border-top: 2px solid lightgray;
+            border-bottom: 2px solid lightgray;
+
+            #mapid {
+                margin: auto;
+                margin-bottom: 50px;
+            }
+        }
+        .send_message {
+            margin: auto;
+            padding: 40px 0;
+
+            h4 {
+                border-bottom: 2px solid lightgray;
+            }
+            form {
+                padding: 20px 0;
+
+                input,
+                textarea {
+                    margin-bottom: 20px;
+                    border-color: rebeccapurple;
+                }
+
+                .btn {
+                    width: 100%;
+                    color: rebeccapurple;
+                    font-weight: bold;
+                    border: 2px solid rebeccapurple;
+
+                    &:hover {
+                        color: #fff;
+                        background-color: rebeccapurple;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
