@@ -9,6 +9,7 @@ use App\Message;
 use App\Facility;
 use Carbon\Carbon;
 use App\Stat;
+use Session;
 
 class ApartmentController extends Controller
 {
@@ -44,10 +45,25 @@ class ApartmentController extends Controller
     public function show(Apartment $apartment) {
 
         $facilities = Facility::all();
+        $stats = Stat::where('apartment_id', $apartment->id)->get();
 
-        $new_stat = new Stat();
-        $new_stat->apartment_id = $apartment->id;
-        $new_stat->save();
+        // prendo la sessione
+        $currrentSession = session()->getId();
+        $permessoCreazioneVisita = true;
+        //cicclo le stat dell'appartamento e se c'è una sessione uguale a quella di ora nego il permesso
+        foreach ($apartment->stats as $stat) {
+          if ($stat->session == $currrentSession) {
+            $permessoCreazioneVisita = false;
+          }
+        }
+        if ($permessoCreazioneVisita == true) {
+          $new_stat = new Stat();
+          $new_stat->apartment_id = $apartment->id;
+          $new_stat->session = $currrentSession;
+          $new_stat->save();
+        }
+
+
         return view('guests.show', compact('apartment','facilities'));
     }
 
