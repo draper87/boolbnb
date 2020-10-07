@@ -9,21 +9,19 @@
 
 
     <style>
-        .contenitore-y {
-
-
-        }
         .contenitore-x {
             background-color: #e9edf5;
 
         }
-
         h4 {
-            color: #031b4e;
+            color: #031b4e; !important;
             font-size: 32px !important;
             font-weight: bold !important;
         }
 
+        h3 {
+            color: white !important;
+        }
     </style>
 
 @endsection
