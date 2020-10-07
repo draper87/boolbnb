@@ -12,58 +12,116 @@
 
 @section('content')
 
-
     <main>
-      <div class="container-fluid ">
-        <img class="img-fluid" src="{{asset('storage') . '/' . $apartment->image_path}}" alt="appartamento">
-      </div>
-        <div class="container text-center">
-            <div class="d-inline">
-              <ul class="d-inline">
-
-                <li>{{$apartment->title}}</li>
-                <li>Camere: {{$apartment->rooms}}</li>
-                <li>Letti: {{$apartment->beds}}</li>
-                <li>Bagni: {{$apartment->bathrooms}}</li>
-                <li>Metri quadri: {{$apartment->square}}</li>
-                <li>Indirizzo: {{$apartment->address}}</li>
-              </ul>
+        <div class="container-fluid bottom-img_my my_remove">
+            <div class="apartment-img">
+                <img class="img-fluid" src="{{asset('storage') . '/' . $apartment->image_path}}" alt="">
             </div>
-
-            <div class="d-inline">
-              <ul>
-              <li>servizi:
-                @foreach ($facilities as $facility)
-                    <div class="d-inline">
-                        <input onclick="return false;" type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
-                        <span>{{ $facility->facility }}</span>
+        </div>
+        <div class="main_show">
+            <div class="container">
+                <hr>
+                <div class="row">
+                    <!-- DESCRIPTION -->
+                    <div class="col-xs-12 col-md-12 col-lg-7">
+                        <div class="title">
+                            <h3 class="address-map my_strong">{{$apartment->title}}</h3>
+                            <p class="host_name">HOST: {{$apartment->user->firstname}} {{$apartment->user->lastname}} </p>
+                        </div>
+                        <div class="description">
+                            <h4 class="bottom-img_my my_strong">DESCRIZIONE</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
                     </div>
-                @endforeach
-              </li>
-            </ul>
+                    <!-- SERVICE AND UTILITY -->
+                    <div class="col-xs-12 col-md-12 col-lg-5">
+                        <div class="service_container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-12 card_box">
+                                        <div class="card_title bottom-img_my my_strong">
+                                            <h5>INFO</h5>
+                                        </div>
+                                        <ul class="list_box">
+                                            <li class="list_service">
+                                                <span>{{$apartment->square}} mq.</span>
+                                                <i class="fas fa-home"></i>
+                                            </li>
+                                            <li class="list_service">
+                                                <span>{{$apartment->rooms}} stanze</span>
+                                                <i class="fas fa-door-open"></i>
+                                            </li>
+                                            <li class="list_service">
+                                                <span>{{$apartment->beds}} letti</span>
+                                                <i class="fas fa-bed"></i>
+                                            </li>
+                                            <li class="list_service">
+                                                <span>{{$apartment->bathrooms}} bagni</span>
+                                                <i class="fas fa-toilet"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-5 offset-md-2 col-lg-12 offset-lg-0 card_box">
+                                        <div class="card_title bottom-img_my my_strong">
+                                            <h5>SERVIZI</h5>
+                                        </div>
+                                        <ul class="list_box">
+                                            @foreach ($facilities as $facility)
+                                                <li class="list_service">
+                                                    <label class="label_container">
+                                                        {{ $facility->facility }}
+                                                        <input class="checkbox" onclick="return false;" type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 text-center options">
+                        <a class="btn" href="{{ route('admin.apartments.edit' , $apartment->id) }}">
+                            Modifica <i class="far fa-edit"></i>
+                        </a>
+                        <form action="{{route('admin.apartments.destroy', $apartment)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn" type="submit" value="Elimina">Elimina <i class="fas fa-skull"></i></button>
+                        </form>
+                    </div>
+                    <div class="map_container">
+                        <div id="mapid" style="height: 400px; width: 90%"></div>
+                    </div>
+                    <div class="col-lg-12 text-center options">
+                        <a class="btn" href="{{ route('admin.stat_show', $apartment) }}">
+                            Visualizza Statistiche
+                        </a>
+                        <a class="btn" href="{{ route('admin.promo', $apartment) }}">
+                            Sponsorizza
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <a href="{{ route('admin.stat_show', $apartment) }}"><button type="button" class="btn btn-success">Visualizza Statistiche</button></a>
-            <a href="{{ route('admin.promo', $apartment) }}"><button type="button" class="btn btn-info">Sponsorizza</button></a>
-
-            <div id="mapid" style="height: 300px; width: 500px"></div>
-
-            <script>
-                var map = L.map('mapid', {
-                    center: [{{$apartment->latitude}}, {{$apartment->longitude}}],
-                    zoom: 12
-                });
-
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                }).addTo(map);
-
-                L.marker([{{$apartment->latitude}}, {{$apartment->longitude}}]).addTo(map)
-                    .bindPopup('{{$apartment->title}}')
-                    .openPopup();
-            </script>
-
-
         </div>
     </main>
 
+    <script>
+        var map = L.map('mapid', {
+            center: [{{$apartment->latitude}}, {{$apartment->longitude}}],
+            zoom: 12
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        }).addTo(map);
+
+        L.marker([{{$apartment->latitude}}, {{$apartment->longitude}}]).addTo(map)
+            .bindPopup('{{$apartment->title}}')
+            .openPopup();
+    </script>
 @endsection
