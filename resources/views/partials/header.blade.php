@@ -70,5 +70,6 @@
       </div>
     </div>
   </nav>
+  <button id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 </header>
 <!-- Header End -->
