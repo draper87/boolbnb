@@ -6,30 +6,105 @@
                 integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
 
         <style>
+
+            a, a:hover,a:visited, a:focus, a:link {
+                text-decoration: none !important;
+            }
             .contenitore {
                 display: flex;
             }
             .custom-box {
                 width: 100%;
-                height: 500px;
-                border: 1px solid white;
+                height: 700px;
             }
             .search-nav {
                 width: 40%;
-                display: flex;
-                justify-content: center;
-                align-content: center;
+                /*background-color: #0c5460;*/
+                min-width: 260px;
+                padding: 20px 0 0 20px;
+                /*display: flex;*/
             }
             .risultati {
                 overflow-y: scroll;
             }
 
             .card_box {
-                padding: 10px 20px;
-                margin-bottom: 25px;
+                display: flex;
+                padding-bottom: 25px;
+                padding-top: 25px;
+                /*background-color: red;*/
+                justify-content: space-around;
                 /*border-radius: 10px;*/
-                border: 2px solid rebeccapurple;
-                box-shadow: 10px 10px 26px -8px rgba(0, 0, 0, 0.75);
+                border-bottom: 1px solid lightgray;
+                /*box-shadow: 10px 10px 26px -8px rgba(0, 0, 0, 0.75);*/
+            }
+
+            .immagine {
+                flex-basis: 28%;
+
+            }
+
+            .testo {
+                margin: 0;
+                flex-basis: 68%;
+                position: relative;
+                color: #3c3c3c !important;
+            }
+
+            .lista {
+                /*background-color: #0c5460;*/
+            }
+
+            /*.lista:first-child {*/
+            /*    padding-top: 25px;*/
+            /*}*/
+
+            .hero {
+                background-image: url("images/sfondo.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .hero--video {
+                min-height: 300px !important;
+            }
+
+            .numeroinput {
+                display: inline-block;
+                text-align: center;
+                background-color: #0075ff;
+                border: 3px solid #0075ff;
+                color: white;
+                border-radius: 50%;
+                padding: 5px;
+                height: 30px;
+                width: 30px;
+                line-height: 16px;
+                text-decoration: none;
+            }
+
+            .page-link {
+                cursor:pointer;
+            }
+
+            .badge-dorato {
+                float: right;
+                color: white;
+                opacity: 0.9;
+                top: 0%;
+                background-color: #FFC107;
+                padding: 2px 5px 0px;
+                border-bottom-left-radius: 8px;
+            }
+
+            p {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+
+            .pagination {
+                margin-top: 15px;
             }
 
 
@@ -55,9 +130,9 @@
       </div>
       </div>
       </div>
-      <video autoplay loop muted>
-      <source src="https://raw.githubusercontent.com/solodev/hero-search-bar/master/images/hero-video.mp4" type="video/mp4">
-      </video>
+{{--      <video autoplay loop muted>--}}
+{{--      <source src="https://raw.githubusercontent.com/solodev/hero-search-bar/master/images/hero-video.mp4" type="video/mp4">--}}
+{{--      </video>--}}
       </section>
         <!-- SEARCH BAR -->
         <!-- RESULT -->
@@ -122,50 +197,51 @@
         <div class="contenitore">
             <div class="custom-box search-nav">
                 <div class="container-fluid">
-                    <div class="row justify-content-md-center">
-                        <div id="tv" class="search_box col-md-auto text-center">
+                    <div class="row">
+                        <div id="tv" class="search_box col-md-auto">
                             <h3>RICERCA</h3>
                             <ul>
                                 <div class="">
-                                    <label for="rooms">Numero stanze:</label>
-                                    <input type="range" id="rooms" min="1" max="9" step="1" value="2">
-                                    <a id="roomsvalue"></a>
+                                    <label for="rooms"><i class="fas fa-door-open"></i>Numero stanze</label>
+                                    <div><input type="range" id="rooms" min="1" max="9" step="1" value="2"><span class="numeroinput" id="roomsvalue"></span></div>
+
                                 </div>
                                 <div class="">
-                                    <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti:</label>
-                                    <input type="range" id="beds" min="1" max="9" step="1" value="1">
-                                    <a id="bedsvalue"></a>
+                                    <label for="beds"><i class="fas fa-bed option_icon"></i>Numero letti</label>
+                                    <div>                                    <input type="range" id="beds" min="1" max="9" step="1" value="1">
+                                        <a id="bedsvalue"></a></div>
+
                                 </div>
                                 <div class="">
-                                    <label for="kmradius"><i class="fas fa-map-marker-alt option_icon add_red_my"></i> Raggio di ricerca (km):</label>
-                                    <input type="range" id="kmradius" min="2" max="200" step="2" value="20">
-                                    <a id="kmradiusvalue"></a>
+                                    <label for="kmradius"><i class="fas fa-map-marker-alt option_icon add_red_my"></i>Raggio di ricerca (km)</label>
+                                    <div><input type="range" id="kmradius" min="2" max="200" step="2" value="20">
+                                        <a id="kmradiusvalue"></a></div>
                                 </div>
                             </ul>
                             <ul class="">
                                 <div class="">
-                                    <label for="wifi"><i class="fas fa-wifi extra_icon"></i> Wifi: </label>
                                     <input type="checkbox" id="wifi" value="">
+                                    <label for="wifi">Wifi <i class="fas fa-wifi extra_icon"></i></label>
                                 </div>
                                 <div class="">
-                                    <label for="car"><i class="fas fa-parking extra_icon"></i> Posto macchina: </label>
                                     <input type="checkbox" id="car" value="">
+                                    <label for="car">Posto macchina <i class="fas fa-parking extra_icon"></i></label>
                                 </div>
                                 <div class="">
-                                    <label for="piscina"><i class="fas fa-swimmer extra_icon"></i> Piscina </label>
                                     <input type="checkbox" id="piscina" value="">
+                                    <label for="piscina">Piscina <i class="fas fa-swimmer extra_icon"></i></label>
                                 </div>
                                 <div class="">
-                                    <label for="portineria"><i class="fas fa-concierge-bell extra_icon"></i> Portineria </label>
                                     <input type="checkbox" id="portineria" value="">
+                                    <label for="portineria">Portineria <i class="fas fa-concierge-bell extra_icon"></i></label>
                                 </div>
                                 <div class="">
-                                    <label for="sauna"><i class="fas fa-hot-tub extra_icon"></i> Sauna </label>
                                     <input type="checkbox" id="sauna" value="">
+                                    <label for="sauna">Sauna <i class="fas fa-hot-tub extra_icon"></i></label>
                                 </div>
                                 <div class="">
-                                    <label for="vistamare"><i class="fas fa-water"></i> Vista mare </label>
                                     <input type="checkbox" id="vistamare" value="">
+                                    <label for="vistamare">Vista mare <i class="fas fa-water"></i></label>
                                 </div>
                             </ul>
                         </div>
@@ -184,37 +260,35 @@
     {{--          Sezione relativa ad Handlebars             --}}
     <script id="entry-templatenopromo" type="text/x-handlebars-template">
     <a href="/apartments/@{{ id }}">
-                <div class="row my_padding card_box">
-                    <div class="col-sm-3">
+                <div class="row card_box">
+                    <div class="immagine">
                         <img class="circle2" src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
                     </div>
-                    <div class="col-sm-9">
+                    <div class="testo">
                         <p class="text-black"><b>@{{ title }}</b></p>
-                        <span class="text-black">Stanze @{{ rooms }} </span>
-                        <span class="text-black">Letti @{{ beds }} </span>
-                        <span class="text-black">Bagni @{{ bathrooms }} </span>
-                        <span class="text-black">Metri quadri @{{ square }} </span>
-                        <span class="text-black">Stanze @{{ address }} </span>
-                        <span class="text-black">Stanze @{{ id }} </span>
+                        <div><span class=""><i class="fas fa-door-open"></i> @{{ rooms }} </span></div>
+                        <div><span class=""><i class="fas fa-bed option_icon"></i> @{{ beds }} </span></div>
+                        <div><span class=""><i class="fas fa-toilet"></i> @{{ bathrooms }} </span></div>
+                        <div><span class=""><i class="fas fa-home""></i> @{{ square }} m<sup>2</sup></span></div>
+                        <div><span class="">@{{ address }} </span></div>
                     </div>
                 </div></a>
     </script>
 
     <script id="entry-templatepromo" type="text/x-handlebars-template">
     <a href="/apartments/@{{ id }}">
-                <div class="row my_padding backround_evidence_my card_box">
-                    <div class="col-sm-3">
+                <div class="row backround_evidence_my card_box">
+                    <div class="immagine">
                         <img class="circle" src="{{asset('storage')}}/@{{image_path}}" alt="appartamento">
                     </div>
-                    <div class="col-sm-9">
+                    <div class="testo">
+                        <span class="badge-dorato my_strong my_blue_text">IN EVIDENZA<i class="fas fa-medal"></i></span>
                         <p class=""><b>@{{ title }}</b></p>
-                        <span class="">Stanze @{{ rooms }} </span>
-                        <span class="">Letti @{{ beds }} </span>
-                        <span class="">IN EVIDENZA</span>
-                        <span class="">Bagni @{{ bathrooms }} </span>
-                        <span class="">Metri quadri @{{ square }} </span>
-                        <span class="">Stanze @{{ address }} </span>
-                        <span class="">Stanze @{{ id }} </span>
+                        <div><span class=""><i class="fas fa-door-open"></i> @{{ rooms }} </span></div>
+                        <div><span class=""><i class="fas fa-bed option_icon"></i> @{{ beds }} </span></div>
+                        <div><span class=""><i class="fas fa-toilet"></i> @{{ bathrooms }} </span></div>
+                        <div><span class=""><i class="fas fa-home""></i> @{{ square }} m<sup>2</sup></span></div>
+                        <div><span class="">@{{ address }} </span></div>
                     </div>
                 </div></a>
     </script>
