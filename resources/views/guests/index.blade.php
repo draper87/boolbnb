@@ -140,7 +140,7 @@
 
         <!-- OTHER HOUSE SECTION -->
         <div class="contenitore-x pt-5 pb-5">
-            <div class="container  ">
+            <div class="container">
 
                 <h4 class="text-center">Altri appartamenti che potrebbero interessarvi</h4>
                 <div id="multi-item-example" class="carousel slide carousel-multi-item mt-5" data-ride="carousel" data-interval="2000">
@@ -204,6 +204,7 @@
                     </div>
                 </div>
 
+                @if(count($no_promo_apartments) > 8)
                 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="2000">
                     <div class="carousel-inner" role="listbox">
                         <!--FIRST PAGE-->
@@ -234,36 +235,39 @@
                         </div>
                         <!--END FIRST PAGE-->
 
-                        <!--SECOND PAGE-->
-                        <div class="carousel-item">
+                        @if(count($no_promo_apartments) > 12)
+                            <!--SECOND PAGE-->
+                                <div class="carousel-item">
 
-                            @for ($i=12; $i < 16; $i++)
-                                @if (empty($no_promo_apartments[$i]))
-                                    <div class="col-md-3 " style="float:left">
-                                    </div>
-                                @else
-                                    <div class="col-md-3 my_shadow " style="float:left">
-                                        <ul class="gallery caption-3">
-                                            <li>
-                                                <figure>
-                                                    <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
-                                                        <img class="random_user_house_img"
-                                                             src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
-                                                        <figcaption>
-                                                        </figcaption>
-                                                    </a>
-                                                </figure>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                @endif
-                            @endfor
+                                    @for ($i=12; $i < 16; $i++)
+                                        @if (empty($no_promo_apartments[$i]))
+                                            <div class="col-md-3 " style="float:left">
+                                            </div>
+                                        @else
+                                            <div class="col-md-3 my_shadow " style="float:left">
+                                                <ul class="gallery caption-3">
+                                                    <li>
+                                                        <figure>
+                                                            <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
+                                                                <img class="random_user_house_img"
+                                                                     src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
+                                                                <figcaption>
+                                                                </figcaption>
+                                                            </a>
+                                                        </figure>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        @endif
+                                    @endfor
 
 
-                        </div>
-                        <!--END SECOND PAGE-->
+                                </div>
+                                <!--END SECOND PAGE-->
+                        @endif
                     </div>
                 </div>
+                    @endif
 
 
             </div>
