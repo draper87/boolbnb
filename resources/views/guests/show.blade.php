@@ -12,8 +12,6 @@
         <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
     </head>
 
 @endsection
@@ -21,7 +19,6 @@
 @section('content')
 
     @if ($apartment->visible)
-
 
     <!-- Main Start -->
     <main>
@@ -43,9 +40,11 @@
                         </div>
                         <div class="description">
                             <h4 class="bottom-img_my my_strong">DESCRIZIONE</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
                         </div>
                     </div>
                     <!-- SERVICE AND UTILITY -->
@@ -88,7 +87,6 @@
                                                         <input class="checkbox" onclick="return false;" type="checkbox" name="facilities[]" {{ ($apartment->facilities->contains($facility)) ? 'checked' : '' }} value="{{ $facility->id }}">
                                                         <span class="checkmark"></span>
                                                     </label>
-
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -115,11 +113,9 @@
 
                             <input class="form-control" type="text" name="apartment_id" placeholder="apartment_id" value="{{ $apartment->id }}" hidden>
 
-                            <input class="btn" type="submit" value="Invia messaggio">
+                            <button class="btn" type="submit">Invia messaggio <i class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -129,10 +125,7 @@
                 <h2>Appartamento non visibile</h2>
             </div>
         @endif
-
     </main>
-
-
     <!-- Main End -->
 
     <script>
@@ -257,8 +250,5 @@
             </div>
         </div>
         <!-- Fine Parte relativa all avviso di messaggio inviato -->
-
     @endif
-
-
 @endsection

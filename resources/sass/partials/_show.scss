@@ -9,13 +9,14 @@ main {
         margin: 50px auto 0;
 
         img {
+            width: 100%;
             border-radius: 10px;
         }
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 992px) {
         .apartment-img {
             width: 100%;
-            margin: 50px auto 0;
+            margin: 0;
 
             img {
                 border-radius: 10px;
@@ -25,12 +26,12 @@ main {
     .main_show {
         hr {
             margin: 50px;
-            background-color: lightgray;
+            background-color: rebeccapurple;
         }
         .title {
             h3 {
                 padding: 5px 0;
-                border-bottom: 2px solid lightgray;
+                border-bottom: 2px solid rebeccapurple;
 
             }
             .host_name {
@@ -42,7 +43,7 @@ main {
 
             h4 {
                 padding: 5px 0;
-                border-bottom: 2px solid lightgray;
+                border-bottom: 2px solid rebeccapurple;
 
             }
         }
@@ -59,7 +60,7 @@ main {
                 padding: 10px 20px;
                 margin-bottom: 20px;
                 border-radius: 10px;
-                border: 2px solid lightgray;
+                border: 2px solid rebeccapurple;
                 box-shadow: 10px 10px 26px -8px rgba(0,0,0,0.75);
 
                 .card_title {
@@ -156,8 +157,8 @@ main {
             width: 100%;
             padding-top: 50px;
             margin-top: 30px;
-            border-top: 2px solid lightgray;
-            border-bottom: 2px solid lightgray;
+            border-top: 2px solid rebeccapurple;
+            border-bottom: 2px solid rebeccapurple;
 
             #mapid {
                 margin: auto;
@@ -166,10 +167,10 @@ main {
         }
         .send_message {
             margin: auto;
-            padding: 40px 0;
+            padding: 40px 20px;
 
             h4 {
-                border-bottom: 2px solid lightgray;
+                border-bottom: 2px solid rebeccapurple;
             }
             form {
                 padding: 20px 0;
@@ -191,6 +192,26 @@ main {
                         background-color: rebeccapurple;
                         transition: 0.5s;
                     }
+                }
+            }
+        }
+        .options {
+            padding: 50px 0;
+
+            form {
+                display: inline-block;
+            }
+
+            .btn {
+                // width: 100%;
+                color: rebeccapurple;
+                font-weight: bold;
+                border: 2px solid rebeccapurple;
+
+                &:hover {
+                    color: #fff;
+                    background-color: rebeccapurple;
+                    transition: 0.5s;
                 }
             }
         }
