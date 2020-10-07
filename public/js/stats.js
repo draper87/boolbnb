@@ -82,7 +82,8 @@ $( document ).ready(function() {
                 data: {
                     labels: arrayMesiDaPassare.reverse(),
                     datasets: [{
-                        label: 'dati degli ultimi ' + numeroMesiDaVisualizzare  +' mesi: ' + coseDaVisualizzare,
+                        label:numeroMesiDaVisualizzare  +' mesi: ' + coseDaVisualizzare,
+
                         // backgroundColor: 'rgb(255, 99, 132)',
                         borderColor: 'rgb(255, 99, 132)',
                         data: arrayValoriDaPassare.reverse(),
@@ -95,7 +96,6 @@ $( document ).ready(function() {
                         padding: {
                             left: 50,
                             right: 50,
-                            top: 50,
                             bottom: 50
                         }
                     }
@@ -103,6 +103,7 @@ $( document ).ready(function() {
             });
 
         },
+
         error: function error() {
             alert('error');
         }
