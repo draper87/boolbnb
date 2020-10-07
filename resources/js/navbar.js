@@ -20,7 +20,7 @@ $(document).ready(function(){
   var scrollHead = 0;
   $(window).scroll(function(){
     scrollHead = $(window).scrollTop();
-     $('.counter').html(scrollHead);
+    $('.counter').html(scrollHead);
 
     if (scrollHead >= 50) {
       $('#special_my_navigator').addClass('jumbo_scroll');
@@ -36,8 +36,9 @@ $(document).ready(function(){
 
 
 // Scroll back to the top function
-mybutton = document.getElementById("myBtn");
+var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
+
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -46,8 +47,11 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
+$("#myBtn").on('click',function(){
+  topFunction();
+});
 
-function topFunction() {
-  document.body.scrollTop = 0; // Safari
-  document.documentElement.scrollTop = 0; //Chrome Firefox
+function topFunction(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
