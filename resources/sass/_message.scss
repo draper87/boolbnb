@@ -1,0 +1,56 @@
+// general
+.ms_margin{
+  margin-top: 3%;
+}
+
+// list style
+
+
+// flat section
+
+.ms_appartment_title{
+    color: #fff;
+    background-color: #6610f2;
+    border-color: #4cae4c;
+    text-transform: capitalize;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+// messages style
+
+.ms_messaggio{
+    // border: none;
+    padding: 20px 30px;
+    border-bottom: 1px solid #555;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    box-shadow: none;
+}
+.ms_messaggio:first-of-type{
+  border-top: 1px solid #555;
+}
+.ms_messaggio:hover{
+  background-color: #ddd;
+  border-color: #aaa;
+  color: #444;
+  z-index: 2;
+}
+.ms_messaggio_linea{
+  margin-bottom: 50px;
+}
+
+.fa-star,
+.fa-envelope-open-text,
+.fa-burn{
+  color:#007bff;
+  font-size: 20px;
+  padding: 0 10px;
+}
+@media all and (max-width: 576px) {
+
+  .ms_mittente{
+    font-size: 14px;
+  }
+
+}
