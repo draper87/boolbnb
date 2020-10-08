@@ -7,6 +7,9 @@
       <div class="hidden-md-up" >
         <a href="{{ route('search') }}" class="navbar-brand mr-3"><i class="fas fa-search-location d-block d-md-none text-white"></i></a>
         <a href="{{ route('admin.apartments.index') }}" class="navbar-brand mr-3"><i class="fas fa-user-astronaut d-block d-md-none text-white"></i></a>
+        @if (Auth::check())
+          <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href= "{{ route('logout') }}" class="navbar-brand mr-3"><i class="fas fa-sign-out-alt d-block d-md-none text-white"></i></a>
+        @endif
       </div>
       <!-- Navbar right-side -->
       <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -30,7 +33,7 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <span class="d-none d-md-inline">{{ Auth::user()->firstname }}</span>
+                            <span class="d-none d-md-inline text-capitalize">{{ Auth::user()->firstname }}</span>
                             <span><i class="fas fa-user-astronaut text-white"></i></span>
                             {{-- @dd(count(Auth::user()->apartments)) --}}
                         </a>
