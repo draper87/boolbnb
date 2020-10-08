@@ -51,7 +51,7 @@
         <div class="contenitore-y pt-5 pb-5">
                 <div class="container-fluid relat pt-5 pb-5">
                     <!-- IMAGE CAROUSEL BASE -->
-                    <div id="multi-item-example" class="carousel slide carousel-multi-item my_padding_evidence_x" data-ride="carousel" data-interval="3000">
+                    <div id="multi-item-example" class="carousel  my_padding_evidence_x" data-ride="carousel" data-interval="0">
                         <!--CONTROL LEFT-->
                         @if(count($evidence_apartments) > 4)
                             <div class="controls-top move_me_my left-butt">
@@ -141,7 +141,7 @@
             <div class="container">
 
                 <h4 class="text-center">Altri appartamenti che potrebbero interessarvi</h4>
-                <div id="multi-item-example" class="carousel slide carousel-multi-item mt-5" data-ride="carousel" data-interval="2000">
+                <div id="carouselExampleControls" class="carousel slide carousel-multi-item mt-5" data-ride="carousel" data-interval="0" >
                     <div class="carousel-inner" role="listbox">
                         <!--FIRST PAGE-->
                         <div class="carousel-item active mb-3">
@@ -200,10 +200,18 @@
                         </div>
                         <!--END SECOND PAGE-->
                     </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon arrow_next_move_sx arrow_next_move_small_sx " aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon arrow_next_move arrow_next_move_small" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
                 </div>
 
                 @if(count($no_promo_apartments) > 8)
-                <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="2000">
+                <div id="sliderimage2" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="0" >
                     <div class="carousel-inner" role="listbox">
                         <!--FIRST PAGE-->
                         <div class="carousel-item active">
@@ -264,10 +272,15 @@
                                 <!--END SECOND PAGE-->
                         @endif
                     </div>
+                  <a class="carousel-control-prev" href="#sliderimage2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon arrow_next_move_sx arrow_next_move_small_sx" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#sliderimage2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon arrow_next_move arrow_next_move_small" aria-hidden="true"></span>
+                  </a>
                 </div>
                     @endif
-
-
             </div>
         </div>
 
@@ -278,22 +291,22 @@
         <!-- ABOUT US -->
         <section class="my_spacing pt-5 pb-5">
           <div class="col-md-12">
-            <div id="carouselExample" class="carousel slide custom_we_are" data-ride="carousel" data-interval="5500">
+            <div id="carouselExample" class="carousel slide custom_we_are" data-ride="carousel" data-interval="2000">
               <ol class="carousel-indicators">
-                <li data-target="#carouselExample" data-slide-to="0" class="active d-none d-md-block">
+                <li data-target="#carouselExample" data-slide-to="0" class="active ">
                   <img class="rounded-circle" src="{{asset('images/oliver.jpg')}}" alt="First slide">
                 </li>
-                <li data-target="#carouselExample" data-slide-to="1"class=" d-none d-md-block">
-                  <img class="rounded-circle" src="{{asset('images/Ale2.jpg')}}" alt="Second slide">
+                <li data-target="#carouselExample" data-slide-to="1"class="">
+                  <img class="rounded-circle we_are_img" src="{{asset('images/Ale2.jpg')}}" alt="Second slide">
                 </li>
-                <li data-target="#carouselExample" data-slide-to="2" class=" d-none d-md-block">
-                  <img class="rounded-circle" src="{{asset('images/Io.jpg')}}" alt="Third slide">
+                <li data-target="#carouselExample" data-slide-to="2" class=" ">
+                  <img class="rounded-circle we_are_img" src="{{asset('images/Io.jpg')}}" alt="Third slide">
                 </li>
-                <li data-target="#carouselExample" data-slide-to="3" class=" d-none d-md-block">
-                  <img class="rounded-circle" src="{{asset('images/Nico.jpg')}}" alt="Third slide">
+                <li data-target="#carouselExample" data-slide-to="3" class="">
+                  <img class="rounded-circle we_are_img" src="{{asset('images/Nico.jpg')}}" alt="Third slide">
                 </li>
-                <li data-target="#carouselExample" data-slide-to="4"class=" d-none d-md-block">
-                  <img class="rounded-circle" src="{{asset('images/andy2.jpg')}}" alt="Third slide">
+                <li data-target="#carouselExample" data-slide-to="4"class="">
+                  <img class="rounded-circle we_are_img" src="{{asset('images/andy2.jpg')}}" alt="Third slide">
                 </li>
               </ol>
 
