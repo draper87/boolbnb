@@ -110,6 +110,7 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
+
         $request->validate($this->validationData());
 
         $requested_data = $request->all();
@@ -165,6 +166,7 @@ class ApartmentController extends Controller
         'beds' => 'required|integer|min:1|max:9',
         'bathrooms' => 'required|integer|min:1|max:9',
         'square' => 'required|integer|min:50|max:300',
+        'descrizione' => 'required',
         'address' => 'required|max:255',
         'longitude' => 'required|numeric|min:-180|max:180',
         'latitude' => 'required|numeric|min:-90|max:90',

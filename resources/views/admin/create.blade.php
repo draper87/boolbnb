@@ -47,15 +47,6 @@
             </div>
             <!-- fine righe titolo e camere -->
 
-            <!-- inizio descrizione-->
-            <div class="form-group row">
-              <div class="col-lg-12">
-                  <label for="descrizione">Descrizione</label><br>
-                  <textarea class="form-control" type="text" name="descrizione" placeholder="Title" value="{{ old('descrizione')}}" required></textarea>
-              </div>
-            </div>
-            <!-- fine descrizione-->
-
             <!-- inizio righe letti e bagni -->
             <div class="form-group row">
               <div class="col-lg-6">
@@ -68,6 +59,7 @@
               </div>
             </div>
             <!-- fine righe letti e bagni -->
+
             <!-- inizio input metri quadri -->
             <div class="form-group row">
               <div class="col-lg-12">
@@ -76,6 +68,16 @@
               </div>
             </div>
             <!-- fine input metri quadri -->
+
+            <!-- inizio descrizione-->
+            <div class="form-group row">
+              <div class="col-lg-12">
+                  <label for="descrizione">Descrizione</label><br>
+                  <textarea class="form-control" type="text" name="descrizione" placeholder="Descrizione" required>{{ old('descrizione')}}</textarea>
+              </div>
+            </div>
+            <!-- fine descrizione-->
+
             <!-- inizio input immagine -->
             <div class="form-group row">
               <div class="col-lg-12">

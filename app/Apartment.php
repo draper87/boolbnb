@@ -11,6 +11,7 @@ class Apartment extends Model
         'rooms',
         'beds',
         'bathrooms',
+        'descrizione',
         'square',
         'user_id',
         'image_path',
