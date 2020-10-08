@@ -85,6 +85,13 @@
             display: inline-block;
             margin: 100px auto;
         }
+
+        @media screen and (max-width: 768px) {
+            .ms_container_flex{
+                flex-direction: column !important;
+            }
+        }
+
     </style>
 @endsection
 
@@ -102,7 +109,7 @@
                         <!-- inizio headline -->
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <h1 class="space_my_payment text-gray ms_title_margin mt-3">Tre pacchetti
-                                per mettere subito in evidenza i tuoi risultati di ricerca.</h1>
+                                per mettere in evidenza i tuoi appartamenti.</h1>
                         </div>
                         <!-- fine headline -->
 
