@@ -58,6 +58,7 @@ class ApartmentController extends Controller
         $new_apartment->bathrooms = $requested_data['bathrooms'];
         $new_apartment->square = $requested_data['square'];
         $new_apartment->address = $requested_data['address'];
+        $new_apartment->descrizione = $requested_data['descrizione'];
         $new_apartment->longitude = $requested_data['longitude'];
         $new_apartment->latitude = $requested_data['latitude'];
         $new_apartment->visible = true;

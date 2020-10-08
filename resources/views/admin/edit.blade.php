@@ -62,6 +62,14 @@
                       </div>
                     </div>
                   <!-- fine input metri quadri -->
+                  <!-- inizio descrizione-->
+                    <div class="form-group row">
+                      <div class="col-lg-12">
+                        <label for="descrizione">Descrizione</label><br>
+                        <textarea class="form-control" type="text" name="descrizione" placeholder="descrizione" required >{{ isset($apartment->descrizione)? $apartment->descrizione : old('descrizione')}}</textarea>
+                      </div>
+                    </div>
+                  <!-- fine descrizione-->
                   <!-- inizio input immagine -->
                     <div class="form-group row">
                       <div class="col-lg-12">
@@ -79,7 +87,7 @@
                     </div>
                   <!-- fine indirizzo -->
                   <!-- inizio riga latitudine e longitudine -->
-              
+
                     <div class="form-group row">
                       <div class="col-lg-6">
                         <label for="longitude">Longitude</label>

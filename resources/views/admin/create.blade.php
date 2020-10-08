@@ -46,6 +46,16 @@
               </div>
             </div>
             <!-- fine righe titolo e camere -->
+
+            <!-- inizio descrizione-->
+            <div class="form-group row">
+              <div class="col-lg-12">
+                  <label for="descrizione">Descrizione</label><br>
+                  <textarea class="form-control" type="text" name="descrizione" placeholder="Title" value="{{ old('descrizione')}}" required></textarea>
+              </div>
+            </div>
+            <!-- fine descrizione-->
+
             <!-- inizio righe letti e bagni -->
             <div class="form-group row">
               <div class="col-lg-6">
@@ -94,7 +104,7 @@
                     <input class="form-control" id="lat-value" type="text" name="latitude" placeholder="Latitude" value="{{ old('latitude')}}" required>
                 </div>
               </div>
-        
+
             <!-- fine riga latitudine e longitudine -->
             <!-- inizio check box -->
             <div class="row">
