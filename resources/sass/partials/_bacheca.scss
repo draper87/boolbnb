@@ -32,6 +32,13 @@
   padding-right: 3px;
 }
 
+.overflow_apartment_my {
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
 // Regole gestione card bacheca
 .card-bacheca {
   margin-bottom: 20px;

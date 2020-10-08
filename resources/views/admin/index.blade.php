@@ -38,7 +38,7 @@
 
                     <div class="card__content">
                         <h1 class="card__title text-capitalize">{{$apartment->title}}</h1>
-                        <p>{{$apartment->descrizione}}</p>
+                        <p class="overflow_apartment_my">{{$apartment->descrizione}}</p>
                         <span><a class="btn btn-outline-success" href="{{ route('admin.apartments.show' , $apartment->id)}}"><i class="fas fa-eye"></i></a></span><span><a class="btn btn-outline-info" href="{{ route('admin.apartments.edit' , $apartment->id)}}"><i class="far fa-edit"></i></a></span>
                                 <form id="form_post"action="{{route('admin.apartments.destroy', $apartment)}}" method="post">
                                     @csrf
