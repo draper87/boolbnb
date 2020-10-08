@@ -7,6 +7,7 @@
             crossorigin="anonymous"></script>
 
     <style>
+    /* REGOLE GESTIONE JUMBO  */
         .hero {
             background-image: url("images/sfondo.jpg");
             background-repeat: no-repeat;
@@ -24,6 +25,7 @@
 
     <!-- Main Start -->
     <main>
+      {{-- JUMBO section --}}
         <section class="hero hero--video">
             <div class="container ">
                 <div class="col-12">
@@ -49,10 +51,11 @@
         <div id="scroll" class="contenitore">
             <div class="custom-box search-nav">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div>
                         <h3 class="pb-3">FILTRI DI RICERCA</h3>
                         <div id="tv" class="search_box col-md-auto">
                             <div>
+                              {{-- Dati numeri regolabili ricerca --}}
                                 <ul>
                                     <li class="pb-2">
                                         <label for="rooms"><i class="fas fa-door-open"></i> Numero stanze <span
@@ -78,6 +81,7 @@
                             </div>
 
                             <div>
+                              {{-- Valori checkbox ricerca --}}
                                 <ul class="">
 
                                     <li class="">
@@ -117,11 +121,10 @@
                 </div>
             </div>
 
-
             <div class="custom-box risultati">
-                <div class="lista container col-{breakpoint}-auto text-white">
 
-                </div>
+              <div class="lista container col-{breakpoint}-auto text-white"></div>
+
             </div>
         </div>
     </main>
