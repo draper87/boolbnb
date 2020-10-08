@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('head')
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3.31/algoliasearchLite.min.js"></script>
+@endsection
+
 @section('content')
 
 
@@ -82,13 +87,13 @@
                     <div class="form-group row">
                       <div class="col-lg-12">
                         <label for="address">Address</label>
-                        <input class="form-control" type="text" name="address" placeholder="address" value="{{ isset($apartment->address)? $apartment->address : old('address')}}" required>
+                        <input id="address" class="form-control" type="text" name="address" placeholder="address" value="{{ isset($apartment->address)? $apartment->address : old('address')}}" required>
                       </div>
                     </div>
                   <!-- fine indirizzo -->
                   <!-- inizio riga latitudine e longitudine -->
 
-                    <div class="form-group row">
+                    <div class="form-group row" hidden>
                       <div class="col-lg-6">
                         <label for="longitude">Longitude</label>
                         <input class="form-control" type="text" name="longitude" placeholder="longitude" value="{{ isset($apartment->longitude)? $apartment->longitude :old('longitude')}}" required>
@@ -137,4 +142,58 @@
       </div>
     </div>
 
+    <script>
+        (function() {
+            var placesAutocomplete = places({
+                appId: 'plNO17G18F5R',
+                apiKey: '9bc42c41773997040e2daf6810f20401',
+                container: document.querySelector('#address')
+            });
+
+            placesAutocomplete.on('change', function(e) {
+                document.querySelector('#lat-value').value = e.suggestion.latlng.lat
+            });
+
+            placesAutocomplete.on('change', function(e) {
+                document.querySelector('#lng-value').value = e.suggestion.latlng.lng
+            });
+
+            placesAutocomplete.on('clear', function() {
+                document.querySelector('#lat-value').value = '';
+                document.querySelector('#lng-value').value = '';
+                document.querySelector('#address').value = '';
+            });
+
+            // parte relativa alla funzione locate me
+            placesAutocomplete.on('locate', function() {
+
+                var places = algoliasearch.initPlaces('plNO17G18F5R', '9bc42c41773997040e2daf6810f20401');
+
+                function updateForm(response) {
+                    var hits = response.hits;
+                    var suggestion = hits[0];
+
+                    console.log(suggestion);
+
+                    if (suggestion && suggestion.locale_names && suggestion.city) {
+                        placesAutocomplete.setVal(suggestion.locale_names.default[0] + ' ' + suggestion.city.default[0]);
+                    }
+                }
+
+                navigator.geolocation.getCurrentPosition(function (response) {
+                    var coords = response.coords;
+                    lat = coords.latitude.toFixed(6);
+                    lng = coords.longitude.toFixed(6);
+
+                    places.reverse({
+                        aroundLatLng: lat + ',' + lng,
+                        hitsPerPage: 1
+                    }).then(updateForm);
+                });
+
+
+            });
+
+        })();
+    </script>
 @endsection

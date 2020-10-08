@@ -15,7 +15,7 @@
           <!-- inizio titolo -->
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
-                <h1>Inserisci i dati sul locale che vorresti affittare</h1>
+                <h1>Inserisci i dati del tuo appartamento</h1>
               </div>
               <!-- In caso di errore -->
                   @if ($errors->any())
