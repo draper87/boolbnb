@@ -53,7 +53,7 @@ $(document).ready(function () {
     }
 
     // quando clicco il bottone Invia parte la chiamata Ajax
-    $('#bottone').click(function () {
+    $('.bottone').click(function () {
         event.preventDefault(); // impedisce il submit della form, da eliminare in quanto useremo un <a> con classe btn
         latitude = $('#lat-value').val();
         longitude = $('#lng-value').val();
@@ -67,6 +67,11 @@ $(document).ready(function () {
         $('#sauna').is(":checked") ? sauna = 'yes' : sauna = 'no';
         $('#vistamare').is(":checked") ? vistamare = 'yes' : vistamare = 'no';
         chiamaAppartamenti();
+        setTimeout(function() {
+            $('html, body').animate({
+                scrollTop: $("#scroll").offset().top
+            }, 800);
+        }, 400);
     });
 
     // chiamata ajax
