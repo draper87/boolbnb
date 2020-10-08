@@ -2,97 +2,6 @@
 
 @section('head')
 
-    <style>
-        #bachecajumbo {
-            background-image: linear-gradient(319deg, #663dff 0%, #aa00ff 37%, #cc4499 100%);
-            color: whitesmoke;
-        }
-
-        #bachecajumbo a {
-            color: white;
-        }
-
-        form {
-            display: inline-block;
-            padding: 0;
-            margin: 0;
-        }
-        form input {
-            margin: 0;
-            padding: 0;
-        }
-
-        img {
-            height: 350px;
-            min-width: 400px;
-        }
-
-        .bacheca {
-          margin: 0 auto;
-          display: inline-flex;
-          justify-content: space-evenly;
-          flex-wrap: wrap;
-
-        }
-        .bacheca span:first-of-type {
-            padding-right: 3px;
-        }
-
-        .card-bacheca {
-          margin-bottom: 20px;
-          position: relative;
-          background: #333;
-          width: 400px;
-          height: 600px;
-          border-radius: 6px;
-          padding: 2rem;
-          color: #aaa;
-          box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
-          overflow: hidden;
-
-        }
-        .card span {
-            padding-right: 1em;
-        }
-        .card__image-container {
-            margin: -2rem -2rem -2rem -2rem;
-        }
-        .card__title {
-            color: white;
-            margin-top: 0;
-            font-size: 25px;
-            letter-spacing: 0.01em;
-        }
-        .card__content {
-            margin-top: -1rem;
-            opacity: 0;
-            font-size: 18px;
-            animation: ContentFadeIn .8s 1.6s forwards;
-        }
-        .card__svg {
-            position: absolute;
-            left: 0;
-            top: 115px;
-        }
-        @keyframes ContentFadeIn {
-            0% {
-                transform: translateY(-1rem);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        @media screen and (min-device-aspect-ratio: 21/9) {
-                    .card-bacheca {
-                      height: 650px;
-                    }
-                }
-
-
-    </style>
-
 @endsection
 
 @section('content')
@@ -105,12 +14,11 @@
                 <h5>Qui puoi trovare i tuoi appartmenti</h5>
 
                 <div class="d-inline">
-                    <a class="btn-bacheca mt-2 draw-border" href="{{ route('admin.apartments.create') }}">Crea nuovo
-                        appartamento</a>
+                    <a class="btn_bacheca btn btn-bacheca mt-2 draw-border" href="{{ route('admin.apartments.create') }}"><i class="fas fa-pen"></i> Crea appartamento</a>
                 </div>
 
                 <div class="d-inline">
-                    <a class="btn-bacheca mt-2 draw-border" href="{{ route('admin.message') }}">Visualizza messaggi</a>
+                    <a class="btn_bacheca btn btn-bacheca mt-2 draw-border" href="{{ route('admin.message') }}"><i class="fas fa-inbox"></i>Visualizza messaggi</a>
                 </div>
             </div>
 
@@ -119,7 +27,7 @@
 
                 <div class="card-bacheca">
                     <div class="card__image-container">
-                        <img class="card__image" src="{{asset('storage') . '/' . $apartment->image_path}}" alt="">
+                        <img id="bachecaimg" class="card__image" src="{{asset('storage') . '/' . $apartment->image_path}}" alt="">
                     </div>
 
                     <svg class="card__svg" viewBox="0 0 800 500">
@@ -132,7 +40,7 @@
                         <h1 class="card__title text-capitalize">{{$apartment->title}}</h1>
                         <p>{{$apartment->descrizione}}</p>
                         <span><a class="btn btn-outline-success" href="{{ route('admin.apartments.show' , $apartment->id)}}"><i class="fas fa-eye"></i></a></span><span><a class="btn btn-outline-info" href="{{ route('admin.apartments.edit' , $apartment->id)}}"><i class="far fa-edit"></i></a></span>
-                                <form action="{{route('admin.apartments.destroy', $apartment)}}" method="post">
+                                <form id="form_post"action="{{route('admin.apartments.destroy', $apartment)}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-outline-danger" type="submit" name="" value="Elimina"><i class="fas fa-skull"></i></button>
