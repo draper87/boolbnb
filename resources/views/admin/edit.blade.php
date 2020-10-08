@@ -17,7 +17,7 @@
                 <!-- inizio titolo -->
                 <div class="row">
                   <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <h1>Modifica i dati sul lotto: {{$apartment->title}}</h1>
+                    <h1>Modifica i dati del tuo appartamento</h1>
                   </div>
                   <!-- in caso di errore -->
                   @if ($errors->any())
@@ -39,31 +39,31 @@
                     <div class="form-group row">
                       <div class="col-lg-6">
                         <label for="title">Titolo</label>
-                        <input class="form-control" type="text" name="title" placeholder="title" value="{{ isset($apartment->title)? $apartment->title : old('title')}}" required>
+                        <input class="form-control" type="text" name="title" placeholder="Titolo" value="{{ isset($apartment->title)? $apartment->title : old('title')}}" required>
                       </div>
                       <div class="col-lg-6">
-                        <label for="rooms">Rooms</label>
-                        <input class="form-control" type="number" name="rooms" placeholder="rooms" value="{{ isset($apartment->rooms)? $apartment->rooms : old('rooms')}}" required>
+                        <label for="rooms">Stanze</label>
+                        <input class="form-control" type="number" name="rooms" placeholder="Stanze" value="{{ isset($apartment->rooms)? $apartment->rooms : old('rooms')}}" required>
                       </div>
                     </div>
                   <!-- fine input titolo e camere -->
                   <!-- inizio input letti e bagni -->
                     <div class="form-group row">
                       <div class="col-lg-6">
-                        <label for="beds">Beds</label>
-                        <input class="form-control" type="number" name="beds" placeholder="beds" value="{{ isset($apartment->beds)? $apartment->beds : old('beds')}}" required>
+                        <label for="beds">Letti</label>
+                        <input class="form-control" type="number" name="beds" placeholder="Letti" value="{{ isset($apartment->beds)? $apartment->beds : old('beds')}}" required>
                       </div>
                       <div class="col-lg-6">
-                        <label for="bathrooms">Bathrooms</label>
-                        <input class="form-control" type="number" name="bathrooms" placeholder="bathrooms" value="{{ isset($apartment->bathrooms)? $apartment->bathrooms : old('bathrooms')}}" required>
+                        <label for="bathrooms">Bagni</label>
+                        <input class="form-control" type="number" name="bathrooms" placeholder="Bagni" value="{{ isset($apartment->bathrooms)? $apartment->bathrooms : old('bathrooms')}}" required>
                       </div>
                     </div>
                   <!-- fine input letti e bagni -->
                   <!-- inizio input metri quadri -->
                     <div class="form-group row">
                       <div class="col-lg-12">
-                        <label for="square">Square</label>
-                        <input class="form-control" type="number" name="square" placeholder="square" value="{{ isset($apartment->square)? $apartment->square : old('square')}}" required>
+                        <label for="square">Metri quadri</label>
+                        <input class="form-control" type="number" name="square" placeholder="Metri quadri" value="{{ isset($apartment->square)? $apartment->square : old('square')}}" required>
                       </div>
                     </div>
                   <!-- fine input metri quadri -->
@@ -78,7 +78,7 @@
                   <!-- inizio input immagine -->
                     <div class="form-group row">
                       <div class="col-lg-12">
-                        <label for="image_path">Scegli l'immagine di percorso</label><br>
+                        <label for="image_path">Carica immagine</label><br>
                         <input type="file" name="image_path" placeholder="Image_path" accept="image/*">
                       </div>
                     </div>
@@ -86,8 +86,8 @@
                   <!-- inizio indirizzo -->
                     <div class="form-group row">
                       <div class="col-lg-12">
-                        <label for="address">Address</label>
-                        <input id="address" class="form-control" type="text" name="address" placeholder="address" value="{{ isset($apartment->address)? $apartment->address : old('address')}}" required>
+                        <label for="address">Indirizzo</label>
+                        <input id="address" class="form-control" type="text" name="address" placeholder="Indirizzo" value="{{ isset($apartment->address)? $apartment->address : old('address')}}" required>
                       </div>
                     </div>
                   <!-- fine indirizzo -->
@@ -108,7 +108,7 @@
                   <!-- inizio checkbox -->
                   <div class="row">
                     <div class="col-12">
-                      <h5>Facilities:</h5>
+                      <h5>Servizi:</h5>
                     </div>
                   </div>
                   <div class="form-group row">
