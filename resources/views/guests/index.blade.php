@@ -151,7 +151,7 @@
                                     <div class="col-md-3" style="float:left">
                                     </div>
                                 @else
-                                    <div class="col-md-3  my_shadow " style="float:left">
+                                    <div class="col-md-3  my_shadow  move_to_center" style="float:left">
                                         <ul class="gallery caption-3">
                                             <li>
                                                 <figure>
@@ -179,7 +179,7 @@
                                     <div class="col-md-3 " style="float:left">
                                     </div>
                                 @else
-                                    <div class="col-md-3 my_shadow " style="float:left">
+                                    <div class="col-md-3 my_shadow move_to_center" style="float:left">
                                         <ul class="gallery caption-3">
                                             <li>
                                                 <figure>
@@ -201,17 +201,15 @@
                         <!--END SECOND PAGE-->
                     </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon arrow_next_move_sx arrow_next_move_small_sx " aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class=" arrow_next_move_sx arrow_next_move_small_sx " aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
                   </a>
                   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon arrow_next_move arrow_next_move_small" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class=" arrow_next_move arrow_next_move_small" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
                   </a>
                 </div>
 
                 @if(count($no_promo_apartments) > 8)
-                <div id="sliderimage2" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="0" >
+                <div id="sliderimage2" class="carousel slide carousel-multi-item d-none d-sm-none d-md-none d-lg-block" data-ride="carousel" data-interval="0" >
                     <div class="carousel-inner" role="listbox">
                         <!--FIRST PAGE-->
                         <div class="carousel-item active">
@@ -221,8 +219,8 @@
                                     <div class="col-md-3" style="float:left">
                                     </div>
                                 @else
-                                    <div class="col-md-3  my_shadow " style="float:left">
-                                        <ul class="gallery caption-3">
+                                    <div class="col-md-3  my_shadow move_to_center" style="float:left">
+                                        <ul class="gallery caption-3 ">
                                             <li>
                                                 <figure>
                                                     <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
@@ -250,8 +248,8 @@
                                             <div class="col-md-3 " style="float:left">
                                             </div>
                                         @else
-                                            <div class="col-md-3 my_shadow " style="float:left">
-                                                <ul class="gallery caption-3">
+                                            <div class="col-md-3 my_shadow move_to_center" style="float:left">
+                                                <ul class="gallery caption-3 move_to_center">
                                                     <li>
                                                         <figure>
                                                             <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
@@ -273,11 +271,11 @@
                         @endif
                     </div>
                   <a class="carousel-control-prev" href="#sliderimage2" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon arrow_next_move_sx arrow_next_move_small_sx" aria-hidden="true"></span>
+                    <span class=" arrow_next_move_sx " aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
                     <span class="sr-only">Previous</span>
                   </a>
                   <a class="carousel-control-next" href="#sliderimage2" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon arrow_next_move arrow_next_move_small" aria-hidden="true"></span>
+                    <span class="arrow_next_move " aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
                   </a>
                 </div>
                     @endif
