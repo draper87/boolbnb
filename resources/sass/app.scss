@@ -18,3 +18,9 @@
 @import 'partials/_show.scss';
 @import 'partials/_checkbox.scss';
 @import 'partials/_bacheca.scss';
+
+
+// Gestione spazio bianco con risultati piccoli
+main {
+  min-height: calc(100vh - 176px) !important;
+}

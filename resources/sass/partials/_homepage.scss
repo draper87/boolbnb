@@ -71,6 +71,16 @@
   border: 0;
 }
 
+.arrow_next_move {
+  margin-right: -160px;
+  color:black;
+}
+.arrow_next_move_sx {
+  color:black;
+  margin-left: -160px;
+
+}
+
 
 @media (max-width: 767.98px) {
 
@@ -86,6 +96,13 @@
         height: 48px;
         width: 48px;
         line-height: 48px;
+    }
+    .we_are_img {
+      width: 65px;
+      height: 65px;
+    }
+    .move_to_center {
+      left: 25%;
     }
 }
 
