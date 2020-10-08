@@ -89,12 +89,12 @@
 @endsection
 
 @section('content')
-
+    <main class="text-center">
     @if ($time_ending < $now || $time_ending == false)
 
         <!-- Main Start -->
 
-        <main class="text-center">
+
             <!-- Payment simulation -->
             <section>
                 <div class="container mb-5">
@@ -196,7 +196,6 @@
                 </div>
             </section>
 
-        </main>
         <!-- Main End -->
 
         <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
@@ -248,6 +247,7 @@
             <script src="{{asset('js/avviso.js')}}"></script>
             <a id='avviso' href="#myModal" class="trigger-btn" data-toggle="modal" hidden>Click to Open Confirm Modal</a>
             <!-- Modal HTML -->
+      
             <div id="myModal" class="modal fade">
                 <div class="modal-dialog modal-confirm">
                     <div class="modal-content">
@@ -266,7 +266,9 @@
                     </div>
                 </div>
             </div>
+          </main>
         @endforeach
     @endif
+
 
 @endsection

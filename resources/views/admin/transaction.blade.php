@@ -80,19 +80,20 @@
               display: inline-block;
               margin: 100px auto;
           }
-          main{
+          /* main{
             height: 80vh;
-          }
+          } */
       </style>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-      <main></main>
+
 
       <script src="{{asset('js/avviso.js')}}"></script>
       <a id='avviso' href="#myModal" class="trigger-btn" data-toggle="modal" hidden>Click to Open Confirm Modal</a>
       <!-- Modal HTML -->
+      <main>
       <div id="myModal" class="modal fade">
           <div class="modal-dialog modal-confirm">
               <div class="modal-content">
@@ -113,5 +114,6 @@
               </div>
           </div>
       </div>
+      </main>
     @endforeach
 @endsection
