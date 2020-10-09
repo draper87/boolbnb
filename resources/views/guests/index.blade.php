@@ -108,7 +108,7 @@
                                                     <div class="hover-overlay"></div>
                                                     <div class="hover-2-content px-5 py-4">
                                                         <h3 class="hover-2-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">{{$evidence_apartments[$i]->title}}</span></h3>
-                                                        <p class="hover-2-description text-uppercase mb-0">{{$evidence_apartments[$i]->address}}</p>
+                                                        <p class="hover-2-description text-uppercase mb-0 apartment_address_my">{{$evidence_apartments[$i]->address}}</p>
                                                     </div>
                                                 </div>
                                                 </a>
