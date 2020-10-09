@@ -272,7 +272,6 @@
                     </div>
                   <a class="carousel-control-prev" href="#sliderimage2" role="button" data-slide="prev">
                     <span class=" arrow_next_move_sx arrow_next_move_small_sx" aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
-                    <span class="sr-only">Previous</span>
                   </a>
                   <a class="carousel-control-next" href="#sliderimage2" role="button" data-slide="next">
                     <span class="arrow_next_move arrow_next_move_small" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
