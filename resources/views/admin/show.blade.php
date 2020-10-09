@@ -26,7 +26,7 @@
                     <div class="col-xs-12 col-md-12 col-lg-7">
                         <div class="title">
                             <h3 class="address-map my_strong">{{$apartment->title}}</h3>
-                            <p class="host_name">HOST: {{$apartment->user->firstname}} {{$apartment->user->lastname}} </p>
+                            <p class="host_name text-capitalize">HOST: {{$apartment->user->firstname}} {{$apartment->user->lastname}} </p>
                         </div>
                         <div class="description">
                             <h4 class="bottom-img_my my_strong">DESCRIZIONE</h4>
