@@ -119,9 +119,11 @@
         </div>
 
         @else
-            <div class="container">
-                <h2>Appartamento non visibile</h2>
-            </div>
+            <main>
+                <div class="container position-relative container-alert">
+                    <h2 class="non-visibile text-center">Appartamento non visibile</h2>
+                </div>
+            </main>
         @endif
     </main>
     <!-- Main End -->

@@ -22,7 +22,7 @@ class ApartmentController extends Controller
   $no_promo_apartments = [];
 
   foreach ($apartments as $apartment) {
-      if (count($apartment->promos) != 0) {
+      if ((count($apartment->promos) != 0) && ($apartment->visible)) {
           foreach ($apartment->promos as $promo) {
               $time_ending = $promo->pivot->time_ending;
               if ($time_ending > $now) {
