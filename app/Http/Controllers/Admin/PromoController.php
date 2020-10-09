@@ -8,6 +8,7 @@ use App\Apartment;
 use App\Promo;
 use Braintree\Gateway;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class PromoController extends Controller
 {
@@ -40,7 +41,16 @@ class PromoController extends Controller
         ]);
         $token = $gateway->ClientToken()->generate();
 
-        return view('admin.promo', compact('token', 'apartment', 'promos', 'data_scadenza' , 'now' ,'time_ending'));
+        $user = Auth::user();
+        $user_apartment = $apartment->user->id;
+        if ($user_apartment == $user->id) {
+            return view('admin.promo', compact('token', 'apartment', 'promos', 'data_scadenza' , 'now' ,'time_ending'));
+        }
+        else {
+            die('Non hai accesso a questa pagina');
+        }
+
+
     }
 
     public function checkout(Request $request, Apartment $apartment)
@@ -51,6 +61,8 @@ class PromoController extends Controller
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey')
         ]);
+
+
         $amount = $request->amount;
         $nonce = $request->payment_method_nonce;
         $promo = $request->promo_selected;
