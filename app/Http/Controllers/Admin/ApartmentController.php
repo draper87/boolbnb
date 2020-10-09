@@ -22,7 +22,7 @@ class ApartmentController extends Controller
         $user = Auth::user();
         $apartments = Apartment::where('user_id', $user->id)->get();
 
-        return view('admin.index', compact('apartments','user'));
+        return view('admin.index', compact('apartments', 'user'));
     }
 
     /**
@@ -39,7 +39,7 @@ class ApartmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -80,32 +80,49 @@ class ApartmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show(Apartment $apartment)
     {
-        $facilities = Facility::all();
-        return view('admin.show', compact('apartment','facilities'));
+
+        $user = Auth::user();
+        $user_apartment = $apartment->user->id;
+        if ($user_apartment == $user->id) {
+            $facilities = Facility::all();
+            return view('admin.show', compact('apartment', 'facilities'));
+        } else {
+            die('Non hai accesso a questa pagina');
+        }
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Apartment $apartment)
     {
-        $facilities = Facility::all();
-        return view('admin.edit' , compact('apartment','facilities'));
+
+        $user = Auth::user();
+        $user_apartment = $apartment->user->id;
+        if ($user_apartment == $user->id) {
+            $facilities = Facility::all();
+            return view('admin.edit', compact('apartment', 'facilities'));
+        } else {
+            die('Non hai accesso a questa pagina');
+        }
+
+
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Apartment $apartment)
@@ -137,14 +154,14 @@ class ApartmentController extends Controller
         }
 
         if ($apartment) {
-          return redirect()->route('admin.apartments.show' , $apartment);
+            return redirect()->route('admin.apartments.show', $apartment);
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Apartment $apartment)
@@ -159,19 +176,20 @@ class ApartmentController extends Controller
 
     }
 
-    public function validationData(){
-      return [
-        'title' => 'required|max:100',
-        'rooms' => 'required|integer|min:1|max:9',
-        'beds' => 'required|integer|min:1|max:9',
-        'bathrooms' => 'required|integer|min:1|max:9',
-        'square' => 'required|integer|min:50|max:300',
-        'descrizione' => 'required',
-        'address' => 'required|max:255',
-        'longitude' => 'required|numeric|min:-180|max:180',
-        'latitude' => 'required|numeric|min:-90|max:90',
-        'image_path' => 'image',
-      ];
+    public function validationData()
+    {
+        return [
+            'title' => 'required|max:100',
+            'rooms' => 'required|integer|min:1|max:9',
+            'beds' => 'required|integer|min:1|max:9',
+            'bathrooms' => 'required|integer|min:1|max:9',
+            'square' => 'required|integer|min:50|max:300',
+            'descrizione' => 'required',
+            'address' => 'required|max:255',
+            'longitude' => 'required|numeric|min:-180|max:180',
+            'latitude' => 'required|numeric|min:-90|max:90',
+            'image_path' => 'image',
+        ];
     }
 
 }
