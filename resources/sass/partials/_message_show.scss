@@ -11,14 +11,13 @@
 }
 // sender section
 .ms_single_message h1{
-  background: #8cc4f5;
 	text-transform: uppercase;
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: #555;
-	font-size: 30px;
-	font-weight: 100;
 	padding: 20px;
-	margin: -30px -30px 30px -30px;
+	margin: -30px -30px 30px -30px !important;
+  color: rebeccapurple;
+  font-weight: bold;
 }
 // object of message
 .ms_object{
@@ -41,7 +40,7 @@
 // test section
 .ms_text p{
   	font: 16px Arial, Helvetica, sans-serif;
-    min-height: 470px;
+    min-height: 350px;
 }
 // media query
 @media (max-width: 992px) {

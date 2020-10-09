@@ -37,7 +37,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+// posizione bottoni
+.button_bacheca {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn_margin_bacheca {
+  margin: 5px;
+}
 // Regole gestione card bacheca
 .card-bacheca {
   margin-bottom: 20px;

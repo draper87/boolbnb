@@ -84,6 +84,17 @@
                         </div>
                     </div>
                     <div class="col-lg-12 text-center options">
+                        <a class="btn" href="{{ route('admin.stat_show', $apartment) }}">
+                            Statistiche
+                        </a>
+                        <a class="btn" href="{{ route('admin.promo', $apartment) }}">
+                            Sponsorizza
+                        </a>
+                    </div>
+                    <div class="map_container">
+                        <div id="mapid" style="height: 400px; width: 90%"></div>
+                    </div>
+                    <div class="col-lg-12 text-center options">
                         <a class="btn" href="{{ route('admin.apartments.edit' , $apartment->id) }}">
                             Modifica <i class="far fa-edit"></i>
                         </a>
@@ -92,17 +103,6 @@
                             @method('DELETE')
                             <button class="btn" type="submit" value="Elimina">Elimina <i class="fas fa-skull"></i></button>
                         </form>
-                    </div>
-                    <div class="map_container">
-                        <div id="mapid" style="height: 400px; width: 90%"></div>
-                    </div>
-                    <div class="col-lg-12 text-center options">
-                        <a class="btn" href="{{ route('admin.stat_show', $apartment) }}">
-                            Visualizza Statistiche
-                        </a>
-                        <a class="btn" href="{{ route('admin.promo', $apartment) }}">
-                            Sponsorizza
-                        </a>
                     </div>
                 </div>
             </div>
