@@ -75,9 +75,7 @@
                 @endforeach
 
               <!-- fine lista appartamenti -->
-              @foreach ($apartment->messages as $key => $message)
-                  {{$key + 1}}
-              @endforeach
+
             </div>
 
 </main>
