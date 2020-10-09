@@ -12,7 +12,7 @@
     <!-- inizio form -->
     <div class="row">
       <div class="offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10 offset-xl-1 col-xl-10">
-        <div class="ms_form">
+        <div class="ms_form_edit">
           <!-- inizio titolo -->
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">

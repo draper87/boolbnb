@@ -1,4 +1,4 @@
-.ms_form{
+.ms_form_edit{
   font-family: 'Open Sans Condensed', arial, sans;
 	padding: 30px;
 	background: #FFFFFF;
@@ -8,22 +8,22 @@
 	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
 	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
 }
-.ms_form h1{
-  background: #4D4D4D;
-	text-transform: uppercase;
-	font-family: 'Open Sans Condensed', sans-serif;
-	color: #797979;
-	font-size: 30px;
-	font-weight: 100;
-	padding: 20px;
-	margin: -30px -30px 30px -30px;
+.ms_form_edit h1{
+  background: rebeccapurple !important;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed", sans-serif;
+  color: white !important;
+  font-size: 30px;
+  font-weight: 100;
+  padding: 20px;
+  margin: -30px -30px 30px -30px !important;
 }
 h5{
   margin: 20px 0;
 }
-.ms_form input[type="text"],
-.ms_form input[type="file"],
-.ms_form input[type="number"]{
+.ms_form_edit input[type="text"],
+.ms_form_edit input[type="file"],
+.ms_form_edit input[type="number"]{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -39,8 +39,8 @@ h5{
 	height: 45px;
 }
 
-.ms_form input[type="button"],
-.ms_form input[type="submit"]{
+.ms_form_edit input[type="button"],
+.ms_form_edit input[type="submit"]{
 	-moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
 	-webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
 	box-shadow: inset 0px 1px 0px 0px #45D6D6;
@@ -55,8 +55,8 @@ h5{
 	text-decoration: none;
 	text-transform: uppercase;
 }
-.ms_form input[type="button"]:hover,
-.ms_form input[type="submit"]:hover {
+.ms_form_edit input[type="button"]:hover,
+.ms_form_edit input[type="submit"]:hover {
 	background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
 	background-color:#34CACA;
 }
