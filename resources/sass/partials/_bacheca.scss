@@ -32,6 +32,22 @@
   padding-right: 3px;
 }
 
+.overflow_apartment_my {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+// posizione bottoni
+.button_bacheca {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn_margin_bacheca {
+  margin: 5px;
+}
 // Regole gestione card bacheca
 .card-bacheca {
   margin-bottom: 20px;

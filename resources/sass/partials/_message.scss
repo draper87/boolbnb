@@ -9,23 +9,24 @@
 // flat section
 
 .ms_appartment_title{
-    color: #fff;
-    background-color: #6610f2;
-    border-color: #4cae4c;
-    text-transform: capitalize;
-    padding: 6px 12px;
-    border-radius: 4px;
+  color: #fff;
+  background-color: #6610f2;
+  border-color: #4cae4c;
+  text-transform: capitalize;
+  padding: 4px 12px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 // messages style
 
 .ms_messaggio{
-    // border: none;
-    padding: 20px 30px;
-    border-bottom: 1px solid #555;
-    border-left: 1px solid #555;
-    border-right: 1px solid #555;
-    box-shadow: none;
+  // border: none;
+  padding: 20px 30px;
+  border-bottom: 1px solid #555;
+  border-left: 1px solid #555;
+  border-right: 1px solid #555;
+  box-shadow: none;
 }
 .ms_messaggio:first-of-type{
   border-top: 1px solid #555;
