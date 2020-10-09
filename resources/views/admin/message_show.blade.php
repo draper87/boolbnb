@@ -8,19 +8,19 @@
       <div class="row no-gutters">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="ms_single_message">
-            <!-- mittente -->            
+            <!-- mittente -->
               <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
                 <h1>Inviato da:<br> {{$message->email}}</h1>
               </div>
             <!-- fine mittente -->
             <!-- oggetto -->
               <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ms_object">
-                <h2 class="text-capitalize">Appartamento: {{$message->apartment->title}}</h2>
+                <h2 class="text-capitalize">{{$message->apartment->title}}</h2>
               </div>
             <!-- fine oggetto -->
             <!-- oggetto -->
               <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ms_text">
-                <p class="text-capitalize">{{$message->message}}</p>
+                <p class="">{{$message->message}}</p>
               </div>
             <!-- fine oggetto -->
             <div class="row">
