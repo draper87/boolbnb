@@ -80,7 +80,12 @@
   margin-left: -160px;
 
 }
-
+.apartment_name_my {
+  font-size: 25px !important;
+}
+.apartment_address_my {
+  font-size: 12px !important;
+}
 
 @media (max-width: 767.98px) {
 
@@ -110,12 +115,6 @@
 
     .arrow_next_move_small{
       margin-right: -60px;
-    }
-    .apartment_name_my {
-      font-size: 20px;
-    }
-    .apartment_address_my {
-      font-size: 12px;
     }
 }
 
