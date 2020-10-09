@@ -72,13 +72,13 @@
 }
 
 .arrow_next_move {
-  margin-right: -160px;
   color:black;
 }
 .arrow_next_move_sx {
   color:black;
-  margin-left: -160px;
-
+}
+.my_arrow_space_away,.my_arrow_space_away_sx {
+  width:15px;
 }
 .apartment_name_my {
   font-size: 25px !important;
@@ -109,13 +109,13 @@
     .move_to_center {
       left: 25%;
     }
-    .arrow_next_move_small_sx{
-      margin-left: -60px;
-    }
-
-    .arrow_next_move_small{
-      margin-right: -60px;
-    }
+    // .arrow_next_move_small_sx{
+    //   margin-left: -60px;
+    // }
+    //
+    // .arrow_next_move_small{
+    //   margin-right: -60px;
+    // }
 }
 
 @media (max-width: 991.98px) {

@@ -200,10 +200,10 @@
                         </div>
                         <!--END SECOND PAGE-->
                     </div>
-                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <a class="carousel-control-prev my_arrow_space_away_sx" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class=" arrow_next_move_sx arrow_next_move_small_sx " aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
                   </a>
-                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <a class="carousel-control-next my_arrow_space_away" href="#carouselExampleControls" role="button" data-slide="next">
                     <span class=" arrow_next_move arrow_next_move_small" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
                   </a>
                 </div>
@@ -270,11 +270,11 @@
                                 <!--END SECOND PAGE-->
                         @endif
                     </div>
-                  <a class="carousel-control-prev" href="#sliderimage2" role="button" data-slide="prev">
+                  <a class="carousel-control-prev my_arrow_space_away_sx" href="#sliderimage2" role="button" data-slide="prev">
                     <span class=" arrow_next_move_sx arrow_next_move_small_sx" aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
                   </a>
-                  <a class="carousel-control-next" href="#sliderimage2" role="button" data-slide="next">
-                    <span class="arrow_next_move arrow_next_move_small" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                  <a class="carousel-control-next my_arrow_space_away" href="#sliderimage2" role="button" data-slide="next">
+                    <span class="arrow_next_move arrow_next_move_small " aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
                   </a>
                 </div>
                     @endif
