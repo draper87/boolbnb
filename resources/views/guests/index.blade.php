@@ -156,7 +156,7 @@
                                             <li>
                                                 <figure>
                                                     <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
-                                                        <img class="random_user_house_img"
+                                                        <img class="random_user_house_img img-fluid"
                                                              src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                                         <figcaption>
                                                         </figcaption>
@@ -184,7 +184,7 @@
                                             <li>
                                                 <figure>
                                                     <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
-                                                        <img class="random_user_house_img"
+                                                        <img class="random_user_house_img img-fluid"
                                                              src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                                         <figcaption>
                                                         </figcaption>
@@ -224,7 +224,7 @@
                                             <li>
                                                 <figure>
                                                     <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
-                                                        <img class="random_user_house_img"
+                                                        <img class="random_user_house_img img-fluid"
                                                              src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                                         <figcaption>
                                                         </figcaption>
@@ -253,7 +253,7 @@
                                                     <li>
                                                         <figure>
                                                             <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
-                                                                <img class="random_user_house_img"
+                                                                <img class="random_user_house_img img-fluid"
                                                                      src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                                                 <figcaption>
                                                                 </figcaption>
