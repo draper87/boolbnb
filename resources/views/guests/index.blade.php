@@ -156,7 +156,7 @@
                                             <li>
                                                 <figure>
                                                     <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
-                                                        <img class="random_user_house_img"
+                                                        <img class="random_user_house_img img-fluid"
                                                              src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                                         <figcaption>
                                                         </figcaption>
@@ -184,7 +184,7 @@
                                             <li>
                                                 <figure>
                                                     <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
-                                                        <img class="random_user_house_img"
+                                                        <img class="random_user_house_img img-fluid"
                                                              src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                                         <figcaption>
                                                         </figcaption>
@@ -224,7 +224,7 @@
                                             <li>
                                                 <figure>
                                                     <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
-                                                        <img class="random_user_house_img"
+                                                        <img class="random_user_house_img img-fluid"
                                                              src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                                         <figcaption>
                                                         </figcaption>
@@ -253,7 +253,7 @@
                                                     <li>
                                                         <figure>
                                                             <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
-                                                                <img class="random_user_house_img"
+                                                                <img class="random_user_house_img img-fluid"
                                                                      src="{{asset('storage') . '/' . $no_promo_apartments[$i]->image_path}}" alt="Card image cap">
                                                                 <figcaption>
                                                                 </figcaption>
@@ -294,7 +294,7 @@
                   <img class="rounded-circle" src="{{asset('images/oliver.jpg')}}" alt="First slide">
                 </li>
                 <li data-target="#carouselExample" data-slide-to="1"class="">
-                  <img class="rounded-circle we_are_img" src="{{asset('images/Ale2.jpg')}}" alt="Second slide">
+                  <img class="rounded-circle we_are_img" src="{{asset('images/Ale2.jpg')}}" alt="Second slide"></a>
                 </li>
                 <li data-target="#carouselExample" data-slide-to="2" class=" ">
                   <img class="rounded-circle we_are_img" src="{{asset('images/Io.jpg')}}" alt="Third slide">
@@ -310,7 +310,7 @@
             <div class="carousel-inner we_are_padding">
               <div class="carousel-item active">
                 <blockquote class="blockquote">
-                OLIVER BENOIT
+                <a href="https://www.linkedin.com/in/oliver-benoit-bb52403a/">OLIVER BENOIT</a>
                 </blockquote>
                 <small>
                 Back-end developer
@@ -319,7 +319,7 @@
 
               <div class="carousel-item">
                 <blockquote class="blockquote">
-                ALESSANDRO CAPANNA
+                <a href="https://www.linkedin.com/in/alessandro-capanna/">ALESSANDRO CAPANNA</a>
                 </blockquote>
                 <small>
                 Back-end developer
@@ -328,7 +328,7 @@
 
               <div class="carousel-item">
                 <blockquote class="blockquote">
-                GIANPIERO INVERNIZZI
+                <a href="https://www.linkedin.com/in/gianpiero-invernizzi-41b6b71b7/">GIANPIERO INVERNIZZI</a>
                 </blockquote>
                 <small>
                 Front-end developer
@@ -337,7 +337,7 @@
 
               <div class="carousel-item">
                 <blockquote class="blockquote">
-                NICOLO' PAGANELLI
+                <a href="https://www.linkedin.com/in/npaganelli/">NICOLO' PAGANELLI</a>
                 </blockquote>
                 <small>
                 Back-end developer
@@ -346,7 +346,7 @@
 
               <div class="carousel-item">
                 <blockquote class="blockquote">
-                ANDY UKPE
+                <a href="https://www.linkedin.com/in/andy-u-45ab01182/">ANDY UKPE</a>
                 </blockquote>
                 <small>
                 Front-end developer
