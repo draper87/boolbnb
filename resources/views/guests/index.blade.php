@@ -138,7 +138,7 @@
 
         <!-- OTHER HOUSE SECTION -->
         <div class="contenitore-x pt-5 pb-5">
-            <div class="container">
+            <div class="container-lg">
 
                 <h4 class="text-center">Altri appartamenti che potrebbero interessarvi</h4>
                 <div id="carouselExampleControls" class="carousel slide carousel-multi-item mt-5" data-ride="carousel" data-interval="0" >
