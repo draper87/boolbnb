@@ -1,5 +1,3 @@
-// var $ = require( "jquery" );
-
 $(document).ready(function () {
 
     // slider che aggiorna il numero di stanze in tempo reale
@@ -67,7 +65,7 @@ $(document).ready(function () {
         $('#sauna').is(":checked") ? sauna = 'yes' : sauna = 'no';
         $('#vistamare').is(":checked") ? vistamare = 'yes' : vistamare = 'no';
         chiamaAppartamenti();
-        setTimeout(function() {
+        setTimeout(function () {
             $('html, body').animate({
                 scrollTop: $("#scroll").offset().top
             }, 800);

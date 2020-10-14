@@ -1,5 +1,3 @@
-// var $ = require( "jquery" );
-
 $( document ).ready(function() {
   // select per la gestione del tempo
   var stats = 'visualizzazioni';

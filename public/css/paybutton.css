@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap);:root {
+@import url(https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap);
+
+:root {
     --background: #33837e;
     --left-side: #5de2a3;
     --card: #c7ffbc;
@@ -13,16 +15,6 @@
     --post-line2: #545354;
     --dollar: #4b953b;
 }
-
-/* body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  width: 100%;
-  background: var(--background);
-} */
 
 .paybutton {
     background-color: #ffffff;
