@@ -219,7 +219,7 @@
                                     <div class="col-md-3" style="float:left">
                                     </div>
                                 @else
-                                    <div class="col-md-3  my_shadow move_to_center" style="float:left">
+                                    <div class="col-md-3  my_shadow " style="float:left">
                                         <ul class="gallery caption-3 ">
                                             <li>
                                                 <figure>
