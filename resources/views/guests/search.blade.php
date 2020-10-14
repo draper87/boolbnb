@@ -7,7 +7,7 @@
             crossorigin="anonymous"></script>
 
     <style>
-    /* REGOLE GESTIONE JUMBO  */
+        /* REGOLE GESTIONE JUMBO  */
         .hero {
             background-image: url("images/sfondo.jpg");
             background-repeat: no-repeat;
@@ -25,7 +25,7 @@
 
     <!-- Main Start -->
     <main>
-      {{-- JUMBO section --}}
+        {{-- JUMBO section --}}
         <section class="hero hero--video">
             <div class="container ">
                 <div class="col-12">
@@ -55,17 +55,20 @@
                         <h3 class="pb-3">FILTRI DI RICERCA</h3>
                         <div id="tv" class="search_box col-md-auto">
                             <div>
-                              {{-- Dati numeri regolabili ricerca --}}
+                                {{-- Dati numeri regolabili ricerca --}}
                                 <ul>
                                     <li class="pb-2">
                                         <label for="rooms"><i class="fas fa-door-open"></i> Numero stanze <span
                                                 id="roomsvalue"></span></label>
-                                        <div><input type="range" class="slider-filter" id="rooms" min="1" max="9" step="1"
+                                        <div><input type="range" class="slider-filter" id="rooms" min="1" max="9"
+                                                    step="1"
                                                     value="2"></div>
                                     </li>
                                     <li class="pb-2">
-                                        <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti <a id="bedsvalue"></a></label>
-                                        <div><input type="range" class="slider-filter" id="beds" min="1" max="9" step="1"
+                                        <label for="beds"><i class="fas fa-bed option_icon"></i> Numero letti <a
+                                                id="bedsvalue"></a></label>
+                                        <div><input type="range" class="slider-filter" id="beds" min="1" max="9"
+                                                    step="1"
                                                     value="1">
                                         </div>
 
@@ -81,7 +84,7 @@
                             </div>
 
                             <div>
-                              {{-- Valori checkbox ricerca --}}
+                                {{-- Valori checkbox ricerca --}}
                                 <ul class="">
 
                                     <li class="">
@@ -90,7 +93,8 @@
                                     </li>
                                     <li>
                                         <input type="checkbox" id="car" value="">
-                                        <label for="car">Posto macchina <i class="fas fa-parking extra_icon"></i></label>
+                                        <label for="car">Posto macchina <i
+                                                class="fas fa-parking extra_icon"></i></label>
                                     </li>
                                     <li class="">
                                         <input type="checkbox" id="piscina" value="">
@@ -98,7 +102,8 @@
                                     </li>
                                     <li class="">
                                         <input type="checkbox" id="portineria" value="">
-                                        <label for="portineria">Portineria <i class="fas fa-concierge-bell extra_icon"></i></label>
+                                        <label for="portineria">Portineria <i
+                                                class="fas fa-concierge-bell extra_icon"></i></label>
                                     </li>
                                     <li class="">
                                         <input type="checkbox" id="sauna" value="">
@@ -112,7 +117,6 @@
                             </div>
 
 
-
                             <button class='bottone filter'><i class="fas fa-filter"></i> Filtra</button>
 
 
@@ -123,7 +127,7 @@
 
             <div class="custom-box risultati">
 
-              <div class="lista container col-{breakpoint}-auto text-white"></div>
+                <div class="lista container col-{breakpoint}-auto text-white"></div>
 
             </div>
         </div>
@@ -148,6 +152,7 @@
                 </div></a>
 
 
+
     </script>
 
     <script id="entry-templatepromo" type="text/x-handlebars-template">
@@ -166,6 +171,7 @@
                         <div><span class="">@{{ address }} </span></div>
                     </div>
                 </div></a>
+
 
 
     </script>

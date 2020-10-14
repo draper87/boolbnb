@@ -4,6 +4,7 @@ main {
             width: auto;
         }
     }
+
     .apartment-img {
         width: 60%;
         margin: 50px auto 0;
@@ -13,6 +14,7 @@ main {
             border-radius: 10px;
         }
     }
+
     @media screen and (max-width: 992px) {
         .apartment-img {
             width: 100%;
@@ -23,21 +25,25 @@ main {
             }
         }
     }
+
     .main_show {
         hr {
             margin: 50px;
             background-color: rebeccapurple;
         }
+
         .title {
             h3 {
                 padding: 5px 0;
                 border-bottom: 2px solid rebeccapurple;
 
             }
+
             .host_name {
                 margin: 0;
             }
         }
+
         .description {
             padding: 40px 0;
 
@@ -47,6 +53,7 @@ main {
 
             }
         }
+
         .service_container {
             width: 60%;
             margin-left: auto;
@@ -56,18 +63,20 @@ main {
             @media screen and (max-width: 992px) {
                 width: 100%;
             }
+
             .card_box {
                 padding: 10px 20px;
                 margin-bottom: 20px;
                 border-radius: 10px;
                 border: 2px solid rebeccapurple;
-                box-shadow: 10px 10px 26px -8px rgba(0,0,0,0.75);
+                box-shadow: 10px 10px 26px -8px rgba(0, 0, 0, 0.75);
 
                 .card_title {
                     h5 {
                         margin: 0;
                     }
                 }
+
                 .list_box {
                     margin: 0;
 
@@ -81,6 +90,7 @@ main {
                         font-size: 20px;
                         text-align: center;
                     }
+
                     .label_container {
                         display: block;
                         position: relative;
@@ -153,6 +163,7 @@ main {
             }
 
         }
+
         .map_container {
             width: 100%;
             padding-top: 50px;
@@ -165,6 +176,7 @@ main {
                 margin-bottom: 50px;
             }
         }
+
         .send_message {
             margin: auto;
             padding: 40px 20px;
@@ -172,6 +184,7 @@ main {
             h4 {
                 border-bottom: 2px solid rebeccapurple;
             }
+
             form {
                 padding: 20px 0;
 
@@ -195,6 +208,7 @@ main {
                 }
             }
         }
+
         .options {
             padding: 50px 0;
 

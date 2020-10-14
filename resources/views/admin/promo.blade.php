@@ -11,39 +11,47 @@
         body {
             font-family: 'Varela Round', sans-serif;
         }
+
         .modal-confirm {
             color: #636363;
             width: 325px;
         }
+
         .modal-confirm .modal-content {
             padding: 20px;
             border-radius: 5px;
             border: none;
         }
+
         .modal-confirm .modal-header {
             border-bottom: none;
             position: relative;
         }
+
         .modal-confirm h4 {
             text-align: center;
             font-size: 26px;
             margin: 30px 0 -15px;
         }
+
         .modal-confirm .form-control, .modal-confirm .btn {
             min-height: 40px;
             border-radius: 3px;
         }
+
         .modal-confirm .close {
             position: absolute;
             top: -5px;
             right: -5px;
         }
+
         .modal-confirm .modal-footer {
             border: none;
             text-align: center;
             border-radius: 5px;
             font-size: 13px;
         }
+
         .modal-confirm .icon-box {
             color: #fff;
             position: absolute;
@@ -60,14 +68,17 @@
             text-align: center;
             box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
         }
+
         .modal-confirm .icon-box i {
             font-size: 56px;
             position: relative;
             top: 4px;
         }
+
         .modal-confirm.modal-dialog {
             margin-top: 80px;
         }
+
         .modal-confirm .btn {
             color: #fff;
             border-radius: 4px;
@@ -77,17 +88,19 @@
             line-height: normal;
             border: none;
         }
+
         .modal-confirm .btn:hover, .modal-confirm .btn:focus {
             background: #da2c12;
             outline: none;
         }
+
         .trigger-btn {
             display: inline-block;
             margin: 100px auto;
         }
 
         @media screen and (max-width: 768px) {
-            .ms_container_flex{
+            .ms_container_flex {
                 flex-direction: column !important;
             }
         }
@@ -115,25 +128,27 @@
 
                         <!-- Plane description -->
 
-                            <div class="container">
-                                <div class="ms_container_flex">
-                                    @foreach($promos as $promo)
-                                        <div class="ms_flex_item ms_cards">
-                                            <h6 class="ms_position_relative"><span>{{$promo->name}}</span></h6>
-                                            <div class="pb-3 pt-3">
-                                                <sup>€</sup>
-                                                {{$promo->price}}
-                                            </div>
-                                            <ul class="text-left">
-                                                <li><i class="far fa-check-circle pt-2"></i> {{$promo->timing}} ore in evidenza</li>
-                                                <li><i class="far fa-check-circle pt-2"></i> Supporto Email</li>
-                                                <li><i class="far fa-check-circle pt-2"></i> Supporto Chat</li>
-                                                <li><i class="far fa-check-circle pt-2"></i> Assistenza telefonica</li>
-                                            </ul>
+                        <div class="container">
+                            <div class="ms_container_flex">
+                                @foreach($promos as $promo)
+                                    <div class="ms_flex_item ms_cards">
+                                        <h6 class="ms_position_relative"><span>{{$promo->name}}</span></h6>
+                                        <div class="pb-3 pt-3">
+                                            <sup>€</sup>
+                                            {{$promo->price}}
                                         </div>
-                                    @endforeach
-                                </div>
+                                        <ul class="text-left">
+                                            <li><i class="far fa-check-circle pt-2"></i> {{$promo->timing}} ore in
+                                                evidenza
+                                            </li>
+                                            <li><i class="far fa-check-circle pt-2"></i> Supporto Email</li>
+                                            <li><i class="far fa-check-circle pt-2"></i> Supporto Chat</li>
+                                            <li><i class="far fa-check-circle pt-2"></i> Assistenza telefonica</li>
+                                        </ul>
+                                    </div>
+                                @endforeach
                             </div>
+                        </div>
 
                         <!-- Plane description -->
 
@@ -203,78 +218,82 @@
                 </div>
             </section>
 
-        <!-- Main End -->
+            <!-- Main End -->
 
-        <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
-        <script>
+            <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
+            <script>
 
-            var form = document.querySelector('#payment-form');
-            var client_token = "{{ $token }}";
+                var form = document.querySelector('#payment-form');
+                var client_token = "{{ $token }}";
 
-            braintree.dropin.create({
-                    authorization: client_token,
-                    selector: '#bt-dropin',
-                },
-                function (createErr, instance) {
-                    if (createErr) {
-                        console.log('Create Error', createErr);
-                        return;
-                    }
-                    form.addEventListener('submit', function (event) {
-                        event.preventDefault();
+                braintree.dropin.create({
+                        authorization: client_token,
+                        selector: '#bt-dropin',
+                    },
+                    function (createErr, instance) {
+                        if (createErr) {
+                            console.log('Create Error', createErr);
+                            return;
+                        }
+                        form.addEventListener('submit', function (event) {
+                            event.preventDefault();
 
-                        instance.requestPaymentMethod(function (err, payload) {
-                            if (err) {
-                                console.log('Request Payment Method Error', err);
-                                return;
-                            }
+                            instance.requestPaymentMethod(function (err, payload) {
+                                if (err) {
+                                    console.log('Request Payment Method Error', err);
+                                    return;
+                                }
 
-                            // Add the nonce to the form and submit
-                            document.querySelector('#nonce').value = payload.nonce;
-                            form.submit();
+                                // Add the nonce to the form and submit
+                                document.querySelector('#nonce').value = payload.nonce;
+                                form.submit();
+                            });
                         });
                     });
+
+                // istruzioni per forzare il refresh della pagina quando si preme il tasto indietro del browser
+                window.addEventListener("pageshow", function (event) {
+                    var historyTraversal = event.persisted ||
+                        (typeof window.performance != "undefined" &&
+                            window.performance.navigation.type === 2);
+                    if (historyTraversal) {
+                        // Handle page restore.
+                        window.location.reload();
+                    }
                 });
 
-            // istruzioni per forzare il refresh della pagina quando si preme il tasto indietro del browser
-            window.addEventListener("pageshow", function (event) {
-                var historyTraversal = event.persisted ||
-                    (typeof window.performance != "undefined" &&
-                        window.performance.navigation.type === 2);
-                if (historyTraversal) {
-                    // Handle page restore.
-                    window.location.reload();
-                }
-            });
+            </script>
 
-        </script>
+        @else
+            @foreach ($apartment->promos as $promo)
+                <script src="{{asset('js/avviso.js')}}"></script>
+                <a id='avviso' href="#myModal" class="trigger-btn" data-toggle="modal" hidden>Click to Open Confirm
+                    Modal</a>
+                <!-- Modal HTML -->
 
-    @else
-        @foreach ($apartment->promos as $promo)
-            <script src="{{asset('js/avviso.js')}}"></script>
-            <a id='avviso' href="#myModal" class="trigger-btn" data-toggle="modal" hidden>Click to Open Confirm Modal</a>
-            <!-- Modal HTML -->
-      
-            <div id="myModal" class="modal fade">
-                <div class="modal-dialog modal-confirm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="icon-box">
-                                <i class="material-icons">&#xE5CD;</i>
+                <div id="myModal" class="modal fade">
+                    <div class="modal-dialog modal-confirm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="icon-box">
+                                    <i class="material-icons">&#xE5CD;</i>
+                                </div>
+                                <h4 class="modal-title w-100">Attenzione!</h4>
                             </div>
-                            <h4 class="modal-title w-100">Attenzione!</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p class="text-center">Hai già la {{ $promo->name }} attiva. Scade il {{ $data_scadenza }}</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button onclick="history.back();" class="btn btn-danger btn-block" data-dismiss="modal">OK</button>
+                            <div class="modal-body">
+                                <p class="text-center">Hai già la {{ $promo->name }} attiva. Scade
+                                    il {{ $data_scadenza }}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="history.back();" class="btn btn-danger btn-block" data-dismiss="modal">
+                                    OK
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-          </main>
-        @endforeach
+    </main>
+    @endforeach
     @endif
 
 
