@@ -78,7 +78,7 @@ $(document).ready(function () {
     function chiamaAppartamenti(page) {
 
         $.ajax({
-            url: 'http://159.65.127.19/api/search',
+            url: window.location.protocol + '//' + window.location.host + '/api/search',
             method: 'GET',
             data: {
                 longitude: longitude,

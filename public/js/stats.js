@@ -17,7 +17,7 @@ $( document ).ready(function() {
 
   function printStats(numeroMesiDaVisualizzare, coseDaVisualizzare){
     $.ajax({
-        url: 'http://159.65.127.19/api/stats',
+        url: window.location.protocol + '//' + window.location.host + '/api/stats',
         data: {
             apartment: $('#appartamento').text(),
             mesi: numeroMesiDaVisualizzare,
