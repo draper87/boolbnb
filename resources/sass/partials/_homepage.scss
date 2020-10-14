@@ -106,12 +106,7 @@
       width: 50px;
       height: 50px;
     }
-    .move_to_center {
-      left: 25%;
-    }
-    .new_sm_rules {
-      left: 7%;
-    }
+
     // .arrow_next_move_small_sx{
     //   margin-left: -60px;
     // }
@@ -119,11 +114,6 @@
     // .arrow_next_move_small{
     //   margin-right: -60px;
     // }
-}
-@media (max-width: 576px) {
-  .new_sm_rules {
-    left: 0%;
-  }
 }
 
 @media (max-width: 991.98px) {
@@ -311,11 +301,6 @@
     height: 35px;
     width: 35px;
   }
-  .new_sm_rules {
-    left: -25%;
-  }
-
-
 }
 
 .my_spacing {

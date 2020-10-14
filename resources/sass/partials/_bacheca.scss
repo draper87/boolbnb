@@ -114,6 +114,22 @@
         opacity: 1;
     }
 }
+@media (max-width:320px) {
+  .bacheca {
+  width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+}
+  .card__svg {
+    top : 170px;
+  }
+  .overflow_apartment_my {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
 // Mediaquery 21/9 screen
 @media screen and (min-device-aspect-ratio: 21/9) {
             .card-bacheca {
