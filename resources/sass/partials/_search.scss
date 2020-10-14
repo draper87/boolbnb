@@ -194,3 +194,12 @@ a, a:hover, a:visited, a:focus, a:link {
     background-color: white;
   }
 }
+
+@media (max-width: 450px) {
+  #tv {
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

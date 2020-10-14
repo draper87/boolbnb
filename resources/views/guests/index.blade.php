@@ -144,14 +144,14 @@
                 <div id="carouselExampleControls" class="carousel slide carousel-multi-item mt-5 " data-ride="carousel" data-interval="0" >
                     <div class="carousel-inner " role="listbox">
                         <!--FIRST PAGE-->
-                        <div class="carousel-item active mb-3 new_sm_rules">
+                        <div class="carousel-item active mb-3 text-center">
 
                             @for ($i=0; $i < 4; $i++)
                                 @if (empty($no_promo_apartments[$i]))
                                     <div class="col-md-3" style="float:left">
                                     </div>
                                 @else
-                                    <div class="col-md-3  my_shadow  move_to_center" style="float:left">
+                                    <div class="col-md-3  my_shadow " style="float:left">
                                         <ul class="gallery caption-3">
                                             <li>
                                                 <figure>
@@ -172,14 +172,14 @@
                         <!--END FIRST PAGE-->
 
                         <!--SECOND PAGE-->
-                        <div class="carousel-item mb-3 new_sm_rules">
+                        <div class="carousel-item mb-3 text-center">
 
                             @for ($i=4; $i < 8; $i++)
                                 @if (empty($no_promo_apartments[$i]))
                                     <div class="col-md-3 " style="float:left">
                                     </div>
                                 @else
-                                    <div class="col-md-3 my_shadow move_to_center" style="float:left">
+                                    <div class="col-md-3 my_shadow " style="float:left">
                                         <ul class="gallery caption-3">
                                             <li>
                                                 <figure>
@@ -249,7 +249,7 @@
                                             </div>
                                         @else
                                             <div class="col-md-3 my_shadow move_to_center" style="float:left">
-                                                <ul class="gallery caption-3 move_to_center">
+                                                <ul class="gallery caption-3">
                                                     <li>
                                                         <figure>
                                                             <a href="{{ route('show' , $no_promo_apartments[$i]->id)}}">
