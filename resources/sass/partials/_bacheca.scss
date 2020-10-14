@@ -1,107 +1,112 @@
 // INSTESTAZIONE
 #bachecajumbo
 #bachecajumbo a,
-#bachecajumbo h5{
-  color: #3c3c3c;
+#bachecajumbo h5 {
+    color: #3c3c3c;
 }
 
 #form_post {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
 }
+
 // regole gestione immagini e imput
 #form_post input {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #bachecaimg {
-  height: 350px;
-  min-width: 400px;
+    height: 350px;
+    min-width: 400px;
 }
 
 .bacheca {
-  margin: 0 auto;
-  display: inline-flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+    margin: 0 auto;
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
 }
+
 .bacheca span:first-of-type {
-  padding-right: 3px;
+    padding-right: 3px;
 }
 
 .overflow_apartment_my {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
+
 // posizione bottoni
 .button_bacheca {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  text-align: center;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
 }
+
 .btn_margin_bacheca {
-  margin: 5px;
+    margin: 5px;
 }
+
 // Regole gestione card bacheca
 .card-bacheca {
-  margin-bottom: 20px;
-  position: relative;
-  background: #333;
-  width: 400px;
-  height: 600px;
-  border-radius: 6px;
-  padding: 2rem;
-  color: #aaa;
-  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+    background: #333;
+    width: 400px;
+    height: 600px;
+    border-radius: 6px;
+    padding: 2rem;
+    color: #aaa;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 .card span {
-  padding-right: 1em;
+    padding-right: 1em;
 }
 
 .card__image-container {
-  margin: -2rem -2rem -2rem -2rem;
+    margin: -2rem -2rem -2rem -2rem;
 }
 
 .card__title {
-  color: white;
-  margin-top: 0;
-  font-size: 25px;
-  letter-spacing: 0.01em;
+    color: white;
+    margin-top: 0;
+    font-size: 25px;
+    letter-spacing: 0.01em;
 }
 
 .card__content {
-  margin-top: -1rem;
-  opacity: 0;
-  font-size: 18px;
-  animation: ContentFadeIn .8s 1.6s forwards;
+    margin-top: -1rem;
+    opacity: 0;
+    font-size: 18px;
+    animation: ContentFadeIn .8s 1.6s forwards;
 }
 
 .card__svg {
-  position: absolute;
-  left: 0;
-  top: 115px;
+    position: absolute;
+    left: 0;
+    top: 115px;
 }
 
 .btn_bacheca {
-  color: rebeccapurple;
-  font-weight: bold;
-  border: 2px solid rebeccapurple;
+    color: rebeccapurple;
+    font-weight: bold;
+    border: 2px solid rebeccapurple;
 
-  &:hover {
-      color: #fff;
-      background-color: rebeccapurple;
-      transition: 0.5s;
-  }
+    &:hover {
+        color: #fff;
+        background-color: rebeccapurple;
+        transition: 0.5s;
+    }
 }
 
 @keyframes ContentFadeIn {
@@ -114,9 +119,10 @@
         opacity: 1;
     }
 }
+
 // Mediaquery 21/9 screen
 @media screen and (min-device-aspect-ratio: 21/9) {
-            .card-bacheca {
-              height: 650px;
-            }
-        }
+    .card-bacheca {
+        height: 650px;
+    }
+}

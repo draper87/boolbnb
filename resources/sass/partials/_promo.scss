@@ -1,20 +1,23 @@
 /* MAIN SECTION PAYMENT */
 // stile per pagamento e prodotti
-.ms_cards{
-  background-color: white;
-  padding: 30px;
-  border: 1px solid rgb(195,195,195);
-  border-radius: 5px;
-  margin: 1%;
-  padding-left: -1%;
-  padding-right: -1%;
-  box-shadow: 10px 10px 26px -8px rgba(0,0,0,0.75);
+.ms_cards {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid rgb(195, 195, 195);
+    border-radius: 5px;
+    margin: 1%;
+    padding-left: -1%;
+    padding-right: -1%;
+    box-shadow: 10px 10px 26px -8px rgba(0, 0, 0, 0.75);
+
     .fa-check-circle {
         color: #5ed3bc;
     }
+
     ul li {
         color: #5d5d5d;
     }
+
     h6 span {
         padding: 5px 10px 5px 10px;
         font-size: 12px;
@@ -22,69 +25,83 @@
         border-radius: 10px;
     }
 }
-.ms_promo_decor{
-  width: 200px;
-  height: 60px;
-  margin: auto;
-  margin-bottom: 18px;
-  background: rgb(187,255,236);
-  background: linear-gradient(174deg, rgba(187,255,236,1) 0%, rgba(48,242,220,1) 35%, rgba(13,166,149,1) 100%);
-  padding: 30px;
-  color: white;
-  border: 5px solid #FFC107;
-  border-radius: 50px;
+
+.ms_promo_decor {
+    width: 200px;
+    height: 60px;
+    margin: auto;
+    margin-bottom: 18px;
+    background: rgb(187, 255, 236);
+    background: linear-gradient(174deg, rgba(187, 255, 236, 1) 0%, rgba(48, 242, 220, 1) 35%, rgba(13, 166, 149, 1) 100%);
+    padding: 30px;
+    color: white;
+    border: 5px solid #FFC107;
+    border-radius: 50px;
 }
-.ms_position_relative{
-  position: relative;
+
+.ms_position_relative {
+    position: relative;
 }
-.ms_position_centered{
-  transform: translate(-50%, -50%);
-  position: absolute;
-  left: 50%;
-  top: 50%;
+
+.ms_position_centered {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
-.text-gray{
-  color: #555;
+
+.text-gray {
+    color: #555;
 }
-.ms_container_flex{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+
+.ms_container_flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-.ms_flex_item{
-  flex-wrap: wrap;
-  flex-grow: 3;
+
+.ms_flex_item {
+    flex-wrap: wrap;
+    flex-grow: 3;
 }
+
 .space_my_payment {
-  padding-top: 30px;
+    padding-top: 30px;
 }
+
 .space_me {
-  margin-top: 40px;
-  border-radius: 25px;
+    margin-top: 40px;
+    border-radius: 25px;
 }
+
 .down_my_btn {
-  margin-bottom: 4px;
+    margin-bottom: 4px;
 }
+
 .space_under_me {
-  margin-bottom: 20px;
-  margin-top:10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
+
 /* REVIEVV-SECTION */
-.ms_section{
-  height: 450px;
+.ms_section {
+    height: 450px;
 }
+
 /* CUSTOMER REVIEVV */
 .my_padding {
-  padding: 40px 0 30px;
+    padding: 40px 0 30px;
 }
+
 .space_my_h1 {
-  padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .my_orange {
-  color: #FFC107;
+    color: #FFC107;
 }
+
 // padding titolo
-.ms_title_margin{
-  margin-bottom: 3%
+.ms_title_margin {
+    margin-bottom: 3%
 }

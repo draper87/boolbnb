@@ -1,196 +1,199 @@
 // STRUTTURA CARD CON APPARTAMENTI
 // Regole di gestione spazi, immagini e testi
 .card {
-  display:block;
-  width:100%;
-  max-width:800px;
+    display: block;
+    width: 100%;
+    max-width: 800px;
 }
 
 .card img {
-  border-bottom: 2px solid #FFC107;
+    border-bottom: 2px solid #FFC107;
 }
 
 .innerLeft {
-  display:inline-block;
-  margin-right:-4px;
-  vertical-align:top;
-  width:30%;
-  text-align:center;
-  padding:5px;
+    display: inline-block;
+    margin-right: -4px;
+    vertical-align: top;
+    width: 30%;
+    text-align: center;
+    padding: 5px;
 }
+
 .innerRight {
-  display:inline-block;
-  vertical-align:top;
-  width:70%;
-  text-align:left;
-  padding:5px;
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    text-align: left;
+    padding: 5px;
 }
+
 .card-text {
-  display:inline-block;
+    display: inline-block;
 }
 
 // Regole immagini appartamenti
 .circle {
-  width: 100%;
-  height: 160px;
+    width: 100%;
+    height: 160px;
 }
 
 .circle2 {
     width: 100%;
     height: 160px;
 }
+
 a, a:hover, a:visited, a:focus, a:link {
     text-decoration: none !important;
 }
 
 .contenitore {
-  display: flex;
+    display: flex;
 }
 
 .slider-filter {
-  width: 100%;
+    width: 100%;
 }
 
 .custom-box {
-  width: 100%;
-  height: 700px;
+    width: 100%;
+    height: 700px;
 }
 
 .search_box {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 .search-nav {
-  width: 40%;
-  min-width: 260px;
-  padding: 35px 0 0 35px;
+    width: 40%;
+    min-width: 260px;
+    padding: 35px 0 0 35px;
 }
 
 .risultati {
-  overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 .card_box {
-  border-right: 1px solid lightgray;
-  border-left: 1px solid lightgray;
-  display: flex;
-  padding-bottom: 25px;
-  padding-top: 25px;
-  padding-left: 25px;
-  justify-content: space-around;
-  border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    display: flex;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    padding-left: 25px;
+    justify-content: space-around;
+    border-bottom: 1px solid lightgray;
 }
 
 .card_box:hover {
-  background-color: #d3d3d3;
+    background-color: #d3d3d3;
 }
 
 .immagine {
-  flex-basis: 28%;
+    flex-basis: 28%;
 }
 
 .testo {
-  margin: 0;
-  flex-basis: 68%;
-  position: relative;
-  color: #3c3c3c !important;
+    margin: 0;
+    flex-basis: 68%;
+    position: relative;
+    color: #3c3c3c !important;
 }
 
 .numeroinput {
-  display: inline-block;
-  text-align: center;
-  background-color: #0075ff;
-  border: 3px solid #0075ff;
-  color: white;
-  border-radius: 50%;
-  padding: 5px;
-  height: 30px;
-  width: 30px;
-  line-height: 16px;
-  text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background-color: #0075ff;
+    border: 3px solid #0075ff;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    line-height: 16px;
+    text-decoration: none;
 }
 
 .badge-dorato {
-  float: right;
-  color: white;
-  opacity: 0.9;
-  top: 0;
-  background-color: #FFC107;
-  padding: 2px 5px 0px;
-  border-bottom-left-radius: 8px;
+    float: right;
+    color: white;
+    opacity: 0.9;
+    top: 0;
+    background-color: #FFC107;
+    padding: 2px 5px 0px;
+    border-bottom-left-radius: 8px;
 }
 
 .pagination {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 .filter {
-  background-color: white;
-  padding: 5px 10px 5px 10px;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
 }
 
 
 // cambio pagina pointer
 .page-link {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 // MEDIA SCREEN
 @media screen and (max-width: 960px) {
-  .contenitore {
-      flex-direction: column;
-  }
-  .badge-dorato {
+    .contenitore {
+        flex-direction: column;
+    }
+    .badge-dorato {
 
-  }
-  .card_box {
-    border: none;
-    padding: 30px;
-  }
-  .risultati {
-    overflow-y: auto;
-  }
-  .custom-box {
-    width: 100%;
-    height: auto;
-  }
-  .search-nav {
-    width: 100%;
-    min-width: auto;
-    padding: 35px;
-  }
-  #tv {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+    }
+    .card_box {
+        border: none;
+        padding: 30px;
+    }
+    .risultati {
+        overflow-y: auto;
+    }
+    .custom-box {
+        width: 100%;
+        height: auto;
+    }
+    .search-nav {
+        width: 100%;
+        min-width: auto;
+        padding: 35px;
+    }
+    #tv {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
-  #tv > div {
-    flex-basis: 48%;
-    border: 1px solid white;
-  }
-  .search-nav h3 {
-    width: 100%;
-    text-align: center;
-  }
-  .search-nav button{
-    width: 100%;
-    text-align: center;
-  }
-  .search-nav label {
-    font-size: 14px;
-  }
-  .immagine {
-    flex-basis: 100%;
-  }
-  .testo {
-    flex-basis: 100%;
-  }
-  .circle {
-    height: auto !important;
-  }
-  .card_box:hover {
-    background-color: white;
-  }
+    #tv > div {
+        flex-basis: 48%;
+        border: 1px solid white;
+    }
+    .search-nav h3 {
+        width: 100%;
+        text-align: center;
+    }
+    .search-nav button {
+        width: 100%;
+        text-align: center;
+    }
+    .search-nav label {
+        font-size: 14px;
+    }
+    .immagine {
+        flex-basis: 100%;
+    }
+    .testo {
+        flex-basis: 100%;
+    }
+    .circle {
+        height: auto !important;
+    }
+    .card_box:hover {
+        background-color: white;
+    }
 }
