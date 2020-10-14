@@ -172,7 +172,7 @@
                         <!--END FIRST PAGE-->
 
                         <!--SECOND PAGE-->
-                        <div class="carousel-item mb-3 ">
+                        <div class="carousel-item mb-3 text-center">
 
                             @for ($i=4; $i < 8; $i++)
                                 @if (empty($no_promo_apartments[$i]))
