@@ -137,14 +137,14 @@
         <!-- END SPONSOR HOUSE -->
 
         <!-- OTHER HOUSE SECTION -->
-        <div class="contenitore-x pt-5 pb-5">
-            <div class="container-lg">
+        <div class="contenitore-x pt-5 pb-5 col-md-12">
+            <div class="container-lg ">
 
                 <h4 class="text-center">Altri appartamenti che potrebbero interessarvi</h4>
-                <div id="carouselExampleControls" class="carousel slide carousel-multi-item mt-5" data-ride="carousel" data-interval="0" >
-                    <div class="carousel-inner" role="listbox">
+                <div id="carouselExampleControls" class="carousel slide carousel-multi-item mt-5 " data-ride="carousel" data-interval="0" >
+                    <div class="carousel-inner " role="listbox">
                         <!--FIRST PAGE-->
-                        <div class="carousel-item active mb-3">
+                        <div class="carousel-item active mb-3 new_sm_rules">
 
                             @for ($i=0; $i < 4; $i++)
                                 @if (empty($no_promo_apartments[$i]))
@@ -172,7 +172,7 @@
                         <!--END FIRST PAGE-->
 
                         <!--SECOND PAGE-->
-                        <div class="carousel-item mb-3">
+                        <div class="carousel-item mb-3 new_sm_rules">
 
                             @for ($i=4; $i < 8; $i++)
                                 @if (empty($no_promo_apartments[$i]))
@@ -291,7 +291,7 @@
             <div id="carouselExample" class="carousel slide custom_we_are" data-ride="carousel" data-interval="2000">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExample" data-slide-to="0" class="active ">
-                  <img class="rounded-circle" src="{{asset('images/oliver.jpg')}}" alt="First slide">
+                  <img class="rounded-circle we_are_img" src="{{asset('images/oliver.jpg')}}" alt="First slide">
                 </li>
                 <li data-target="#carouselExample" data-slide-to="1"class="">
                   <img class="rounded-circle we_are_img" src="{{asset('images/Ale2.jpg')}}" alt="Second slide"></a>
