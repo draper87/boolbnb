@@ -307,52 +307,52 @@
                 </li>
               </ol>
 
-            <div class="carousel-inner we_are_padding">
-              <div class="carousel-item active">
-                <blockquote class="blockquote">
-                <a href="https://www.linkedin.com/in/oliver-benoit-bb52403a/">OLIVER BENOIT</a>
-                </blockquote>
-                <small>
-                Back-end developer
-                </small>
-              </div>
+{{--            <div class="carousel-inner we_are_padding">--}}
+{{--              <div class="carousel-item active">--}}
+{{--                <blockquote class="blockquote">--}}
+{{--                <a href="https://www.linkedin.com/in/oliver-benoit-bb52403a/">OLIVER BENOIT</a>--}}
+{{--                </blockquote>--}}
+{{--                <small>--}}
+{{--                Back-end developer--}}
+{{--                </small>--}}
+{{--              </div>--}}
 
-              <div class="carousel-item">
-                <blockquote class="blockquote">
-                <a href="https://www.linkedin.com/in/alessandro-capanna/">ALESSANDRO CAPANNA</a>
-                </blockquote>
-                <small>
-                Back-end developer
-                </small>
-              </div>
+{{--              <div class="carousel-item">--}}
+{{--                <blockquote class="blockquote">--}}
+{{--                <a href="https://www.linkedin.com/in/alessandro-capanna/">ALESSANDRO CAPANNA</a>--}}
+{{--                </blockquote>--}}
+{{--                <small>--}}
+{{--                Back-end developer--}}
+{{--                </small>--}}
+{{--              </div>--}}
 
-              <div class="carousel-item">
-                <blockquote class="blockquote">
-                <a href="https://www.linkedin.com/in/gianpiero-invernizzi-41b6b71b7/">GIANPIERO INVERNIZZI</a>
-                </blockquote>
-                <small>
-                Front-end developer
-                </small>
-              </div>
+{{--              <div class="carousel-item">--}}
+{{--                <blockquote class="blockquote">--}}
+{{--                <a href="https://www.linkedin.com/in/gianpiero-invernizzi-41b6b71b7/">GIANPIERO INVERNIZZI</a>--}}
+{{--                </blockquote>--}}
+{{--                <small>--}}
+{{--                Front-end developer--}}
+{{--                </small>--}}
+{{--              </div>--}}
 
-              <div class="carousel-item">
-                <blockquote class="blockquote">
-                <a href="https://www.linkedin.com/in/npaganelli/">NICOLO' PAGANELLI</a>
-                </blockquote>
-                <small>
-                Back-end developer
-                </small>
-              </div>
+{{--              <div class="carousel-item">--}}
+{{--                <blockquote class="blockquote">--}}
+{{--                <a href="https://www.linkedin.com/in/npaganelli/">NICOLO' PAGANELLI</a>--}}
+{{--                </blockquote>--}}
+{{--                <small>--}}
+{{--                Back-end developer--}}
+{{--                </small>--}}
+{{--              </div>--}}
 
-              <div class="carousel-item">
-                <blockquote class="blockquote">
-                <a href="https://www.linkedin.com/in/andy-u-45ab01182/">ANDY UKPE</a>
-                </blockquote>
-                <small>
-                Front-end developer
-                </small>
-              </div>
-            </div>
+{{--              <div class="carousel-item">--}}
+{{--                <blockquote class="blockquote">--}}
+{{--                <a href="https://www.linkedin.com/in/andy-u-45ab01182/">ANDY UKPE</a>--}}
+{{--                </blockquote>--}}
+{{--                <small>--}}
+{{--                Front-end developer--}}
+{{--                </small>--}}
+{{--              </div>--}}
+{{--            </div>--}}
             </div>
           </div>
         </section>
