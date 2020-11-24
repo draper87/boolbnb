@@ -286,26 +286,26 @@
         <!-- END OTHER HOUSE SECTION -->
 
         <!-- ABOUT US -->
-        <section class="my_spacing pt-5 pb-5">
-          <div class="col-md-12">
-            <div id="carouselExample" class="carousel slide custom_we_are" data-ride="carousel" data-interval="2000">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExample" data-slide-to="0" class="active ">
-                  <img class="rounded-circle we_are_img" src="{{asset('images/oliver.jpg')}}" alt="First slide">
-                </li>
-                <li data-target="#carouselExample" data-slide-to="1"class="">
-                  <img class="rounded-circle we_are_img" src="{{asset('images/Ale2.jpg')}}" alt="Second slide"></a>
-                </li>
-                <li data-target="#carouselExample" data-slide-to="2" class=" ">
-                  <img class="rounded-circle we_are_img" src="{{asset('images/Io.jpg')}}" alt="Third slide">
-                </li>
-                <li data-target="#carouselExample" data-slide-to="3" class="">
-                  <img class="rounded-circle we_are_img" src="{{asset('images/Nico.jpg')}}" alt="Third slide">
-                </li>
-                <li data-target="#carouselExample" data-slide-to="4"class="">
-                  <img class="rounded-circle we_are_img" src="{{asset('images/andy2.jpg')}}" alt="Third slide">
-                </li>
-              </ol>
+{{--        <section class="my_spacing pt-5 pb-5">--}}
+{{--          <div class="col-md-12">--}}
+{{--            <div id="carouselExample" class="carousel slide custom_we_are" data-ride="carousel" data-interval="2000">--}}
+{{--              <ol class="carousel-indicators">--}}
+{{--                <li data-target="#carouselExample" data-slide-to="0" class="active ">--}}
+{{--                  <img class="rounded-circle we_are_img" src="{{asset('images/oliver.jpg')}}" alt="First slide">--}}
+{{--                </li>--}}
+{{--                <li data-target="#carouselExample" data-slide-to="1"class="">--}}
+{{--                  <img class="rounded-circle we_are_img" src="{{asset('images/Ale2.jpg')}}" alt="Second slide"></a>--}}
+{{--                </li>--}}
+{{--                <li data-target="#carouselExample" data-slide-to="2" class=" ">--}}
+{{--                  <img class="rounded-circle we_are_img" src="{{asset('images/Io.jpg')}}" alt="Third slide">--}}
+{{--                </li>--}}
+{{--                <li data-target="#carouselExample" data-slide-to="3" class="">--}}
+{{--                  <img class="rounded-circle we_are_img" src="{{asset('images/Nico.jpg')}}" alt="Third slide">--}}
+{{--                </li>--}}
+{{--                <li data-target="#carouselExample" data-slide-to="4"class="">--}}
+{{--                  <img class="rounded-circle we_are_img" src="{{asset('images/andy2.jpg')}}" alt="Third slide">--}}
+{{--                </li>--}}
+{{--              </ol>--}}
 
 {{--            <div class="carousel-inner we_are_padding">--}}
 {{--              <div class="carousel-item active">--}}
@@ -353,9 +353,9 @@
 {{--                </small>--}}
 {{--              </div>--}}
 {{--            </div>--}}
-            </div>
-          </div>
-        </section>
+{{--            </div>--}}
+{{--          </div>--}}
+{{--        </section>--}}
       </main>
       <!-- Main End -->
 
